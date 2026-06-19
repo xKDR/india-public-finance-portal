@@ -1,0 +1,68 @@
+{
+  "budget_rows_count": 220211,
+  "checks_rows_count": 192804,
+  "final_summary_files_count": 175,
+  "pdfs_count": 77,
+  "per_year": {
+    "2016-17": {
+      "budget_rows": 22103,
+      "check_rows": 19956,
+      "pdf_count": 7
+    },
+    "2017-18": {
+      "budget_rows": 22127,
+      "check_rows": 19140,
+      "pdf_count": 7
+    },
+    "2018-19": {
+      "budget_rows": 22138,
+      "check_rows": 20740,
+      "pdf_count": 7
+    },
+    "2019-20": {
+      "budget_rows": 21949,
+      "check_rows": 21452,
+      "pdf_count": 7
+    },
+    "2020-21": {
+      "budget_rows": 22090,
+      "check_rows": 21924,
+      "pdf_count": 7
+    },
+    "2021-22": {
+      "budget_rows": 21877,
+      "check_rows": 22016,
+      "pdf_count": 7
+    },
+    "2022-23": {
+      "budget_rows": 21081,
+      "check_rows": 19920,
+      "pdf_count": 7
+    },
+    "2023-24": {
+      "budget_rows": 17183,
+      "check_rows": 12056,
+      "pdf_count": 7
+    },
+    "2024-25": {
+      "budget_rows": 16389,
+      "check_rows": 11864,
+      "pdf_count": 7
+    },
+    "2025-26": {
+      "budget_rows": 16260,
+      "check_rows": 11868,
+      "pdf_count": 7
+    },
+    "2026-27": {
+      "budget_rows": 17014,
+      "check_rows": 11868,
+      "pdf_count": 7
+    }
+  },
+  "release_version": "v0.2.0-draft",
+  "schema_version": "ka-public-two-table-v3",
+  "validation_findings_anchor_pages_count": 3202,
+  "validation_findings_count": 25317,
+  "years_count": 11
+}

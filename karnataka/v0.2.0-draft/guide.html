@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Karnataka Budget Data Guide</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18202a;
+      --muted: #5e6975;
+      --line: #d9dee5;
+      --paper: #f7f7f4;
+      --white: #ffffff;
+      --accent: #0f6b63;
+      --accent-soft: #dcece8;
+      --warn: #9b4f14;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+    header {
+      padding: 40px 28px 26px;
+      border-bottom: 1px solid var(--line);
+      background: var(--white);
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 8px 0 10px;
+      max-width: 880px;
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+    p {
+      margin: 0 0 12px;
+      max-width: 760px;
+      color: var(--muted);
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .93em;
+      background: #eef1f2;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+    pre {
+      overflow-x: auto;
+      margin: 14px 0 0;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #111820;
+      color: #eef6f3;
+    }
+    section {
+      padding: 26px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 22px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+    .stat {
+      min-height: 92px;
+      padding: 16px;
+      background: var(--white);
+    }
+    .stat b {
+      display: block;
+      font-size: 24px;
+    }
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .ladder {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(120px, 1fr));
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .step {
+      min-height: 130px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+    .step strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+    .step small {
+      color: var(--muted);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      background: var(--white);
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #edf2f0;
+      font-size: 13px;
+    }
+    .note {
+      border-left: 4px solid var(--accent);
+      padding: 12px 14px;
+      background: var(--accent-soft);
+      color: #1d3c38;
+      border-radius: 0 8px 8px 0;
+    }
+    .warning {
+      border-left-color: var(--warn);
+      background: #f4e6d8;
+      color: #4c2f17;
+    }
+    @media (max-width: 880px) {
+      .stats, .ladder, .grid { grid-template-columns: 1fr; }
+      header, main { padding-left: 18px; padding-right: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">IndiaBudgets research data</div>
+    <h1>Karnataka budget data guide</h1>
+    <p>How to read the CSVs, interpret the budget hierarchy, and use validation findings without losing the shape of the original PDF.</p>
+    <div class="stats">
+      <div class="stat"><b>v0.2.0-draft</b><span>Package version</span></div>
+      <div class="stat"><b>11</b><span>Fiscal years</span></div>
+      <div class="stat"><b>220,211</b><span>Budget rows</span></div>
+      <div class="stat"><b>192,804</b><span>Validation rows</span></div>
+    </div>
+  </header>
+  <main>
+    <section>
+      <h2>What this package is</h2>
+      <p>Budget PDFs are hard to parse and harder to analyze. This package is an attempt to represent Karnataka expenditure volumes as CSV and JSON while preserving the source row structure, page references, and validation checks.</p>
+      <p class="note">The CSV is document-shaped by design. It includes leaf rows, headers, totals, and summary rows so users can compare the table back to the PDF.</p>
+    </section>
+
+    <section>
+      <h2>The accounting ladder</h2>
+      <p>The DEA Budget Manual describes six tiers in Detailed Demands for Grants. In this package they appear as code/name columns from Major Head through Object Head.</p>
+      <div class="ladder">
+        <div class="step"><strong>Major Head</strong><small>4 digits. Broad function, such as tax collection or education.</small></div>
+        <div class="step"><strong>Sub-Major Head</strong><small>2 digits. Sub-function within a major head. <code>00</code> often means no sub-major split.</small></div>
+        <div class="step"><strong>Minor Head</strong><small>3 digits. Programme-level classification.</small></div>
+        <div class="step"><strong>Sub-Head</strong><small>2 digits. Scheme-level classification.</small></div>
+        <div class="step"><strong>Detailed Head</strong><small>2 digits. Sub-scheme or detailed activity.</small></div>
+        <div class="step"><strong>Object Head</strong><small>2 digits. Object or primary unit of appropriation. This is the usual additive leaf level.</small></div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div>
+        <h2>Safe totals</h2>
+        <p>Do not sum the whole table. Totals and summary rows repeat amounts already present in leaf rows.</p>
+        <pre><code>WHERE type_of_table = 'object_head'
+  AND row_type = 'Data'
+  AND row_level = 'Object-Head'</code></pre>
+      </div>
+      <div>
+        <h2>Voted and charged</h2>
+        <p><code>vote_charge_marker</code> captures the source distinction where printed. Charged expenditure is not submitted for vote under the Constitution; voted expenditure is subject to legislative vote.</p>
+        <p class="note warning">Validation is an internal consistency signal, not a guarantee that every PDF character was extracted correctly.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Validation drilldown</h2>
+      <p>Example key:</p>
+      <pre><code>KA.2021-22.expvol_1.in_schema.object_head.minor.03_2043_00_101</code></pre>
+      <table>
+        <thead><tr><th>Part</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td><code>KA</code></td><td>Karnataka.</td></tr>
+          <tr><td><code>2021-22</code></td><td>Source budget year.</td></tr>
+          <tr><td><code>expvol_1</code></td><td>Expenditure volume 1.</td></tr>
+          <tr><td><code>in_schema</code></td><td>The check stays inside one source table family.</td></tr>
+          <tr><td><code>object_head</code></td><td>The table family being checked.</td></tr>
+          <tr><td><code>minor</code></td><td>The rollup level: object-head rows are compared with a printed minor-head total.</td></tr>
+          <tr><td><code>03_2043_00_101</code></td><td>Demand 03, Major Head 2043, Sub-Major 00, Minor Head 101.</td></tr>
+        </tbody>
+      </table>
+      <p>In <code>checks_2021-22.csv</code>, this key has four financial-column comparisons. Two pass exactly; two differ by INR lakh 1 and fail the <code>0.01</code> threshold. A <code>0.01</code> difference is one-hundredth of the package amount unit; if <code>INR_lakh</code> is correct, that is Rs 1,000.</p>
+    </section>
+
+    <section>
+      <h2>Files to use</h2>
+      <table>
+        <thead><tr><th>File</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td><code>years/&lt;year&gt;/csv/budget_&lt;year&gt;.csv</code></td><td>Extracted source rows with hierarchy, row type, row level, amount columns, and PDF provenance.</td></tr>
+          <tr><td><code>years/&lt;year&gt;/csv/checks_&lt;year&gt;.csv</code></td><td>Validation comparisons by check, account key, and financial column.</td></tr>
+          <tr><td><code>validation_findings.csv</code></td><td>Failed validation rows joined to PDF page and row anchors.</td></tr>
+          <tr><td><code>data_dictionary.csv</code></td><td>Column definitions and controlled values.</td></tr>
+          <tr><td><code>known_caveats.md</code></td><td>Risks, affected areas, and user actions.</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
