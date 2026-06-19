@@ -33,7 +33,7 @@ WHERE type_of_table = 'object_head'
 
 ## What The Hierarchy Means
 
-The account hierarchy follows the standard budget classification tiers described in the DEA Budget Manual reference in the repository (`DATA/reference/DEA/BUDGET_MANUAL_FINAL_15_11_22.pdf`): Major Head is a 4-digit function, Sub-Major Head is a 2-digit sub-function, Minor Head is a 3-digit programme, Sub-Head is a 2-digit scheme, Detailed Head is a 2-digit sub-scheme, and Object Head is a 2-digit object or primary unit of appropriation.
+The account hierarchy follows the standard budget classification tiers described in the Department of Economic Affairs (DEA) Budget Manual: Major Head is a 4-digit function, Sub-Major Head is a 2-digit sub-function, Minor Head is a 3-digit programme, Sub-Head is a 2-digit scheme, Detailed Head is a 2-digit sub-scheme, and Object Head is a 2-digit object or primary unit of appropriation.
 
 `vote_charge_marker` records whether an amount is voted or charged where the source prints that distinction. Charged expenditure is expenditure not submitted for the vote under the Constitution; voted expenditure is subject to legislative vote.
 
