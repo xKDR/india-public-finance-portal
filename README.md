@@ -37,7 +37,8 @@ india-public-finance-portal/
         └── years/
             └── <year>/                 e.g. 2021-22
                 ├── csv/                 budget_<year>.csv, checks_<year>.csv
-                ├── json/                budget_<year>.json, checks_<year>.json
+                ├── json/                NDJSON documents: budget_nodes, budget_leaves,
+                │                        summaries, checks (one per line, MongoDB-loadable)
                 └── pdfs/                source expenditure-volume PDFs
 ```
 

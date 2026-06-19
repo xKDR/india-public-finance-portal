@@ -12,8 +12,20 @@ Coverage: 2016-17 through 2026-27, 7 expenditure volumes per year, 220,211 extra
 - Open `data_dictionary.csv` for column definitions and controlled values.
 - Open `known_caveats.md` before using the data in unit-sensitive analysis.
 - Open `guide.html` for a visual guide to the hierarchy and validation IDs.
+- Load `years/<year>/json/*.ndjson` into MongoDB (or any document store) for queryable, nested documents.
 
 Every budget row carries `source_file`, `page_number`, and `row_number`. In budget rows and validation findings, `source_file` is package-relative, for example `years/2021-22/pdfs/KA_2021_22_EXPVOL1.pdf`. `row_number` is the row number in the extracted final-summary CSV, not a PDF text-line number.
+
+## JSON Documents
+
+Each year ships four newline-delimited JSON (`.ndjson`) files under `years/<year>/json/`, one document per line, ready to load into MongoDB or any document store. Values are typed (numbers, booleans, null), amounts are a long array `[{measure, fiscal_year, value}]`, and every document has a stable `_id`.
+
+- `budget_nodes_<year>.ndjson`: one document per demand, nested Major Head -> Sub-Major -> Minor -> Sub-Head -> Detailed -> Object leaf. Read a demand's whole tree in one query.
+- `budget_leaves_<year>.ndjson`: one document per additive object-head leaf, hierarchy embedded. This is the safe-to-sum collection.
+- `summaries_<year>.ndjson`: printed totals plus the minor-head and sub-major-head summary tables, kept separate from the leaves so leaves never double-count.
+- `checks_<year>.ndjson`: one document per validation comparison; find failures with `{"failed": true}`.
+
+Example: `mongoimport --db ka_budget --collection budget_leaves --file years/2018-19/json/budget_leaves_2018-19.ndjson`.
 
 ## How To Sum Amounts
 

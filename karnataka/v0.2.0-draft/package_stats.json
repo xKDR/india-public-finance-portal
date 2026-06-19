@@ -7,56 +7,100 @@
     "2016-17": {
       "budget_rows": 22103,
       "check_rows": 19956,
+      "json_budget_leaves": 11277,
+      "json_budget_nodes": 29,
+      "json_checks": 19956,
+      "json_summaries": 6094,
       "pdf_count": 7
     },
     "2017-18": {
       "budget_rows": 22127,
       "check_rows": 19140,
+      "json_budget_leaves": 11353,
+      "json_budget_nodes": 29,
+      "json_checks": 19140,
+      "json_summaries": 5855,
       "pdf_count": 7
     },
     "2018-19": {
       "budget_rows": 22138,
       "check_rows": 20740,
+      "json_budget_leaves": 11222,
+      "json_budget_nodes": 29,
+      "json_checks": 20740,
+      "json_summaries": 6292,
       "pdf_count": 7
     },
     "2019-20": {
       "budget_rows": 21949,
       "check_rows": 21452,
+      "json_budget_leaves": 11128,
+      "json_budget_nodes": 29,
+      "json_checks": 21452,
+      "json_summaries": 6311,
       "pdf_count": 7
     },
     "2020-21": {
       "budget_rows": 22090,
       "check_rows": 21924,
+      "json_budget_leaves": 11029,
+      "json_budget_nodes": 29,
+      "json_checks": 21924,
+      "json_summaries": 6419,
       "pdf_count": 7
     },
     "2021-22": {
       "budget_rows": 21877,
       "check_rows": 22016,
+      "json_budget_leaves": 10759,
+      "json_budget_nodes": 29,
+      "json_checks": 22016,
+      "json_summaries": 6452,
       "pdf_count": 7
     },
     "2022-23": {
       "budget_rows": 21081,
       "check_rows": 19920,
+      "json_budget_leaves": 10541,
+      "json_budget_nodes": 29,
+      "json_checks": 19920,
+      "json_summaries": 5829,
       "pdf_count": 7
     },
     "2023-24": {
       "budget_rows": 17183,
       "check_rows": 12056,
+      "json_budget_leaves": 11095,
+      "json_budget_nodes": 28,
+      "json_checks": 12056,
+      "json_summaries": 3049,
       "pdf_count": 7
     },
     "2024-25": {
       "budget_rows": 16389,
       "check_rows": 11864,
+      "json_budget_leaves": 10389,
+      "json_budget_nodes": 29,
+      "json_checks": 11864,
+      "json_summaries": 2996,
       "pdf_count": 7
     },
     "2025-26": {
       "budget_rows": 16260,
       "check_rows": 11868,
+      "json_budget_leaves": 10231,
+      "json_budget_nodes": 28,
+      "json_checks": 11868,
+      "json_summaries": 3005,
       "pdf_count": 7
     },
     "2026-27": {
       "budget_rows": 17014,
       "check_rows": 11868,
+      "json_budget_leaves": 10956,
+      "json_budget_nodes": 28,
+      "json_checks": 11868,
+      "json_summaries": 3003,
       "pdf_count": 7
     }
   },
