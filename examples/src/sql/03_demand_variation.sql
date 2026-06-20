@@ -4,7 +4,7 @@
 -- latest available Actuals fiscal year, and compares latest Actuals to latest BE.
 --
 -- demand_names table is registered by run_sql.py from
---   karnataka-state-finance/examples/demand_names.json
+--   karnataka-state-finance/demand_names.json
 --
 -- The tidy CSV is already additive-leaf, canonical-source, OCR-cleaned.
 -- Amounts in INR lakh; divide by 100 for INR crore.

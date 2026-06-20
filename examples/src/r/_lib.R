@@ -77,7 +77,7 @@ SALARY_OH          <- SCOPE$salary_object_codes    # c("001","002",...)
 # Each demand line: "01": {"name": "Agriculture...", "short": ...}
 
 .load_demand_names <- function() {
-  path  <- file.path(REPO_ROOT, "karnataka-state-finance", "examples", "demand_names.json")
+  path  <- file.path(REPO_ROOT, "karnataka-state-finance", "demand_names.json")
   lines <- readLines(path, warn = FALSE)
   # Match:  "DD": {"name": "Name Text"
   pat   <- '^\\s*"(\\d{2})"\\s*:\\s*\\{\\s*"name"\\s*:\\s*"([^"]+)"'

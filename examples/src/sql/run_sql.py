@@ -34,7 +34,7 @@ _REPO     = os.path.dirname(_EXAMPLES)                       # repo root
 
 CSV_PATH      = os.path.join(_EXAMPLES, "data", "processed", "karnataka_budget_tidy.csv")
 CANONICAL_PATH = os.path.join(_EXAMPLES, "data", "processed", "canonical_numbers.json")
-DEMAND_NAMES_PATH = os.path.join(_REPO, "karnataka-state-finance", "examples", "demand_names.json")
+DEMAND_NAMES_PATH = os.path.join(_REPO, "karnataka-state-finance", "demand_names.json")
 OUT_PATH      = os.path.join(_EXAMPLES, "out", "results_sql.json")
 
 SQL_DIR = _HERE  # examples/src/sql/

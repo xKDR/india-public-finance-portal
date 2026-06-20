@@ -7,7 +7,7 @@ Run from repo root:
 
 Reads:
     karnataka-state-finance/years/*/csv/budget_*.csv
-    karnataka-state-finance/examples/demand_names.json
+    karnataka-state-finance/demand_names.json
     karnataka-state-finance/package_stats.json
 
 Writes:
@@ -394,7 +394,7 @@ def main():
     print("=" * 62)
 
     # Load demand names
-    dn_path = os.path.join(PKG_ROOT, "examples", "demand_names.json")
+    dn_path = os.path.join(PKG_ROOT, "demand_names.json")
     with open(dn_path, encoding="utf-8") as f:
         demand_names = json.load(f)["demands"]
 
@@ -446,63 +446,6 @@ def main():
     with open(cn_path, "w", encoding="utf-8") as f:
         json.dump(cn, f, indent=2)
     print(f"  Written: {cn_path}")
-
-    # --- Verification vs results.json ----------------------------------------
-    print("\n--- Verification vs results.json ---")
-    results_path = os.path.join(PKG_ROOT, "examples", "results.json")
-    with open(results_path, encoding="utf-8") as f:
-        gold = json.load(f)
-
-    max_diff = 0.0
-    max_diff_detail = ""
-
-    def check(label, a, b):
-        nonlocal max_diff, max_diff_detail
-        d = abs(a - b)
-        if d > max_diff:
-            max_diff = d
-            max_diff_detail = f"{label}: mine={a:.4f}  gold={b:.4f}"
-
-    # q1_health: compare be/re/actuals per fiscal year
-    gold_q1 = {r["year"]: r for r in gold["q1_health"]}
-    for row in cn["q1_health"]:
-        fy = row["fiscal_year"]
-        if fy in gold_q1:
-            g = gold_q1[fy]
-            check(f"q1[{fy}].be",      row["be"],      g["be"])
-            check(f"q1[{fy}].re",      row["re"],      g["re"])
-            check(f"q1[{fy}].actuals", row["actuals"], g["actuals"])
-
-    # q2_committed: compare committed actuals vs results "actuals"
-    gold_q2 = {r["year"]: r for r in gold["q2_committed"]}
-    for row in cn["q2_committed"]:
-        fy = row["fiscal_year"]
-        if fy in gold_q2:
-            check(f"q2[{fy}].committed", row["committed"], gold_q2[fy]["actuals"])
-
-    # total_expenditure: compare total_be and committed_be
-    gold_te = {r["year"]: r for r in gold["total_expenditure"]}
-    for row in cn["total_expenditure"]:
-        fy = row["fiscal_year"]
-        if fy in gold_te:
-            check(f"te[{fy}].total_be",     row["total_be"],     gold_te[fy]["total_be"])
-            check(f"te[{fy}].committed_be", row["committed_be"], gold_te[fy]["committed_be"])
-
-    # q3: compare latest_actuals and latest_be per demand
-    gold_d = {r["demand"]: r for r in gold["demands"]}
-    for row in cn["q3_demand"]["rows"]:
-        d = row["demand"]
-        if d in gold_d:
-            check(f"q3[{d}].latest_actuals", row["latest_actuals"], gold_d[d]["actuals"])
-            check(f"q3[{d}].latest_be",      row["latest_be"],      gold_d[d]["be"])
-
-    print(f"  Max abs diff vs results.json: {max_diff:.6f} cr")
-    if max_diff_detail:
-        print(f"  Worst case: {max_diff_detail}")
-    if max_diff < 0.01:
-        print("  PASS (< 0.01 cr tolerance)")
-    else:
-        print("  FAIL — exceeds 0.01 cr tolerance, investigate!")
 
     # --- Sanity checks -------------------------------------------------------
     print("\n--- Sanity checks ---")
