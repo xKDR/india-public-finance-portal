@@ -6,3 +6,7 @@ __MACOSX/
 # Editor / OS cruft
 *~
 Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
