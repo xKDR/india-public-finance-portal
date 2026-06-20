@@ -1,70 +1,311 @@
 # Karnataka Budget Data Package (v0.2.0-draft)
 
-This is a research draft of Karnataka budget tables extracted from public expenditure-volume PDFs. The goal is to make PDF budget documents usable as CSV and JSON while keeping provenance, caveats, and validation evidence next to the data.
+Karnataka expenditure-budget tables extracted from public expenditure-volume PDFs and shipped as
+CSV and NDJSON. Coverage: 2016-17 through 2026-27 (11 years), 220,211 budget rows, 192,804
+validation check rows, 77 source PDFs. Version: `v0.2.0-draft`.
 
-Coverage: 2016-17 through 2026-27, 7 expenditure volumes per year, 220,211 extracted budget rows, 192,804 validation check rows, and 77 packaged PDFs.
+Every row carries `source_file`, `page_number`, and `row_number` so any figure can be traced to
+a specific page of a specific source PDF.
 
-## Start Here
+---
 
-- Open `years/<year>/csv/budget_<year>.csv` for the document-shaped budget rows.
-- Open `years/<year>/csv/checks_<year>.csv` for validation comparisons.
-- Open `validation_findings.csv` for failed validation rows with page and row anchors.
-- Open `data_dictionary.csv` for column definitions and controlled values.
-- Open `known_caveats.md` before using the data in unit-sensitive analysis.
-- Open `guide.html` for a visual guide to the hierarchy and validation IDs.
-- Load `years/<year>/json/*.ndjson` into MongoDB (or any document store) for queryable, nested documents.
+## Start in 5 Minutes
 
-Every budget row carries `source_file`, `page_number`, and `row_number`. In budget rows and validation findings, `source_file` is package-relative, for example `years/2021-22/pdfs/KA_2021_22_EXPVOL1.pdf`. `row_number` is the row number in the extracted final-summary CSV, not a PDF text-line number.
+The `budget_leaves` NDJSON contains only additive leaf rows — no predicate needed:
 
-## JSON Documents
+```python
+import json
+total = 0
+with open("years/2024-25/json/budget_leaves_2024-25.ndjson") as f:
+    for line in f:
+        for amt in json.loads(line)["amounts"]:
+            if amt["measure"] == "budget_estimate" and amt["fiscal_year"] == "2024-25":
+                total += amt["value"]
+print(f"Total BE 2024-25: ₹{total/100:,.0f} crore")  # ~₹370,659 crore
+```
 
-Each year ships four newline-delimited JSON (`.ndjson`) files under `years/<year>/json/`, one document per line, ready to load into MongoDB or any document store. Values are typed (numbers, booleans, null), amounts are a long array `[{measure, fiscal_year, value}]`, and every document has a stable `_id`.
+Or from CSV — requires the three-condition predicate (see next section):
 
-- `budget_nodes_<year>.ndjson`: one document per demand, nested Major Head -> Sub-Major -> Minor -> Sub-Head -> Detailed -> Object leaf. Read a demand's whole tree in one query.
-- `budget_leaves_<year>.ndjson`: one document per additive object-head leaf, hierarchy embedded. This is the safe-to-sum collection.
-- `summaries_<year>.ndjson`: printed totals plus the minor-head and sub-major-head summary tables, kept separate from the leaves so leaves never double-count.
-- `checks_<year>.ndjson`: one document per validation comparison; find failures with `{"failed": true}`.
+```python
+import csv
+total = 0
+with open("years/2024-25/csv/budget_2024-25.csv") as f:
+    for row in csv.DictReader(f):
+        if (row["type_of_table"] == "object_head"
+                and row["row_type"] == "Data"
+                and row["row_level"] == "Object-Head"):
+            v = row["budget_estimate_2024_25_amount"].replace(",", "").strip()
+            if v and v != "-":
+                total += float(v)
+print(f"Total BE 2024-25: ₹{total/100:,.0f} crore")  # ~₹370,659 crore
+```
 
-Example: `mongoimport --db ka_budget --collection budget_leaves --file years/2018-19/json/budget_leaves_2018-19.ndjson`.
+For demand-level analysis, load `demand_names.json` (in this directory) to map demand numbers
+to department names.
 
-## How To Sum Amounts
+---
 
-Do not sum every amount row. The CSV deliberately includes source Data rows, Header rows, Total rows, and summary-table rows because the package is meant to stay close to the PDF.
+## ⚠ Do Not Blindly Sum
 
-Use this predicate for additive budget leaf rows:
+**Read this before summing any column.**
+
+The CSV keeps Header, Total, and summary rows to stay close to the source PDF. Summing every
+amount row double-counts. Use the **additive-leaf predicate** — all three conditions are required:
 
 ```sql
 WHERE type_of_table = 'object_head'
-  AND row_type = 'Data'
-  AND row_level = 'Object-Head'
+  AND row_type      = 'Data'
+  AND row_level     = 'Object-Head'
 ```
 
-`row_type = 'Data'` alone is not enough. Total and summary rows repeat amounts already present at lower levels.
+In Python:
 
-`object_head_code` is still present for traceability, but the safe summation rule should use the full predicate above rather than `object_head_code` alone.
+```python
+def is_leaf(row):
+    return (row["type_of_table"] == "object_head"
+        and row["row_type"]      == "Data"
+        and row["row_level"]     == "Object-Head")
+```
 
-## What The Hierarchy Means
+**Why all three?** In 2024-25, 37% of rows (≈6,000 of 16,389) are non-additive.
+`row_type = 'Data'` alone is not enough — it does not exclude `minor_head` and `sub_major_head`
+Data rows that repeat amounts already counted at the object-head level.
 
-The account hierarchy follows the standard budget classification tiers described in the Department of Economic Affairs (DEA) Budget Manual: Major Head is a 4-digit function, Sub-Major Head is a 2-digit sub-function, Minor Head is a 3-digit programme, Sub-Head is a 2-digit scheme, Detailed Head is a 2-digit sub-scheme, and Object Head is a 2-digit object or primary unit of appropriation.
+If you use `budget_leaves_<year>.ndjson` the filter is already applied — sum directly.
 
-`vote_charge_marker` records whether an amount is voted or charged where the source prints that distinction. Charged expenditure is expenditure not submitted for the vote under the Constitution; voted expenditure is subject to legislative vote.
+---
 
-## Financial Columns
+## Amount Columns and `document_year`
 
-Each budget CSV has four semantic amount columns, such as `accounts_2018_19_amount`, `budget_estimate_2019_20_amount`, `revised_estimate_2019_20_amount`, and `budget_estimate_2020_21_amount`. Later years with generic source headers use the positional convention documented in `known_caveats.md`.
+### `document_year`
 
-All amount columns are emitted with `amount_unit = INR_lakh`, but the unit is not yet source-certified per volume. Treat it as a package-level caveat, not a row-level quality signal.
+Every row and every NDJSON document now carries a `document_year` field (e.g. `2024-25`). This
+identifies the source publication — the budget volume the row was extracted from. It is distinct
+from `fiscal_year`, which is the year an amount refers to.
+
+### Four positional amount columns
+
+Each budget CSV has exactly four amount columns. Their **position** (not just their name) is
+semantically fixed:
+
+| Position | Column prefix | Content | Fiscal year |
+|---|---|---|---|
+| 1 | `accounts_*` | Actuals | document_year − 2 |
+| 2 | `budget_estimate_*` (first) | BE (restated) | document_year − 1 |
+| 3 | `revised_estimate_*` | RE | document_year − 1 |
+| 4 | `budget_estimate_*` (second) | BE (current) | document_year |
+
+Column headers now carry the correct fiscal year across all 11 years. Historically, years
+2016-17 through 2022-23 carried identical wrong labels (all seven years showed 2020-21's labels).
+Those labels are corrected in v0.2.0-draft — no numeric values changed.
+
+### Canonical source rule
+
+Each fiscal year's amount should come from one canonical document, not every document that
+mentions it:
+
+| Measure | Canonical document year | Column position |
+|---|---|---|
+| BE(Y) | Y | 4 |
+| RE(Y) | Y + 1 | 3 |
+| Actuals(Y) | Y + 2 | 1 |
+
+Reading BE(Y) from document Y+1 (column 2) is valid as a cross-check but will double-count if
+mixed with the canonical figure. The `examples/` compendium applies this rule in its tidy table.
+
+---
+
+## NDJSON Files
+
+The four NDJSON files under `years/<year>/json/` are:
+
+| File | Contents |
+|---|---|
+| `budget_leaves_<year>.ndjson` | **One doc per additive object-head leaf.** Additive-leaf filter already applied — safe to sum directly. Hierarchy embedded. |
+| `budget_nodes_<year>.ndjson` | Full demand tree (nested Major → Sub-Major → Minor → Sub-Head → Detailed → Object). |
+| `summaries_<year>.ndjson` | Printed totals and minor-head / sub-major-head summary tables, separated from leaves. |
+| `checks_<year>.ndjson` | One doc per validation comparison; find failures with `{"failed": true}`. |
+
+Each `amounts` array entry has the shape
+`{"measure": "budget_estimate"|"revised_estimate"|"accounts", "fiscal_year": "<Y>", "value": <number>}`.
+
+**Note on irregular amounts arrays:** many documents legitimately have fewer than 4 amounts.
+These are partial entries where the source PDF printed fewer columns (zero or absent values) for
+that line item. Do not assume every document has a full 4-element amounts array.
+
+---
+
+## CSV vs NDJSON: When to Use Which
+
+**Use CSV when:**
+- You want flat, universally readable data (Excel, pandas, R `read.csv`)
+- You are doing column-by-column analysis or filtering by predicate
+- You do not need the embedded hierarchy
+
+**Use NDJSON (`budget_leaves`) when:**
+- You want pre-filtered additive leaves with no summation predicate to remember
+- You are loading into MongoDB, DuckDB, or processing with `jq`
+- You want the full hierarchy (major head, minor head, etc.) as structured fields
+
+See `examples/doc/why-ndjson.md` for a fuller comparison and the complete list of exclusions
+required before any naive analysis.
+
+---
+
+## Page-Numbering Note
+
+Each budget row carries a `page_number`. This is the **body arabic page number** — the numeric
+page label in the main content section of the source PDF.
+
+Evidence from `KA_2024_25_EXPVOL1.pdf` (PDF pages 1–10 examined): the front matter (cover
+pages and blank pages, PDF pages 1–3) carries no visible page numbers. The abstract section
+(PDF pages 4–8) uses its own "Abstract Page 1 of 5" through "Abstract Page 5 of 5" label in
+the footer — not roman numerals. The Table of Contents (PDF page 10) lists body sections with
+arabic page numbers (Finance: 1–34; DPAR: 35–68; E-Governance: 69–71; Home: 72–97; Transport:
+98–112; Law: 113–126; Parliamentary Affairs: 127–139; Debt Servicing: 140–208). No roman-numeral
+pagination was found anywhere in the first 10 PDF pages.
+
+The `page_number` column matches the body arabic numbers shown in the Table of Contents.
+Page-wise findings in `validation_summary.csv` are **anchor-page findings**: they identify the
+PDF page containing the checked printed total or summary row. The actual extraction discrepancy
+may originate on an earlier contributing row that feeds into that total. ("Anchor page" means
+the page of the checked total, not necessarily the page of the error.)
+
+---
+
+## Caveats
+
+### Amount unit (unverified)
+
+`amount_unit` is always `INR_lakh` on every row, but this has not been independently verified
+against the source PDFs per volume. Treat unit-sensitive results as draft. Do not drop rows
+because of this; caveat your outputs instead.
+
+### OCR and extraction anomalies
+
+A small number of source extraction errors survive into the package. Known outliers:
+
+| Document year | Volume | Page | Description |
+|---|---|---|---|
+| 2016-17 | EXPVOL2 | p. 95 | Actuals ≈ ₹9.5 million crore (OCR artefact) |
+| 2016-17 | EXPVOL2 | p. 108 | Actuals ≈ ₹10.8 million crore (OCR artefact) |
+| 2016-17 | EXPVOL5 | p. 236 | Actuals ≈ ₹23.6 million crore (OCR artefact) |
+| 2017-18 | EXPVOL2 | p. 24 | BE ≈ 2.4 × 10²⁴ crore (OCR artefact) |
+| 2022-23 | EXPVOL1 | p. 153 | Malformed account code; Actuals ≈ 1.5 × 10²³ crore |
+
+Filter rule: `abs(amount_lakh) > 5_000_000` (> ₹50,000 crore per leaf) reliably identifies
+these. The `examples/` tidy table excludes all five rows.
+
+### Label history (now corrected)
+
+Years 2016-17 through 2022-23 originally shipped with identical mislabelled column headers —
+all seven years carried 2020-21's labels. Fixed in v0.2.0-draft; no numeric values changed.
+If you pinned a prior version, re-pull.
+
+### Cross-document restatement gaps
+
+BE(Y) as tabled in document Y and the restated BE(Y) printed in document Y+1 (column 2) may
+differ due to mid-year supplementary budgets. These are genuine restatements, not extraction
+errors.
+
+### Validation scope
+
+Across-schema checks are present only where the relevant minor-head or sub-major-head summary
+table exists in the source PDF. Coverage is not uniform across all years and volumes.
+
+### Recovered inputs
+
+Years 2016-17, 2017-18, and 2022-23 final summaries are recovered from an earlier repository
+state. Cite the package version and preserve the packaged PDFs with any derived analysis.
+
+---
 
 ## Validation
 
-Validation checks internal accounting consistency. For example, object-head Data rows should add up to the printed Minor-Head Total inside the same object-head table. A passing check means that relationship holds in the extracted data; it does not prove every PDF line was extracted perfectly.
+Validation checks internal accounting consistency — for example, whether object-head Data rows
+add up to the printed Minor-Head Total in the same table. A passing check means the relationship
+holds in the extracted data; it does not prove every PDF line was extracted perfectly.
 
-`checks_<year>.csv` is one row per validation comparison and financial column. In checks rows, `source_file` and `target_file` name the final-summary CSV families being compared, not PDFs. `diff` is signed (`source_amount - target_amount`), `abs_diff` is absolute, and `threshold` is the pass threshold. In this package, `abs_diff <= 0.01` passes. The `0.01` threshold is in the package amount unit; if `INR_lakh` is correct for a volume, `0.01` equals Rs 1,000.
+**Per-year overall pass rates** (source: `validation_summary.csv`, level = Year, all financial
+columns aggregated):
 
-Page-wise findings in `validation_findings.csv` are anchor-page findings: they identify the page containing the checked printed total or summary row. The original extraction mistake may be on that page or on one of the contributing lower-level rows.
+| Year | Pass rate | Year | Pass rate |
+|---|---|---|---|
+| 2016-17 | 84.3% | 2021-22 | 89.9% |
+| 2017-18 | 74.8% | 2022-23 | 83.4% |
+| 2018-19 | 86.8% | 2023-24 | 99.5% |
+| 2019-20 | 89.5% | 2024-25 | 99.0% |
+| 2020-21 | 89.6% | 2025-26 | 99.6% |
+| | | 2026-27 | 99.7% |
 
-To investigate a failed check: (1) take `reference_check_id` and `check_id` from `validation_findings.csv`; (2) filter `years/<year>/csv/checks_<year>.csv` to those values to see the compared amounts and financial columns; (3) filter `years/<year>/csv/budget_<year>.csv` where `reference_check_id` matches to find the checked printed total or summary row; (4) use its `source_file`, `page_number`, hierarchy codes, and the lower-level source-row role described by `check_type` to inspect the PDF and contributing rows.
+Years 2016-17 through 2022-23 have lower pass rates; treat those volumes with extra caution.
+2023-24 onward: 99%+.
 
-## Example Validation ID
+Machine-readable detail: `validation_summary.csv` (columns: document_year, fiscal_year, level,
+demand_number, major_head_code, …, n_checks, n_passed, pass_pct). Browser-viewable summary:
+`validation_summary.html`. The `checks_<year>.csv` and `checks_<year>.ndjson` files contain the
+full row-level comparison data for drill-down.
 
-`KA.2021-22.expvol_1.in_schema.object_head.minor.03_2043_00_101` means Karnataka, source year 2021-22, expenditure volume 1, an in-schema check inside the object-head table, at minor-head rollup level, for Demand 03 / Major Head 2043 / Sub-Major 00 / Minor Head 101.
+---
+
+## Package File Map
+
+```
+karnataka-state-finance/
+├── README.md                         This file
+├── data_dictionary.csv               Column definitions for budget, checks, validation_summary
+├── demand_names.json                 Demand number → department name lookup (29 demands)
+├── validation_summary.csv            Cross-year pass rates, machine-readable
+├── validation_summary.html           Cross-year pass rates, browser-viewable
+├── package_stats.json                Row counts, schema version, PDF counts
+└── years/
+    └── <year>/                       e.g. 2024-25
+        ├── csv/
+        │   ├── budget_<year>.csv     Budget rows (all row types; use additive-leaf predicate)
+        │   └── checks_<year>.csv     One row per validation comparison per financial column
+        ├── json/
+        │   ├── budget_leaves_<year>.ndjson   Additive leaves only; safe to sum directly
+        │   ├── budget_nodes_<year>.ndjson    Full demand trees (nested hierarchy)
+        │   ├── summaries_<year>.ndjson       Printed totals and summary tables
+        │   └── checks_<year>.ndjson          Validation comparisons as typed documents
+        └── pdfs/
+            └── KA_<year>_EXPVOL{1..7}.pdf    Source expenditure-volume PDFs
+```
+
+**Demand names:** `demand_names.json` maps demand numbers to department names
+(e.g. `"29"` → `"Debt Servicing"`). Source: 2024-25 volume cover pages, independently
+cross-checked against dominant major heads per demand.
+
+**Examples compendium:** `examples/` at the repo root contains four worked analyses in Python,
+R, and DuckDB/SQL, all reconciling to 0.000000 crore. See `examples/README.md`.
+
+---
+
+## Advanced: JSON / Document Store
+
+Load a year's leaves into MongoDB:
+
+```bash
+mongoimport --db ka_budget --collection budget_leaves_2024_25 \
+  --file years/2024-25/json/budget_leaves_2024-25.ndjson
+```
+
+Query with `jq` (sum BE 2024-25 across all leaves):
+
+```bash
+jq -s '[.[].amounts[] | select(.measure=="budget_estimate" and .fiscal_year=="2024-25") | .value] | add' \
+  years/2024-25/json/budget_leaves_2024-25.ndjson
+```
+
+Or with DuckDB:
+
+```sql
+SELECT SUM(a.value) / 100 AS total_be_crore
+FROM read_ndjson_auto('years/2024-25/json/budget_leaves_2024-25.ndjson') t,
+     UNNEST(t.amounts) AS a
+WHERE a.measure = 'budget_estimate' AND a.fiscal_year = '2024-25';
+```
+
+**checks NDJSON schema notes:** `source_file` and `target_file` name the CSV families being
+compared, not PDFs. `diff` is signed (`source_amount - target_amount`); `abs_diff <= 0.01`
+(in INR_lakh, i.e. Rs 1,000) passes. Find failures with `{"failed": true}`.
