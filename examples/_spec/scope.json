@@ -1,0 +1,55 @@
+{
+  "unit_lakh_to_crore": 100,
+  "additive_leaf": {
+    "type_of_table": "object_head",
+    "row_type": "Data",
+    "row_level": "Object-Head"
+  },
+  "ocr_outlier_max_lakh": 5000000,
+  "health_major_heads": ["2210", "2211"],
+  "interest_major_head": "2049",
+  "pension_major_head": "2071",
+  "salary_object_codes": [
+    "001", "002", "003", "004", "005", "008", "009",
+    "011", "014", "020", "033", "035"
+  ],
+  "canonical_source_offset": {
+    "BE": 0,
+    "RE": -1,
+    "Actuals": -2
+  },
+  "examples": [
+    {"id": "00_onboarding", "title": "Onboarding: orientation questions for a first-time user"},
+    {"id": "01_health",     "title": "Q1: Health spending (BE vs RE vs Actuals, MH 2210+2211)"},
+    {"id": "02_committed",  "title": "Q2: Committed expenditure (salaries + pensions + interest)"},
+    {"id": "03_demand_variation", "title": "Q3: Variation by demand head over time"}
+  ],
+  "filenames": {
+    "python": [
+      "src/python/00_onboarding.py",
+      "src/python/01_health.py",
+      "src/python/02_committed.py",
+      "src/python/03_demand_variation.py",
+      "src/python/_lib.py"
+    ],
+    "r": [
+      "src/r/00_onboarding.R",
+      "src/r/01_health.R",
+      "src/r/02_committed.R",
+      "src/r/03_demand_variation.R",
+      "src/r/_lib.R"
+    ],
+    "sql": [
+      "src/sql/00_onboarding.sql",
+      "src/sql/01_health.sql",
+      "src/sql/02_committed.sql",
+      "src/sql/03_demand_variation.sql"
+    ]
+  },
+  "output_naming": {
+    "python": "out/results_python.json",
+    "r":      "out/results_r.json",
+    "sql":    "out/results_sql.json"
+  },
+  "results_schema": "same keys as data/processed/canonical_numbers.json"
+}
