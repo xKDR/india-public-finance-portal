@@ -69,13 +69,13 @@ checks,source_file,string,Source-side final summary CSV file name used by the va
 checks,target_file,string,Target-side final summary CSV file name used by the validation check.,
 validation_summary,document_year,string,"Budget document year, e.g. 2016-17.",
 validation_summary,fiscal_year,string,"Fiscal year the checks cover, or ALL for cross-column aggregated rows.",
-validation_summary,level,string,"Aggregation level: Year (whole document) or Demand (per grant/demand number).",Year;Demand
-validation_summary,demand_number,string,Grant/Demand number (blank for Year-level rows).,
-validation_summary,major_head_code,string,Major head code (blank for Year/Demand-level rows).,
-validation_summary,sub_major_head_code,string,Sub-major head code (blank for Year/Demand-level rows).,
-validation_summary,minor_head_code,string,Minor head code (blank for Year/Demand-level rows).,
-validation_summary,sub_head_code,string,Sub-head code (blank for Year/Demand-level rows).,
-validation_summary,detailed_head_code,string,Detailed head code (blank for Year/Demand-level rows).,
+validation_summary,level,string,"Aggregation level: Year, Demand, MajorHead, SubMajor, Minor, SubHead, or Detailed.",Year;Demand;MajorHead;SubMajor;Minor;SubHead;Detailed
+validation_summary,demand_number,string,Grant/Demand number; populated from Demand level downward; blank at Year level.,
+validation_summary,major_head_code,string,Major head code; populated from MajorHead level downward; blank at shallower levels.,
+validation_summary,sub_major_head_code,string,Sub-major head code; populated from SubMajor level downward; blank at shallower levels.,
+validation_summary,minor_head_code,string,Minor head code; populated from Minor level downward; blank at shallower levels.,
+validation_summary,sub_head_code,string,Sub-head code; populated from SubHead level downward; blank at shallower levels.,
+validation_summary,detailed_head_code,string,Detailed head code; populated from Detailed level downward; blank at shallower levels.,
 validation_summary,financial_column_position,string,"Financial column index 1–4, or ALL for aggregated rows.",1;2;3;4;ALL
 validation_summary,financial_column_label,string,"Label of the financial column (e.g. BE 2024-25), or ALL for aggregated rows.",
 validation_summary,n_checks,string,Total number of validation checks in this group.,

@@ -64,7 +64,7 @@ OCR extraction errors and excluded. Five such values were identified across all 
 ### 4. Unit caveat
 
 All amounts are in **INR lakh** as extracted from the source PDFs. They have not been
-independently certified. See `karnataka-state-finance/known_caveats.md` for details.
+independently certified. See the "Caveats" section in `karnataka-state-finance/README.md` for details.
 
 ---
 
@@ -73,7 +73,7 @@ independently certified. See `karnataka-state-finance/known_caveats.md` for deta
 The raw NDJSON budget leaves (one JSON object per leaf row) are at:
 
 ```
-karnataka-state-finance/years/<YEAR>/ndjson/budget_<YEAR>_leaves.ndjson
+karnataka-state-finance/years/<YEAR>/json/budget_leaves_<YEAR>.ndjson
 ```
 
 These are read directly by some examples (the formats-lesson exercise). Do not copy them here.

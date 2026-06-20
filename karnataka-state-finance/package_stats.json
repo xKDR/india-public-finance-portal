@@ -1,7 +1,6 @@
 {
   "budget_rows_count": 220211,
   "checks_rows_count": 192804,
-  "final_summary_files_count": 175,
   "pdfs_count": 77,
   "per_year": {
     "2016-17": {
@@ -106,7 +105,5 @@
   },
   "release_version": "v0.2.0-draft",
   "schema_version": "ka-public-two-table-v3",
-  "validation_findings_anchor_pages_count": 3202,
-  "validation_findings_count": 25317,
   "years_count": 11
 }

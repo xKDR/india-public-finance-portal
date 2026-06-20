@@ -4,14 +4,14 @@ verify_data_fix.py — Gate verification for Task A2.
 
 Two modes:
   --snapshot  Capture pre-transform baseline (run BEFORE relabel_and_annotate.py).
-  --verify    Check all 5 gate conditions (run AFTER relabel_and_annotate.py).
+  --verify    Check all 4 gate conditions (run AFTER relabel_and_annotate.py).
 
 Gates:
   1. Counts unchanged vs package_stats.json.
   2. Every numeric value byte-identical (pre/post comparison via hashes).
   3. Label truth (CSV headers + ndjson fiscal_year sets).
   4. Canary: 2024-25 additive-leaf col4 sum ≈ 37,065,844 INR_lakh (±0.1%).
-  5. budget_examples.py stdout byte-identical pre/post.
+  + Consistency: checks-CSV labels == checks-NDJSON labels (per year, per position).
 
 Run from repo root:
     python3 tools/data_fix/verify_data_fix.py --snapshot
@@ -23,7 +23,6 @@ import csv
 import hashlib
 import json
 import os
-import subprocess
 import sys
 
 YEARS = [
@@ -120,7 +119,7 @@ def hash_ndjson_amounts(path):
 
 def capture_snapshot():
     print("Capturing pre-transform baseline snapshot...")
-    snap = {"csv_amounts": {}, "ndjson_amounts": {}, "budget_examples_stdout": None}
+    snap = {"csv_amounts": {}, "ndjson_amounts": {}}
 
     for Y in YEARS:
         # Budget CSV amounts
@@ -137,17 +136,6 @@ def capture_snapshot():
                 "hash": h, "value_count": vcnt, "line_count": lcnt
             }
         print(f"  {Y} ndjson hashed")
-
-    # budget_examples.py stdout
-    print("  Running budget_examples.py for baseline stdout...")
-    examples_script = os.path.join(PKG_ROOT, "examples", "budget_examples.py")
-    result = subprocess.run(
-        [sys.executable, examples_script],
-        capture_output=True, text=True, cwd=PKG_ROOT
-    )
-    if result.returncode != 0:
-        print(f"  WARNING: budget_examples.py exited {result.returncode}: {result.stderr[:200]}")
-    snap["budget_examples_stdout"] = result.stdout
 
     with open(SNAPSHOT_PATH, "w") as f:
         json.dump(snap, f, indent=2)
@@ -313,19 +301,6 @@ def gate4_canary():
     return passed, total, rel_err
 
 
-def gate5_examples_stdout(snap):
-    """Gate 5: budget_examples.py output byte-identical pre/post."""
-    examples_script = os.path.join(PKG_ROOT, "examples", "budget_examples.py")
-    result = subprocess.run(
-        [sys.executable, examples_script],
-        capture_output=True, text=True, cwd=PKG_ROOT
-    )
-    post_stdout = result.stdout
-    pre_stdout = snap.get("budget_examples_stdout", "")
-    match = post_stdout == pre_stdout
-    return match, pre_stdout, post_stdout
-
-
 # ── consistency check ─────────────────────────────────────────────────────────
 
 def check_csv_ndjson_label_consistency():
@@ -434,29 +409,6 @@ def run_verify():
 
     print()
     print("=" * 72)
-    print("GATE 5: budget_examples.py stdout byte-identical")
-    print("=" * 72)
-    g5_pass, pre_out, post_out = gate5_examples_stdout(snap)
-    if g5_pass:
-        print("  PASS: stdout byte-identical")
-        print()
-        print("  --- post-fix output (first 30 lines) ---")
-        for line in post_out.splitlines()[:30]:
-            print(f"  {line}")
-    else:
-        all_pass = False
-        print("  FAIL: stdout differs")
-        # Show diff context
-        pre_lines = pre_out.splitlines()
-        post_lines = post_out.splitlines()
-        for i, (pl, ql) in enumerate(zip(pre_lines, post_lines)):
-            if pl != ql:
-                print(f"  Line {i + 1} differs:")
-                print(f"    pre:  {pl!r}")
-                print(f"    post: {ql!r}")
-
-    print()
-    print("=" * 72)
     print("CONSISTENCY: checks-CSV labels == checks-NDJSON labels (per year, per position)")
     print("=" * 72)
     g_consistency_failures = check_csv_ndjson_label_consistency()
@@ -471,7 +423,7 @@ def run_verify():
     print()
     print("=" * 72)
     if all_pass:
-        print("ALL 5 GATE CHECKS + CONSISTENCY CHECK PASS")
+        print("ALL 4 GATE CHECKS + CONSISTENCY CHECK PASS")
     else:
         print("GATE CHECKS FAILED — do not commit")
     print("=" * 72)

@@ -125,7 +125,9 @@ compute_onboarding <- function(df) {
   fy_latest_act <- act_yrs[length(act_yrs)]
 
   # ── Top 5 departments by total Actuals in the latest Actuals year ──────────
-  act_df   <- df[df$measure == "Actuals" & df$fiscal_year == fy_latest_act, ]
+  # Restrict to named demands (matching Python/SQL); drop blank demand.
+  act_df   <- df[df$measure == "Actuals" & df$fiscal_year == fy_latest_act &
+                   df$demand %in% names(DEMAND_NAMES) & nzchar(df$demand), ]
   d_totals <- tapply(act_df$amount_lakh, act_df$demand, sum, na.rm = TRUE)
   d_sorted <- sort(d_totals, decreasing = TRUE)
   top5_d   <- names(d_sorted)[seq_len(min(5L, length(d_sorted)))]

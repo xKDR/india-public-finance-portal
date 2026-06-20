@@ -43,7 +43,7 @@ india-public-finance-portal/
     ├── src/r/                        Same four analyses in R (base-R primary path)
     ├── src/sql/                      Same four analyses in DuckDB SQL
     ├── data/processed/               Canonical tidy table + reconciliation fixture
-    ├── doc/                          why-ndjson.md, learning-module.md
+    ├── doc/                          why-ndjson.md, learning-module.md, guide.html, usability-audit.md
     ├── Dockerfile + compose.yaml     Pinned Docker image for one-command reproduction
     └── Makefile                      make reproduce
 ```
