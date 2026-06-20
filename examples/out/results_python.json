@@ -1,0 +1,510 @@
+{
+  "unit": "INR_crore",
+  "tolerance_crore": 0.01,
+  "onboarding": {
+    "top5_departments_latest_actuals": {
+      "fiscal_year": "2024-25",
+      "rows": [
+        {
+          "demand": "29",
+          "name": "Debt Servicing",
+          "amount": 63016.55
+        },
+        {
+          "demand": "03",
+          "name": "Finance",
+          "amount": 35172.55
+        },
+        {
+          "demand": "11",
+          "name": "Women and Child Development",
+          "amount": 34138.84
+        },
+        {
+          "demand": "17",
+          "name": "Education",
+          "amount": 33653.21
+        },
+        {
+          "demand": "24",
+          "name": "Energy",
+          "amount": 31437.68
+        }
+      ]
+    },
+    "health_be_latest": {
+      "fiscal_year": "2026-27",
+      "amount": 15535.9
+    },
+    "spend_vs_budget": {
+      "fiscal_year": "2024-25",
+      "actuals": 368396.56,
+      "be": 370658.45,
+      "ratio": 0.9939
+    }
+  },
+  "q1_health": [
+    {
+      "fiscal_year": "2016-17",
+      "be": 6348.76,
+      "re": 10250.97,
+      "actuals": 6145.78
+    },
+    {
+      "fiscal_year": "2017-18",
+      "be": 9643.69,
+      "re": 6576.72,
+      "actuals": 6984.1
+    },
+    {
+      "fiscal_year": "2018-19",
+      "be": 8507.91,
+      "re": 8594.31,
+      "actuals": 8369.26
+    },
+    {
+      "fiscal_year": "2019-20",
+      "be": 8629.97,
+      "re": 8251.01,
+      "actuals": 8338.53
+    },
+    {
+      "fiscal_year": "2020-21",
+      "be": 9315.59,
+      "re": 9843.38,
+      "actuals": 9768.51
+    },
+    {
+      "fiscal_year": "2021-22",
+      "be": 11156.9,
+      "re": 12783.58,
+      "actuals": 12718.13
+    },
+    {
+      "fiscal_year": "2022-23",
+      "be": 12872.87,
+      "re": 12286.4,
+      "actuals": 11308.78
+    },
+    {
+      "fiscal_year": "2023-24",
+      "be": 13251.54,
+      "re": 12957.91,
+      "actuals": 12237.86
+    },
+    {
+      "fiscal_year": "2024-25",
+      "be": 15046.69,
+      "re": 13930.88,
+      "actuals": 12771.07
+    },
+    {
+      "fiscal_year": "2025-26",
+      "be": 16574.78,
+      "re": 16221.24,
+      "actuals": 0.0
+    },
+    {
+      "fiscal_year": "2026-27",
+      "be": 15535.9,
+      "re": 0.0,
+      "actuals": 0.0
+    }
+  ],
+  "q2_committed": [
+    {
+      "fiscal_year": "2014-15",
+      "salaries": 8873.12,
+      "pensions": 10031.65,
+      "interest": 5259.52,
+      "committed": 24164.29,
+      "total_exp_actuals": 106623.48,
+      "share_pct": 22.66
+    },
+    {
+      "fiscal_year": "2015-16",
+      "salaries": 7225.17,
+      "pensions": 11112.95,
+      "interest": 10167.53,
+      "committed": 28505.66,
+      "total_exp_actuals": 117290.98,
+      "share_pct": 24.3
+    },
+    {
+      "fiscal_year": "2016-17",
+      "salaries": 9834.82,
+      "pensions": 11295.15,
+      "interest": 10239.31,
+      "committed": 31369.27,
+      "total_exp_actuals": 160956.98,
+      "share_pct": 19.49
+    },
+    {
+      "fiscal_year": "2017-18",
+      "salaries": 11918.79,
+      "pensions": 11683.75,
+      "interest": 10240.66,
+      "committed": 33843.2,
+      "total_exp_actuals": 182675.93,
+      "share_pct": 18.53
+    },
+    {
+      "fiscal_year": "2018-19",
+      "salaries": 14636.72,
+      "pensions": 15103.75,
+      "interest": 14769.46,
+      "committed": 44509.94,
+      "total_exp_actuals": 213490.28,
+      "share_pct": 20.85
+    },
+    {
+      "fiscal_year": "2019-20",
+      "salaries": 15968.89,
+      "pensions": 18402.94,
+      "interest": 18519.41,
+      "committed": 52891.24,
+      "total_exp_actuals": 225350.75,
+      "share_pct": 23.47
+    },
+    {
+      "fiscal_year": "2020-21",
+      "salaries": 16000.8,
+      "pensions": 18936.46,
+      "interest": 21920.39,
+      "committed": 56857.65,
+      "total_exp_actuals": 233271.24,
+      "share_pct": 24.37
+    },
+    {
+      "fiscal_year": "2021-22",
+      "salaries": 18352.69,
+      "pensions": 20665.87,
+      "interest": 24983.61,
+      "committed": 64002.17,
+      "total_exp_actuals": 275469.78,
+      "share_pct": 23.23
+    },
+    {
+      "fiscal_year": "2022-23",
+      "salaries": 19915.28,
+      "pensions": 24019.54,
+      "interest": 28427.16,
+      "committed": 72361.97,
+      "total_exp_actuals": 291779.13,
+      "share_pct": 24.8
+    },
+    {
+      "fiscal_year": "2023-24",
+      "salaries": 22526.39,
+      "pensions": 24859.4,
+      "interest": 29907.32,
+      "committed": 77293.1,
+      "total_exp_actuals": 320740.98,
+      "share_pct": 24.1
+    },
+    {
+      "fiscal_year": "2024-25",
+      "salaries": 25043.61,
+      "pensions": 30651.0,
+      "interest": 36121.53,
+      "committed": 91816.14,
+      "total_exp_actuals": 368396.56,
+      "share_pct": 24.92
+    }
+  ],
+  "total_expenditure": [
+    {
+      "fiscal_year": "2016-17",
+      "total_be": 177584.96,
+      "committed_be": 34438.67
+    },
+    {
+      "fiscal_year": "2017-18",
+      "total_be": 163139.99,
+      "committed_be": 38895.03
+    },
+    {
+      "fiscal_year": "2018-19",
+      "total_be": 210813.82,
+      "committed_be": 53840.25
+    },
+    {
+      "fiscal_year": "2019-20",
+      "total_be": 234375.82,
+      "committed_be": 55302.19
+    },
+    {
+      "fiscal_year": "2020-21",
+      "total_be": 237996.16,
+      "committed_be": 63308.78
+    },
+    {
+      "fiscal_year": "2021-22",
+      "total_be": 245473.72,
+      "committed_be": 70243.77
+    },
+    {
+      "fiscal_year": "2022-23",
+      "total_be": 264211.84,
+      "committed_be": 72951.02
+    },
+    {
+      "fiscal_year": "2023-24",
+      "total_be": 326696.27,
+      "committed_be": 87310.14
+    },
+    {
+      "fiscal_year": "2024-25",
+      "total_be": 370658.45,
+      "committed_be": 109212.88
+    },
+    {
+      "fiscal_year": "2025-26",
+      "total_be": 408549.94,
+      "committed_be": 119872.36
+    },
+    {
+      "fiscal_year": "2026-27",
+      "total_be": 447992.17,
+      "committed_be": 136226.22
+    }
+  ],
+  "q3_demand": {
+    "fiscal_year_first": "2014-15",
+    "fiscal_year_latest": "2024-25",
+    "rows": [
+      {
+        "demand": "29",
+        "name": "Debt Servicing",
+        "first_actuals": 7660.75,
+        "latest_actuals": 63016.55,
+        "latest_be": 66207.83,
+        "act_be": 0.9517990901
+      },
+      {
+        "demand": "03",
+        "name": "Finance",
+        "first_actuals": 10498.07,
+        "latest_actuals": 35172.55,
+        "latest_be": 44165.2,
+        "act_be": 0.7963859544
+      },
+      {
+        "demand": "11",
+        "name": "Women and Child Development",
+        "first_actuals": 3567.85,
+        "latest_actuals": 34138.84,
+        "latest_be": 33796.49,
+        "act_be": 1.0101298547
+      },
+      {
+        "demand": "17",
+        "name": "Education",
+        "first_actuals": 17777.85,
+        "latest_actuals": 33653.21,
+        "latest_be": 40155.3,
+        "act_be": 0.838076358
+      },
+      {
+        "demand": "24",
+        "name": "Energy",
+        "first_actuals": 852.36,
+        "latest_actuals": 31437.68,
+        "latest_be": 23158.66,
+        "act_be": 1.3574911638
+      },
+      {
+        "demand": "21",
+        "name": "Irrigation",
+        "first_actuals": 8456.62,
+        "latest_actuals": 20618.77,
+        "latest_be": 19179.25,
+        "act_be": 1.0750561531
+      },
+      {
+        "demand": "14",
+        "name": "Revenue",
+        "first_actuals": 2797.04,
+        "latest_actuals": 18840.34,
+        "latest_be": 14209.92,
+        "act_be": 1.3258577895
+      },
+      {
+        "demand": "07",
+        "name": "Rural Development and Panchayath Raj",
+        "first_actuals": 9164.33,
+        "latest_actuals": 18742.8,
+        "latest_be": 20570.53,
+        "act_be": 0.9111478905
+      },
+      {
+        "demand": "05",
+        "name": "Home and Transport",
+        "first_actuals": 4017.28,
+        "latest_actuals": 18593.03,
+        "latest_be": 19577.45,
+        "act_be": 0.9497165793
+      },
+      {
+        "demand": "19",
+        "name": "Urban Development and Housing",
+        "first_actuals": 6773.6,
+        "latest_actuals": 17885.06,
+        "latest_be": 17708.77,
+        "act_be": 1.009954825
+      },
+      {
+        "demand": "10",
+        "name": "Social Welfare",
+        "first_actuals": 6305.53,
+        "latest_actuals": 13884.04,
+        "latest_be": 12571.31,
+        "act_be": 1.1044227537
+      },
+      {
+        "demand": "22",
+        "name": "Health and Family Welfare",
+        "first_actuals": 5726.74,
+        "latest_actuals": 13847.67,
+        "latest_be": 15100.06,
+        "act_be": 0.9170607138
+      },
+      {
+        "demand": "20",
+        "name": "Public Works",
+        "first_actuals": 6542.67,
+        "latest_actuals": 9983.22,
+        "latest_be": 9699.31,
+        "act_be": 1.029271346
+      },
+      {
+        "demand": "13",
+        "name": "Food and Civil Supplies",
+        "first_actuals": 2594.36,
+        "latest_actuals": 9560.12,
+        "latest_be": 9963.33,
+        "act_be": 0.9595307707
+      },
+      {
+        "demand": "01",
+        "name": "Agriculture and Horticulture",
+        "first_actuals": 3848.96,
+        "latest_actuals": 6276.72,
+        "latest_be": 3293.5,
+        "act_be": 1.905788859
+      },
+      {
+        "demand": "26",
+        "name": "Planning, Statistics, Science & Technology",
+        "first_actuals": 1023.03,
+        "latest_actuals": 3802.28,
+        "latest_be": 3843.32,
+        "act_be": 0.9893213027
+      },
+      {
+        "demand": "02",
+        "name": "Animal Husbandry and Fisheries",
+        "first_actuals": 1716.19,
+        "latest_actuals": 3608.2,
+        "latest_be": 251.46,
+        "act_be": 14.3489592219
+      },
+      {
+        "demand": "18",
+        "name": "Commerce and Industries",
+        "first_actuals": 846.31,
+        "latest_actuals": 2495.75,
+        "latest_be": 2361.73,
+        "act_be": 1.0567430237
+      },
+      {
+        "demand": "23",
+        "name": "Labour and Skill Development",
+        "first_actuals": 519.93,
+        "latest_actuals": 2276.09,
+        "latest_be": 2848.62,
+        "act_be": 0.7990143144
+      },
+      {
+        "demand": "09",
+        "name": "Co-operation",
+        "first_actuals": 1115.35,
+        "latest_actuals": 2133.85,
+        "latest_be": 2991.82,
+        "act_be": 0.7132280024
+      },
+      {
+        "demand": "27",
+        "name": "Law, Justice and Human Rights",
+        "first_actuals": 516.52,
+        "latest_actuals": 2109.83,
+        "latest_be": 2311.26,
+        "act_be": 0.9128479406
+      },
+      {
+        "demand": "08",
+        "name": "Forest, Ecology and Environment",
+        "first_actuals": 962.27,
+        "latest_actuals": 2048.97,
+        "latest_be": 2300.96,
+        "act_be": 0.8904844382
+      },
+      {
+        "demand": "04",
+        "name": "Department of Personnel and Administrative Reforms",
+        "first_actuals": 797.53,
+        "latest_actuals": 1291.48,
+        "latest_be": 1343.95,
+        "act_be": 0.960959574
+      },
+      {
+        "demand": "12",
+        "name": "Information, Tourism and Youth Services",
+        "first_actuals": 521.86,
+        "latest_actuals": 942.49,
+        "latest_be": 695.03,
+        "act_be": 1.356034818
+      },
+      {
+        "demand": "15",
+        "name": "Information Technology",
+        "first_actuals": 178.45,
+        "latest_actuals": 741.08,
+        "latest_be": 754.46,
+        "act_be": 0.982269528
+      },
+      {
+        "demand": "06",
+        "name": "Infrastructure Development",
+        "first_actuals": 95.87,
+        "latest_actuals": 640.9,
+        "latest_be": 940.57,
+        "act_be": 0.6813982427
+      },
+      {
+        "demand": "28",
+        "name": "Parliamentary Affairs and Legislation",
+        "first_actuals": 125.73,
+        "latest_actuals": 360.88,
+        "latest_be": 403.86,
+        "act_be": 0.8935743479
+      },
+      {
+        "demand": "25",
+        "name": "Kannada and Culture",
+        "first_actuals": 186.27,
+        "latest_actuals": 294.17,
+        "latest_be": 254.49,
+        "act_be": 1.1559389727
+      },
+      {
+        "demand": "16",
+        "name": "Housing",
+        "first_actuals": 1434.17,
+        "latest_actuals": 0.0,
+        "latest_be": 0.0,
+        "act_be": 0.0
+      }
+    ]
+  }
+}
