@@ -111,7 +111,7 @@ def build_records():
                     # Drop implausible single-leaf values (> Rs 50,000 cr) -- OCR errors per
                     # known_caveats.md (e.g. 2022-23 expvol_1 p.153). Recorded for the QA report.
                     if abs(amt) > 5_000_000:
-                        outliers.append((doc_year, measure, col, amt, row.get("source_file", ""),
+                        outliers.append((doc_year, measure, amt, row.get("source_file", ""),
                                          row.get("page_number", "")))
                         continue
                     rec = dict(common)
@@ -243,7 +243,7 @@ def qa_checks(records, outliers):
         print("  -> small gaps = restatement/reclassification or extraction noise; investigate via validation_findings.csv.")
     print(f"  Implausible single-leaf amounts (> Rs 50,000 cr) flagged: {len(outliers)}")
     for o in outliers[:5]:
-        print(f"    doc={o[0]} {o[1]} {o[2]} = Rs {cr(o[3]):,.0f} cr  src={o[4]} p.{o[5]}")
+        print(f"    doc={o[0]} {o[1]} = Rs {cr(o[2]):,.0f} cr  src={o[3]} p.{o[4]}")
 
 
 def main():

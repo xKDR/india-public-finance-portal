@@ -1,0 +1,271 @@
+{
+  "csv_amounts": {
+    "2016-17": {
+      "hash": "ee87b7d1557bd228eff0874d2c25aef0a377d13d50e4bb5ca3bdccabb84d242b",
+      "value_count": 88412
+    },
+    "2017-18": {
+      "hash": "d3796cb907608e2eb5f846e9d90b05eb24f6941ac559dbfb6cf8f0f73438a23d",
+      "value_count": 88508
+    },
+    "2018-19": {
+      "hash": "1a10bf01488f5f12b766ce93f523061ec68191d71e3e002e328d24257f371f9a",
+      "value_count": 88552
+    },
+    "2019-20": {
+      "hash": "8485abca39c01bcdf403d7e70c5ad2f4b4520006b9ae1dc3f5565ebdb937e146",
+      "value_count": 87796
+    },
+    "2020-21": {
+      "hash": "d653b1610fde8f4ad0a76bb1f453a0a0737ea8a1ae39f00b5f855c1885530fb3",
+      "value_count": 88360
+    },
+    "2021-22": {
+      "hash": "7dc3779bd8f1010b90ce9cee16463422b79688cdc56b977a07fa7d69e9d3237f",
+      "value_count": 87508
+    },
+    "2022-23": {
+      "hash": "4cf4b30938abf1972cb62c17452d606c8b80c0362aa361610fb245d700e908b2",
+      "value_count": 84324
+    },
+    "2023-24": {
+      "hash": "3760c2cc647e49df6389866a88f1ef7b6e2fec2fe53b590414bf3d6765ff7c17",
+      "value_count": 68732
+    },
+    "2024-25": {
+      "hash": "1b463f86bb6f5918e03a06304e74379f9c53cb5fcfa5bc5cd9a3b5612331b516",
+      "value_count": 65556
+    },
+    "2025-26": {
+      "hash": "10bd6dc3ce7b2c0eab485fd5075563207b93b366c8f2625409a33defd3a4b6f9",
+      "value_count": 65040
+    },
+    "2026-27": {
+      "hash": "0d059f1676e2baad2ea1b42f418eb37f8542b36ec3ef42ca2cd230332884c9ce",
+      "value_count": 68056
+    }
+  },
+  "ndjson_amounts": {
+    "budget_leaves_2016-17": {
+      "hash": "caf6559cbb5353be000945bee35f87ed7d58bff115485846f361dcf3ca2bc951",
+      "value_count": 35943,
+      "line_count": 11277
+    },
+    "summaries_2016-17": {
+      "hash": "ea4e7a450d3b24b33d7986f8acdda45fd61d62a20ef14277ee658061c6a00e36",
+      "value_count": 19325,
+      "line_count": 6094
+    },
+    "budget_nodes_2016-17": {
+      "hash": "4e71923b515da3dc4e6ee94ab629730fe8809b5d175717040832def9cb5432dc",
+      "value_count": 35943,
+      "line_count": 29
+    },
+    "checks_2016-17": {
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "value_count": 0,
+      "line_count": 19956
+    },
+    "budget_leaves_2017-18": {
+      "hash": "12107c30d8fcd5cfc10cdea9c8e31deb90972debd7bb39f92514a9a2fe094211",
+      "value_count": 31831,
+      "line_count": 11353
+    },
+    "summaries_2017-18": {
+      "hash": "069c7afbd595c20fadcc84dd132b94a4c83bde07795ae9e706fb515ae850df56",
+      "value_count": 17648,
+      "line_count": 5855
+    },
+    "budget_nodes_2017-18": {
+      "hash": "9dab862898deb323bb119ddb83d750b03f49c721efaa6db21c5c4c8e524fd751",
+      "value_count": 31831,
+      "line_count": 29
+    },
+    "checks_2017-18": {
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "value_count": 0,
+      "line_count": 19140
+    },
+    "budget_leaves_2018-19": {
+      "hash": "2e6c02b9edb9a811c84b714834cb2cdf11dae9ee789024fadd63c9f78476eda4",
+      "value_count": 37857,
+      "line_count": 11222
+    },
+    "summaries_2018-19": {
+      "hash": "3a3dd825a0ba66b901ff445ae48304a14333dbdfb65bcf51f54b0dc6283d0f90",
+      "value_count": 21811,
+      "line_count": 6292
+    },
+    "budget_nodes_2018-19": {
+      "hash": "70f54e4db04fff1c359deb12ee24258b2c0c4b0f6678d0cfc2fb7e29f6e87fed",
+      "value_count": 37857,
+      "line_count": 29
+    },
+    "checks_2018-19": {
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "value_count": 0,
+      "line_count": 20740
+    },
+    "budget_leaves_2019-20": {
+      "hash": "0e6a5f8f2377cee248505d1f6ce6e2eb51ef52f9e32db17710d64f80174f6039",
+      "value_count": 38130,
+      "line_count": 11128
+    },
+    "summaries_2019-20": {
+      "hash": "ae4c6f2bcf9aa50c739653b390c9dea9211ff0e7c5dc70bc43e0dbb20be29501",
+      "value_count": 22054,
+      "line_count": 6311
+    },
+    "budget_nodes_2019-20": {
+      "hash": "17424eee8bcb4e0cb352c22b225d2b25dde2a5dad697870f75a38111c242e485",
+      "value_count": 38130,
+      "line_count": 29
+    },
+    "checks_2019-20": {
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "value_count": 0,
+      "line_count": 21452
+    },
+    "budget_leaves_2020-21": {
+      "hash": "68dd444d2ac3bd7b6bc6ebd927243c2fe460f202a2b03a4b53c4d024871b5796",
+      "value_count": 36263,
+      "line_count": 11029
+    },
+    "summaries_2020-21": {
+      "hash": "a01ac6184e6bf5d29f840476d1af477f0bc1035c12ab25f072f47e3290eea268",
+      "value_count": 21536,
+      "line_count": 6419
+    },
+    "budget_nodes_2020-21": {
+      "hash": "741f771a330c8bb50cde80174c3b9e2b7d092dcefa17cee0a7f4d668c80259ce",
+      "value_count": 36263,
+      "line_count": 29
+    },
+    "checks_2020-21": {
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "value_count": 0,
+      "line_count": 21924
+    },
+    "budget_leaves_2021-22": {
+      "hash": "f0d0b5e307c269919d80188be9f321d7b326783b5f36617a296fcd311d3b9b88",
+      "value_count": 34689,
+      "line_count": 10759
+    },
+    "summaries_2021-22": {
+      "hash": "0305eba772c6d6e3bb675812181f0f8b5d932483a974034d72412a1c53a77b75",
+      "value_count": 21137,
+      "line_count": 6452
+    },
+    "budget_nodes_2021-22": {
+      "hash": "2eca99cf25304133e09b9f8161265d2d788af23b1234bca1e2d490b053bb9e68",
+      "value_count": 34689,
+      "line_count": 29
+    },
+    "checks_2021-22": {
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "value_count": 0,
+      "line_count": 22016
+    },
+    "budget_leaves_2022-23": {
+      "hash": "71b90fff453dab87af1ab1038951e3b5fd3c458f65fd1284b997d7adf9c4626d",
+      "value_count": 34465,
+      "line_count": 10541
+    },
+    "summaries_2022-23": {
+      "hash": "3176285381bfa64eb508426990a9b494a07b3e5c153bb4e129decb45a6e2387d",
+      "value_count": 19648,
+      "line_count": 5829
+    },
+    "budget_nodes_2022-23": {
+      "hash": "595f9a80ac07bb8f8cf2468f896856c6ca16a649d87612bbccd6234c564a8e3d",
+      "value_count": 34465,
+      "line_count": 29
+    },
+    "checks_2022-23": {
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "value_count": 0,
+      "line_count": 19920
+    },
+    "budget_leaves_2023-24": {
+      "hash": "977bd45cd8e63c2141f5f213801a483f0ffd63eb168215d88415e433edb90d50",
+      "value_count": 34385,
+      "line_count": 11095
+    },
+    "summaries_2023-24": {
+      "hash": "9363f090bcf6ceda424b957f51c0c96080b27b703d7d53fcd840f30debff40f8",
+      "value_count": 12191,
+      "line_count": 3049
+    },
+    "budget_nodes_2023-24": {
+      "hash": "c573200b7566a438cd1fea0ec5e1d25d1e47d3930f2faf31ebb32b77db6c190a",
+      "value_count": 34385,
+      "line_count": 28
+    },
+    "checks_2023-24": {
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "value_count": 0,
+      "line_count": 12056
+    },
+    "budget_leaves_2024-25": {
+      "hash": "551243eb84bed712398883f6f5285228d4243cf2d5cbdc1070a75cf6c9173649",
+      "value_count": 33582,
+      "line_count": 10389
+    },
+    "summaries_2024-25": {
+      "hash": "1077f689ee91a94cb416b93e142eda8b1fdea54e1253d9f0cee34611e9de0dfa",
+      "value_count": 11978,
+      "line_count": 2996
+    },
+    "budget_nodes_2024-25": {
+      "hash": "44cb4905fd5fb06aa95b816335f00d0cf6bc564b374a300efaea5f8b04c45533",
+      "value_count": 33582,
+      "line_count": 29
+    },
+    "checks_2024-25": {
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "value_count": 0,
+      "line_count": 11864
+    },
+    "budget_leaves_2025-26": {
+      "hash": "f8e7b02443de1132d1bb64e49ed81dc9c27e8297ff9e5ba1b99fd828876e3c2b",
+      "value_count": 32913,
+      "line_count": 10231
+    },
+    "summaries_2025-26": {
+      "hash": "03c52e52772c35a5ce4a5f54af7b92204b1b06cb74107b0442489899305803de",
+      "value_count": 12020,
+      "line_count": 3005
+    },
+    "budget_nodes_2025-26": {
+      "hash": "ebb5ab71a1e137c601e0ecf41ef95d224de319e734c382bed7c9cdcc0ae9c955",
+      "value_count": 32913,
+      "line_count": 28
+    },
+    "checks_2025-26": {
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "value_count": 0,
+      "line_count": 11868
+    },
+    "budget_leaves_2026-27": {
+      "hash": "bfee343a880c1e2cee85aa0cccc4cede1bfe38482262d32144dcfd060e200e22",
+      "value_count": 31868,
+      "line_count": 10956
+    },
+    "summaries_2026-27": {
+      "hash": "78e46a455916656c3731ea8597a0bf666f3dd6f09d016355a10479e5faac0672",
+      "value_count": 12011,
+      "line_count": 3003
+    },
+    "budget_nodes_2026-27": {
+      "hash": "cd1eef72816550c28e3e22f144f18fad3e07c66da9e5657c4e1b700169b211fe",
+      "value_count": 31868,
+      "line_count": 28
+    },
+    "checks_2026-27": {
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "value_count": 0,
+      "line_count": 11868
+    }
+  },
+  "budget_examples_stdout": "Loaded 381,779 positional leaf records; 285,604 canonical (BE<-Y, RE<-Y+1, Act<-Y+2).\n\n==============================================================================\nQ1  HEALTH (revenue: major heads 2210 + 2211) -- BE vs RE vs Actuals, Rs crore\n==============================================================================\n fiscal_year           BE           RE      Actuals   RE/BE  Act/BE\n     2016-17      6,348.8     10,251.0      6,145.8    1.61    0.97\n     2017-18      9,643.7      6,576.7      6,984.1    0.68    0.72\n     2018-19      8,507.9      8,594.3      8,369.3    1.01    0.98\n     2019-20      8,630.0      8,251.0      8,338.5    0.96    0.97\n     2020-21      9,315.6      9,843.4      9,768.5    1.06    1.05\n     2021-22     11,156.9     12,783.6     12,718.1    1.15    1.14\n     2022-23     12,872.9     12,286.4     11,308.8    0.95    0.88\n     2023-24     13,251.5     12,957.9     12,237.9    0.98    0.92\n     2024-25     15,046.7     13,930.9     12,771.1    0.93    0.85\n     2025-26     16,574.8     16,221.2          0.0    0.98       -\n     2026-27     15,535.9          0.0          0.0    0.00       -\n  RE/BE < 1 = budget trimmed mid-year; Act/BE < 1 = under-spent vs original budget.\n\n==============================================================================\nQ2  COMMITTED EXPENDITURE (salaries + pensions[2071] + interest[2049]), Rs crore\n==============================================================================\n  (Actuals basis; years with complete actuals only)\n fiscal_year     Salaries     Pensions     Interest    Committed     TotalExp  %share\n     2014-15      8,873.1     10,031.7      5,259.5     24,164.3    106,623.5   22.7%\n     2015-16      7,225.2     11,113.0     10,167.5     28,505.7    117,291.0   24.3%\n     2016-17      9,834.8     11,295.1     10,239.3     31,369.3    160,957.0   19.5%\n     2017-18     11,918.8     11,683.7     10,240.7     33,843.2    182,675.9   18.5%\n     2018-19     14,636.7     15,103.8     14,769.5     44,509.9    213,490.3   20.8%\n     2019-20     15,968.9     18,402.9     18,519.4     52,891.2    225,350.8   23.5%\n     2020-21     16,000.8     18,936.5     21,920.4     56,857.6    233,271.2   24.4%\n     2021-22     18,352.7     20,665.9     24,983.6     64,002.2    275,469.8   23.2%\n     2022-23     19,915.3     24,019.5     28,427.2     72,362.0    291,779.1   24.8%\n     2023-24     22,526.4     24,859.4     29,907.3     77,293.1    320,741.0   24.1%\n     2024-25     25,043.6     30,651.0     36,121.5     91,816.1    368,396.6   24.9%\n  Salaries = direct pay object codes (GIA-salaries excluded). Interest/pensions via major head (no double count).\n\n==============================================================================\nQ3  VARIATION BY DEMAND HEAD -- top 12 demands by latest Actuals, Rs crore\n==============================================================================\n  first actuals year = 2014-15, latest actuals year = 2024-25  (10-year span)\n demand  Act_2014-15  Act_2024-25   BE_2024-25    CAGR  Act/BE\n     29      7,660.7     63,016.6     66,207.8  +23.5%    0.95\n     03     10,498.1     35,172.5     44,165.2  +12.9%    0.80\n     11      3,567.9     34,138.8     33,796.5  +25.3%    1.01\n     17     17,777.8     33,653.2     40,155.3   +6.6%    0.84\n     24        852.4     31,437.7     23,158.7  +43.4%    1.36\n     21      8,456.6     20,618.8     19,179.2   +9.3%    1.08\n     14      2,797.0     18,840.3     14,209.9  +21.0%    1.33\n     07      9,164.3     18,742.8     20,570.5   +7.4%    0.91\n     05      4,017.3     18,593.0     19,577.5  +16.6%    0.95\n     19      6,773.6     17,885.1     17,708.8  +10.2%    1.01\n     10      6,305.5     13,884.0     12,571.3   +8.2%    1.10\n     22      5,726.7     13,847.7     15,100.1   +9.2%    0.92\n  (No demand-name column exists in the package; label demands from any year's Vol-1 contents page.)\n\n==============================================================================\nQA / RECONCILIATION\n==============================================================================\n  Health BE 2023-24: from doc 2023-24 = Rs 13,251.5 cr | from doc 2024-25 = Rs 13,318.6 cr  (gap 0.5%)\n  -> small gaps = restatement/reclassification or extraction noise; investigate via validation_findings.csv.\n  Implausible single-leaf amounts (> Rs 50,000 cr) flagged: 5\n    doc=2016-17 Actuals = Rs 9,521,722 cr  src=years/2016-17/pdfs/KA_2016_17_EXPVOL2.pdf p.95\n    doc=2016-17 Actuals = Rs 10,821,722 cr  src=years/2016-17/pdfs/KA_2016_17_EXPVOL2.pdf p.108\n    doc=2016-17 Actuals = Rs 23,652,322 cr  src=years/2016-17/pdfs/KA_2016_17_EXPVOL5.pdf p.236\n    doc=2017-18 BE = Rs 242,122,220,601,060,032,512 cr  src=years/2017-18/pdfs/KA_2017_18_EXPVOL2.pdf p.24\n    doc=2022-23 Actuals = Rs 153,012,720,140,011,405,312 cr  src=years/2022-23/pdfs/KA_2022_23_EXPVOL1.pdf p.153\n"
+}
