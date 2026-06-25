@@ -14,9 +14,18 @@ PY      ?= python3
 RSCRIPT ?= Rscript
 PIP     ?= $(PY) -m pip
 
-.PHONY: reproduce build python r sql check clean
+.PHONY: reproduce build python r sql check clean hello slides
 
 reproduce: build python r sql check
+
+hello:
+	$(PY) src/python/hello_budget.py
+	@command -v $(RSCRIPT) >/dev/null 2>&1 \
+	  && $(RSCRIPT) src/r/hello_budget.R \
+	  || echo "(Rscript not found - skipping the R warm-up; the Python run above is enough.)"
+
+slides:
+	$(PY) src/python/build_results_slideshow.py
 
 build:
 	$(PY) src/python/00_build_tidy.py

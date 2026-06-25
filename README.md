@@ -67,6 +67,20 @@ Start with the package `README.md` if you want to understand the data structure.
 
 ## Quick-Start (Karnataka, 5 minutes)
 
+**New here? Start with the warm-up** — one number, no Docker, nothing to install beyond Python 3
+or R:
+
+```bash
+python3 examples/src/python/hello_budget.py     # or:  Rscript examples/src/r/hello_budget.R
+```
+
+Then read the **visual guide** to the documents and the data: open `examples/doc/guide.html` in a
+browser (`open examples/doc/guide.html` on macOS, `xdg-open examples/doc/guide.html` on Linux, or
+double-click it; on GitHub the link shows raw HTML, so clone or download first). The
+[`examples/`](examples/) compendium has the full getting-started path.
+
+The options below are for **reading the raw data directly**, once you know what you want.
+
 ### Option A — Raw CSV with predicate
 
 ```python
@@ -138,3 +152,8 @@ traced to a specific page of a specific source PDF.
 Packages are versioned per state (e.g. `v0.2.0-draft`). A `-draft` suffix means the data has not
 been finalised. Pin to the package directory and re-check the package `README.md` when a new
 version lands.
+
+## License
+
+Code and data in this repository are released under the MIT License (see [`LICENSE`](LICENSE)). If
+you use the data, please cite it — see [`CITATION.cff`](CITATION.cff).

@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: India Public Finance Portal — Karnataka State Finance
+message: "If you use this data or code, please cite it."
+type: dataset
+authors:
+  - name: XKDR Forum
+repository-code: "https://github.com/xKDR/india-public-finance-portal"
+version: v0.2.0-draft
+license: MIT
+date-released: 2026-06-24
+keywords:
+  - public finance
+  - state budgets
+  - Karnataka
+  - India
+  - fiscal data

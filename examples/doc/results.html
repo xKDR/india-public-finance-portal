@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Karnataka State Finances — Results</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink:#212529; --paper:#f2f1f0; --white:#fff;
+  --coral:#f57d6a; --coral-deep:#b5462f; --slate:#3b6f78; --gold:#caa14a;
+  --grid:#d9d5d0; --muted:#5e6975;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;height:100%;}
+body{
+  font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2{font-family:"Montserrat",system-ui,sans-serif;color:var(--ink);}
+/* monospace accounting numerals: the ledger signature */
+.fig,.c-val,.c-axis,.c-share,kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+.deck{height:100vh;overflow:hidden;position:relative;}
+.slide{position:absolute;inset:0;display:none;padding:clamp(20px,4vw,56px);overflow-y:auto;}
+.slide.active{display:flex;}
+.slide-inner{margin:auto;max-width:1080px;width:100%;display:grid;grid-template-columns:0.82fr 1fr;gap:clamp(20px,4vw,52px);align-items:center;}
+.eyebrow{color:var(--coral-deep);font-weight:700;font-size:12px;letter-spacing:.10em;text-transform:uppercase;}
+.slide-head h2{font-size:clamp(24px,3.4vw,38px);font-weight:700;line-height:1.08;margin:10px 0 14px;}
+.lede{color:var(--muted);max-width:46ch;margin:0 0 18px;}
+.lede strong{color:var(--ink);}
+.headline{border-left:4px solid var(--coral);padding-left:16px;margin-top:18px;}
+.headline .fig{display:block;font-size:clamp(30px,4.4vw,52px);font-weight:700;color:var(--coral-deep);line-height:1;}
+.figlab{display:block;color:var(--muted);font-size:13px;margin-top:6px;max-width:34ch;}
+.chart{min-width:0;}
+.chart-svg{width:100%;height:auto;display:block;}
+.src{color:var(--muted);font-size:11.5px;margin:12px 0 0;}
+.bar{transition:none;}
+.grid{stroke:var(--grid);stroke-width:1;}
+.c-name{fill:var(--ink);font-size:13px;font-weight:600;}
+.c-val{fill:var(--coral-deep);font-size:12px;}
+.c-axis{fill:var(--muted);font-size:11px;}
+.c-share{fill:var(--ink);font-size:11px;font-weight:700;}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:8px;font-size:12.5px;color:var(--muted);}
+.lg{display:inline-flex;align-items:center;gap:6px;}
+.sw{width:14px;height:10px;border-radius:2px;display:inline-block;}
+.lg-note{font-style:italic;}
+/* title slide */
+.title .title-inner{display:block;text-align:left;max-width:880px;}
+.title h1{font-size:clamp(40px,7vw,76px);font-weight:700;line-height:1.02;margin:10px 0 16px;}
+.subtitle{font-size:clamp(16px,1.7vw,20px);color:var(--muted);max-width:54ch;}
+.title-stats{display:flex;flex-wrap:wrap;gap:36px;margin:32px 0 24px;border-top:1px solid var(--grid);padding-top:24px;}
+.title-stats .fig{display:block;font-size:clamp(28px,4vw,44px);font-weight:700;color:var(--coral-deep);}
+.nudge{color:var(--muted);font-size:13px;}
+kbd{background:var(--white);border:1px solid var(--grid);border-bottom-width:2px;border-radius:4px;padding:1px 6px;font-size:12px;}
+/* method slide */
+.method .slide-inner{display:block;}
+.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--grid);border:1px solid var(--grid);margin-top:10px;}
+.mcard{background:var(--white);padding:18px;}
+.mcard .fig{display:block;font-size:26px;font-weight:700;color:var(--coral-deep);}
+.method-foot{color:var(--muted);font-size:13px;margin-top:18px;}
+a{color:var(--coral-deep);}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86em;background:#eceae7;padding:1px 5px;border-radius:4px;color:var(--ink);}
+/* controls */
+.controls{position:fixed;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;gap:16px;padding:14px;background:linear-gradient(to top,var(--paper),rgba(242,241,240,0));}
+.controls button{font:inherit;cursor:pointer;background:var(--ink);color:var(--paper);border:0;border-radius:999px;width:40px;height:40px;font-size:18px;line-height:1;}
+.controls button:disabled{opacity:.3;cursor:default;}
+.counter{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;color:var(--muted);min-width:54px;text-align:center;}
+.dots{display:flex;gap:8px;}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--grid);border:0;padding:0;cursor:pointer;}
+.dot[aria-current="true"]{background:var(--coral);}
+:focus-visible{outline:3px solid var(--coral);outline-offset:2px;}
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--coral);transition:width .3s ease;z-index:5;}
+/* motion: gentle reveal */
+.slide.active .slide-inner,.slide.active .title-inner{animation:rise .5s ease both;}
+@keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+@media (max-width:820px){
+  .slide-inner{grid-template-columns:1fr;gap:22px;}
+  .title-stats{gap:22px;}
+  .method-grid{grid-template-columns:1fr;}
+}
+@media (prefers-reduced-motion:reduce){
+  .slide.active .slide-inner,.slide.active .title-inner{animation:none;}
+  .progress{transition:none;}
+}
+@media print{
+  .slide{display:block !important;position:static;page-break-after:always;height:auto;}
+  .controls,.progress{display:none;}
+}
+</style>
+</head>
+<body>
+<div class="progress" style="width:0"></div>
+<div class="deck">
+<section class="slide title" data-n="0">
+  <div class="slide-inner title-inner">
+    <div class="eyebrow">XKDR · India public finance</div>
+    <h1>Karnataka state finances</h1>
+    <p class="subtitle">Four findings from a decade of the state budget &mdash; extracted from the Detailed Estimates of Expenditure, reconciled across Python, R, and DuckDB.</p>
+    <div class="title-stats">
+      <div><span class="fig">11</span><span class="figlab">fiscal years</span></div>
+      <div><span class="fig">29</span><span class="figlab">demands (departments)</span></div>
+      <div><span class="fig">&#8377;370,658</span><span class="figlab">cr budgeted, 2024-25</span></div>
+    </div>
+    <p class="nudge">Use &larr; &rarr; or the controls below. Press <kbd>F</kbd> for full screen.</p>
+  </div>
+</section><section class="slide" data-n="1">
+  <div class="slide-inner">
+    <div class="slide-head">
+      <div class="eyebrow">Finding 01 · Where the money goes</div>
+      <h2>Five demands dominate the budget</h2>
+      <p class="lede">In 2024-25, Karnataka actually spent <strong>&#8377;368,397 crore</strong> &mdash; 99.4% of the &#8377;370,658 crore it budgeted. These five demands account for most of it.</p>
+      <div class="headline"><span class="fig">&#8377;63,017</span><span class="figlab">crore on Debt Servicing alone (2024-25 actuals)</span></div>
+    </div>
+    <div class="chart"><svg viewBox="0 0 820 360" preserveAspectRatio="xMidYMid meet" role="img" class="chart-svg"><text class="c-name" x="18" y="28.3">Debt Servicing</text><rect class="bar" x="18" y="36.4" width="527.8" height="27.0" rx="2" fill="#f57d6a"/><text class="c-val" x="553.8" y="56.4">63,017</text><text class="c-name" x="18" y="95.9">Finance</text><rect class="bar" x="18" y="104.0" width="294.6" height="27.0" rx="2" fill="#f57d6a"/><text class="c-val" x="320.6" y="124.0">35,173</text><text class="c-name" x="18" y="163.5">Women and Child Development</text><rect class="bar" x="18" y="171.6" width="285.9" height="27.0" rx="2" fill="#f57d6a"/><text class="c-val" x="311.9" y="191.6">34,139</text><text class="c-name" x="18" y="231.1">Education</text><rect class="bar" x="18" y="239.2" width="281.8" height="27.0" rx="2" fill="#f57d6a"/><text class="c-val" x="307.8" y="259.2">33,653</text><text class="c-name" x="18" y="298.7">Energy</text><rect class="bar" x="18" y="306.8" width="263.3" height="27.0" rx="2" fill="#f57d6a"/><text class="c-val" x="289.3" y="326.8">31,438</text></svg><p class="src">Top 5 demands by 2024-25 actuals, INR crore. Source: canonical_numbers.json (onboarding).</p></div>
+  </div>
+</section><section class="slide" data-n="2">
+  <div class="slide-inner">
+    <div class="slide-head">
+      <div class="eyebrow">Finding 02 · A service over time</div>
+      <h2>Health is budgeted high, spent lower</h2>
+      <p class="lede">Health (major heads 2210 + 2211) across the plan (BE), the mid-year revision (RE), and what was actually spent (Actuals). Since 2022-23, actuals have run below the budget estimate.</p>
+      <div class="headline"><span class="fig">&#8377;12,771</span><span class="figlab">crore Health actuals, 2024-25 (vs ₹15,047 cr budgeted)</span></div>
+    </div>
+    <div class="chart"><div class="legend"><span class="lg"><span class="sw" style="background:#212529"></span>BE (plan)</span><span class="lg"><span class="sw" style="background:#3b6f78"></span>RE (revised)</span><span class="lg"><span class="sw" style="background:#f57d6a"></span>Actuals (spent)</span></div><svg viewBox="0 0 820 400" preserveAspectRatio="xMidYMid meet" role="img" class="chart-svg"><line class="grid" x1="60" y1="356.0" x2="790" y2="356.0"/><text class="c-axis" x="52" y="359.0" text-anchor="end">0</text><line class="grid" x1="60" y1="277.0" x2="790" y2="277.0"/><text class="c-axis" x="52" y="280.0" text-anchor="end">5,000</text><line class="grid" x1="60" y1="198.0" x2="790" y2="198.0"/><text class="c-axis" x="52" y="201.0" text-anchor="end">10,000</text><line class="grid" x1="60" y1="119.0" x2="790" y2="119.0"/><text class="c-axis" x="52" y="122.0" text-anchor="end">15,000</text><line class="grid" x1="60" y1="40.0" x2="790" y2="40.0"/><text class="c-axis" x="52" y="43.0" text-anchor="end">20,000</text><text class="c-axis" x="60.0" y="374" text-anchor="start">2016-17</text><text class="c-axis" x="206.0" y="374" text-anchor="middle">2018-19</text><text class="c-axis" x="352.0" y="374" text-anchor="middle">2020-21</text><text class="c-axis" x="498.0" y="374" text-anchor="middle">2022-23</text><text class="c-axis" x="644.0" y="374" text-anchor="middle">2024-25</text><text class="c-axis" x="790.0" y="374" text-anchor="end">2026-27</text><polyline class="line" points="60.0,255.7 133.0,203.6 206.0,221.6 279.0,219.6 352.0,208.8 425.0,179.7 498.0,152.6 571.0,146.6 644.0,118.3 717.0,94.1 790.0,110.5" fill="none" stroke="#212529" stroke-width="2.5"/><circle cx="60.0" cy="255.7" r="3" fill="#212529"/><circle cx="133.0" cy="203.6" r="3" fill="#212529"/><circle cx="206.0" cy="221.6" r="3" fill="#212529"/><circle cx="279.0" cy="219.6" r="3" fill="#212529"/><circle cx="352.0" cy="208.8" r="3" fill="#212529"/><circle cx="425.0" cy="179.7" r="3" fill="#212529"/><circle cx="498.0" cy="152.6" r="3" fill="#212529"/><circle cx="571.0" cy="146.6" r="3" fill="#212529"/><circle cx="644.0" cy="118.3" r="3" fill="#212529"/><circle cx="717.0" cy="94.1" r="3" fill="#212529"/><circle cx="790.0" cy="110.5" r="3" fill="#212529"/><polyline class="line" points="60.0,194.0 133.0,252.1 206.0,220.2 279.0,225.6 352.0,200.5 425.0,154.0 498.0,161.9 571.0,151.3 644.0,135.9 717.0,99.7" fill="none" stroke="#3b6f78" stroke-width="2.5" stroke-dasharray="6 4"/><circle cx="60.0" cy="194.0" r="3" fill="#3b6f78"/><circle cx="133.0" cy="252.1" r="3" fill="#3b6f78"/><circle cx="206.0" cy="220.2" r="3" fill="#3b6f78"/><circle cx="279.0" cy="225.6" r="3" fill="#3b6f78"/><circle cx="352.0" cy="200.5" r="3" fill="#3b6f78"/><circle cx="425.0" cy="154.0" r="3" fill="#3b6f78"/><circle cx="498.0" cy="161.9" r="3" fill="#3b6f78"/><circle cx="571.0" cy="151.3" r="3" fill="#3b6f78"/><circle cx="644.0" cy="135.9" r="3" fill="#3b6f78"/><circle cx="717.0" cy="99.7" r="3" fill="#3b6f78"/><polyline class="line" points="60.0,258.9 133.0,245.7 206.0,223.8 279.0,224.3 352.0,201.7 425.0,155.1 498.0,177.3 571.0,162.6 644.0,154.2" fill="none" stroke="#f57d6a" stroke-width="2.5"/><circle cx="60.0" cy="258.9" r="3" fill="#f57d6a"/><circle cx="133.0" cy="245.7" r="3" fill="#f57d6a"/><circle cx="206.0" cy="223.8" r="3" fill="#f57d6a"/><circle cx="279.0" cy="224.3" r="3" fill="#f57d6a"/><circle cx="352.0" cy="201.7" r="3" fill="#f57d6a"/><circle cx="425.0" cy="155.1" r="3" fill="#f57d6a"/><circle cx="498.0" cy="177.3" r="3" fill="#f57d6a"/><circle cx="571.0" cy="162.6" r="3" fill="#f57d6a"/><circle cx="644.0" cy="154.2" r="3" fill="#f57d6a"/></svg><p class="src">Health spending by fiscal year, INR crore. Actuals end 2024-25; later years are plan/revision only. Source: q1_health.</p></div>
+  </div>
+</section><section class="slide" data-n="3">
+  <div class="slide-inner">
+    <div class="slide-head">
+      <div class="eyebrow">Finding 03 · The structural squeeze</div>
+      <h2>A quarter of spending is committed</h2>
+      <p class="lede">Salaries, pensions, and interest are committed expenditure &mdash; hard to cut. Their share of total spending rose from <strong>23%</strong> in 2014-15 to <strong>25%</strong> in 2024-25.</p>
+      <div class="headline"><span class="fig">25%</span><span class="figlab">of all spending was committed in 2024-25</span></div>
+    </div>
+    <div class="chart"><div class="legend"><span class="lg"><span class="sw" style="background:#3b6f78"></span>Salaries</span><span class="lg"><span class="sw" style="background:#f57d6a"></span>Pensions</span><span class="lg"><span class="sw" style="background:#caa14a"></span>Interest</span><span class="lg lg-note">% = committed share of total spending</span></div><svg viewBox="0 0 820 430" preserveAspectRatio="xMidYMid meet" role="img" class="chart-svg"><line class="grid" x1="60" y1="374.0" x2="804" y2="374.0"/><text class="c-axis" x="52" y="377.0" text-anchor="end">0</text><line class="grid" x1="60" y1="288.0" x2="804" y2="288.0"/><text class="c-axis" x="52" y="291.0" text-anchor="end">25,000</text><line class="grid" x1="60" y1="202.0" x2="804" y2="202.0"/><text class="c-axis" x="52" y="205.0" text-anchor="end">50,000</text><line class="grid" x1="60" y1="116.0" x2="804" y2="116.0"/><text class="c-axis" x="52" y="119.0" text-anchor="end">75,000</text><line class="grid" x1="60" y1="30.0" x2="804" y2="30.0"/><text class="c-axis" x="52" y="33.0" text-anchor="end">100,000</text><rect class="bar" x="73.5" y="343.5" width="40.6" height="30.5" fill="#3b6f78"/><rect class="bar" x="73.5" y="309.0" width="40.6" height="34.5" fill="#f57d6a"/><rect class="bar" x="73.5" y="290.9" width="40.6" height="18.1" fill="#caa14a"/><text class="c-share" x="93.8" y="284.9" text-anchor="middle">23%</text><text class="c-axis" x="93.8" y="390" text-anchor="middle" transform="rotate(-40 93.8 390)">2014-15</text><rect class="bar" x="141.2" y="349.1" width="40.6" height="24.9" fill="#3b6f78"/><rect class="bar" x="141.2" y="310.9" width="40.6" height="38.2" fill="#f57d6a"/><rect class="bar" x="141.2" y="275.9" width="40.6" height="35.0" fill="#caa14a"/><text class="c-share" x="161.5" y="269.9" text-anchor="middle">24%</text><text class="c-axis" x="161.5" y="390" text-anchor="middle" transform="rotate(-40 161.5 390)">2015-16</text><rect class="bar" x="208.8" y="340.2" width="40.6" height="33.8" fill="#3b6f78"/><rect class="bar" x="208.8" y="301.3" width="40.6" height="38.9" fill="#f57d6a"/><rect class="bar" x="208.8" y="266.1" width="40.6" height="35.2" fill="#caa14a"/><text class="c-share" x="229.1" y="260.1" text-anchor="middle">19%</text><text class="c-axis" x="229.1" y="390" text-anchor="middle" transform="rotate(-40 229.1 390)">2016-17</text><rect class="bar" x="276.4" y="333.0" width="40.6" height="41.0" fill="#3b6f78"/><rect class="bar" x="276.4" y="292.8" width="40.6" height="40.2" fill="#f57d6a"/><rect class="bar" x="276.4" y="257.6" width="40.6" height="35.2" fill="#caa14a"/><text class="c-share" x="296.7" y="251.6" text-anchor="middle">19%</text><text class="c-axis" x="296.7" y="390" text-anchor="middle" transform="rotate(-40 296.7 390)">2017-18</text><rect class="bar" x="344.1" y="323.6" width="40.6" height="50.4" fill="#3b6f78"/><rect class="bar" x="344.1" y="271.7" width="40.6" height="52.0" fill="#f57d6a"/><rect class="bar" x="344.1" y="220.9" width="40.6" height="50.8" fill="#caa14a"/><text class="c-share" x="364.4" y="214.9" text-anchor="middle">21%</text><text class="c-axis" x="364.4" y="390" text-anchor="middle" transform="rotate(-40 364.4 390)">2018-19</text><rect class="bar" x="411.7" y="319.1" width="40.6" height="54.9" fill="#3b6f78"/><rect class="bar" x="411.7" y="255.8" width="40.6" height="63.3" fill="#f57d6a"/><rect class="bar" x="411.7" y="192.1" width="40.6" height="63.7" fill="#caa14a"/><text class="c-share" x="432.0" y="186.1" text-anchor="middle">23%</text><text class="c-axis" x="432.0" y="390" text-anchor="middle" transform="rotate(-40 432.0 390)">2019-20</text><rect class="bar" x="479.3" y="319.0" width="40.6" height="55.0" fill="#3b6f78"/><rect class="bar" x="479.3" y="253.8" width="40.6" height="65.1" fill="#f57d6a"/><rect class="bar" x="479.3" y="178.4" width="40.6" height="75.4" fill="#caa14a"/><text class="c-share" x="499.6" y="172.4" text-anchor="middle">24%</text><text class="c-axis" x="499.6" y="390" text-anchor="middle" transform="rotate(-40 499.6 390)">2020-21</text><rect class="bar" x="547.0" y="310.9" width="40.6" height="63.1" fill="#3b6f78"/><rect class="bar" x="547.0" y="239.8" width="40.6" height="71.1" fill="#f57d6a"/><rect class="bar" x="547.0" y="153.8" width="40.6" height="85.9" fill="#caa14a"/><text class="c-share" x="567.3" y="147.8" text-anchor="middle">23%</text><text class="c-axis" x="567.3" y="390" text-anchor="middle" transform="rotate(-40 567.3 390)">2021-22</text><rect class="bar" x="614.6" y="305.5" width="40.6" height="68.5" fill="#3b6f78"/><rect class="bar" x="614.6" y="222.9" width="40.6" height="82.6" fill="#f57d6a"/><rect class="bar" x="614.6" y="125.1" width="40.6" height="97.8" fill="#caa14a"/><text class="c-share" x="634.9" y="119.1" text-anchor="middle">25%</text><text class="c-axis" x="634.9" y="390" text-anchor="middle" transform="rotate(-40 634.9 390)">2022-23</text><rect class="bar" x="682.3" y="296.5" width="40.6" height="77.5" fill="#3b6f78"/><rect class="bar" x="682.3" y="211.0" width="40.6" height="85.5" fill="#f57d6a"/><rect class="bar" x="682.3" y="108.1" width="40.6" height="102.9" fill="#caa14a"/><text class="c-share" x="702.5" y="102.1" text-anchor="middle">24%</text><text class="c-axis" x="702.5" y="390" text-anchor="middle" transform="rotate(-40 702.5 390)">2023-24</text><rect class="bar" x="749.9" y="287.8" width="40.6" height="86.2" fill="#3b6f78"/><rect class="bar" x="749.9" y="182.4" width="40.6" height="105.4" fill="#f57d6a"/><rect class="bar" x="749.9" y="58.2" width="40.6" height="124.3" fill="#caa14a"/><text class="c-share" x="770.2" y="52.2" text-anchor="middle">25%</text><text class="c-axis" x="770.2" y="390" text-anchor="middle" transform="rotate(-40 770.2 390)">2024-25</text></svg><p class="src">Committed expenditure (actuals), INR crore, with committed share of total. Source: q2_committed.</p></div>
+  </div>
+</section><section class="slide" data-n="4">
+  <div class="slide-inner">
+    <div class="slide-head">
+      <div class="eyebrow">Finding 04 · A decade of change</div>
+      <h2>The fastest-growing demands</h2>
+      <p class="lede">Comparing 2014-15 actuals with 2024-25, some demands grew many times over. <strong>Energy</strong> rose roughly <strong>37&times;</strong>, from &#8377;852 to &#8377;31,438 crore.</p>
+      <div class="headline"><span class="fig">37&times;</span><span class="figlab">growth in Energy spending since 2014-15</span></div>
+    </div>
+    <div class="chart"><div class="legend"><span class="lg"><span class="sw" style="background:#3b6f78;opacity:.55"></span>2014-15 actuals</span><span class="lg"><span class="sw" style="background:#f57d6a"></span>2024-25 actuals</span><span class="lg lg-note">&times; = growth over the decade</span></div><svg viewBox="0 0 820 400" preserveAspectRatio="xMidYMid meet" role="img" class="chart-svg"><text class="c-name" x="18" y="40.5">Debt Servicing</text><rect x="18" y="44.1" width="62.4" height="11.0" rx="1.5" fill="#3b6f78" opacity="0.55"/><rect class="bar" x="18" y="58.1" width="513.6" height="11.0" rx="1.5" fill="#f57d6a"/><text class="c-val" x="539.6" y="68.0">63,017 cr · 8&times;</text><text class="c-name" x="18" y="85.7">Energy</text><rect x="18" y="89.3" width="6.9" height="11.0" rx="1.5" fill="#3b6f78" opacity="0.55"/><rect class="bar" x="18" y="103.3" width="256.2" height="11.0" rx="1.5" fill="#f57d6a"/><text class="c-val" x="282.2" y="113.2">31,438 cr · 37&times;</text><text class="c-name" x="18" y="131.0">Women and Child Development</text><rect x="18" y="134.6" width="29.1" height="11.0" rx="1.5" fill="#3b6f78" opacity="0.55"/><rect class="bar" x="18" y="148.6" width="278.2" height="11.0" rx="1.5" fill="#f57d6a"/><text class="c-val" x="304.2" y="158.5">34,139 cr · 10&times;</text><text class="c-name" x="18" y="176.2">Finance</text><rect x="18" y="179.8" width="85.6" height="11.0" rx="1.5" fill="#3b6f78" opacity="0.55"/><rect class="bar" x="18" y="193.8" width="286.7" height="11.0" rx="1.5" fill="#f57d6a"/><text class="c-val" x="312.7" y="203.8">35,173 cr · 3&times;</text><text class="c-name" x="18" y="221.5">Revenue</text><rect x="18" y="225.1" width="22.8" height="11.0" rx="1.5" fill="#3b6f78" opacity="0.55"/><rect class="bar" x="18" y="239.1" width="153.5" height="11.0" rx="1.5" fill="#f57d6a"/><text class="c-val" x="179.5" y="249.0">18,840 cr · 7&times;</text><text class="c-name" x="18" y="266.7">Education</text><rect x="18" y="270.4" width="144.9" height="11.0" rx="1.5" fill="#3b6f78" opacity="0.55"/><rect class="bar" x="18" y="284.4" width="274.3" height="11.0" rx="1.5" fill="#f57d6a"/><text class="c-val" x="300.3" y="294.2">33,653 cr · 2&times;</text><text class="c-name" x="18" y="312.0">Home and Transport</text><rect x="18" y="315.6" width="32.7" height="11.0" rx="1.5" fill="#3b6f78" opacity="0.55"/><rect class="bar" x="18" y="329.6" width="151.5" height="11.0" rx="1.5" fill="#f57d6a"/><text class="c-val" x="177.5" y="339.5">18,593 cr · 5&times;</text><text class="c-name" x="18" y="357.2">Irrigation</text><rect x="18" y="360.9" width="68.9" height="11.0" rx="1.5" fill="#3b6f78" opacity="0.55"/><rect class="bar" x="18" y="374.9" width="168.0" height="11.0" rx="1.5" fill="#f57d6a"/><text class="c-val" x="194.0" y="384.8">20,619 cr · 2&times;</text></svg><p class="src">Demands with the largest absolute growth, 2014-15 vs 2024-25 actuals, INR crore. Source: q3_demand.</p></div>
+  </div>
+</section><section class="slide method" data-n="5">
+  <div class="slide-inner">
+    <div class="slide-head">
+      <div class="eyebrow">How these numbers were made</div>
+      <h2>Auditable, not just asserted</h2>
+      <p class="lede">Every figure here is summed only from additive leaf rows (<code>type_of_table = object_head</code>, <code>row_type = Data</code>, <code>row_level = Object-Head</code>) &mdash; totals and summary rows are excluded, so nothing is double-counted. The four analyses are implemented three times, in Python, R, and DuckDB, and must agree to the paisa.</p>
+    </div>
+    <div class="method-grid">
+      <div class="mcard"><span class="fig">0.000000</span><span class="figlab">crore max difference across Python = R = DuckDB</span></div>
+      <div class="mcard"><span class="fig">&#8377;</span><span class="figlab">all amounts in INR crore (source data is in lakh; 100 lakh = 1 crore)</span></div>
+      <div class="mcard"><span class="fig">PDF</span><span class="figlab">every row traces to a page of a source expenditure volume</span></div>
+    </div>
+    <p class="method-foot">New to the data? Read the <a href="guide.html">visual guide</a>, or reproduce these numbers with <code>make -C examples reproduce</code>. Generated from <code>canonical_numbers.json</code>.</p>
+  </div>
+</section>
+</div>
+<div class="controls">
+  <button class="prev" aria-label="Previous slide">&#8249;</button>
+  <div class="dots" role="tablist" aria-label="Slides"></div>
+  <span class="counter">01 / 06</span>
+  <button class="next" aria-label="Next slide">&#8250;</button>
+</div>
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var dotsWrap=document.querySelector('.dots');
+  var counter=document.querySelector('.counter');
+  var prev=document.querySelector('.prev');
+  var next=document.querySelector('.next');
+  var bar=document.querySelector('.progress');
+  var i=0;
+  slides.forEach(function(s,n){
+    var d=document.createElement('button');
+    d.className='dot'; d.setAttribute('aria-label','Go to slide '+(n+1));
+    d.addEventListener('click',function(){go(n);});
+    dotsWrap.appendChild(d);
+  });
+  var dots=[].slice.call(document.querySelectorAll('.dot'));
+  function pad(n){return (n<10?'0':'')+n;}
+  function go(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach(function(s,k){s.classList.toggle('active',k===i);});
+    dots.forEach(function(d,k){d.setAttribute('aria-current',k===i?'true':'false');});
+    counter.textContent=pad(i+1)+' / '+pad(slides.length);
+    prev.disabled=(i===0); next.disabled=(i===slides.length-1);
+    bar.style.width=((i)/(slides.length-1)*100)+'%';
+  }
+  prev.addEventListener('click',function(){go(i-1);});
+  next.addEventListener('click',function(){go(i+1);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){go(i+1);e.preventDefault();}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){go(i-1);}
+    else if(e.key==='Home'){go(0);}
+    else if(e.key==='End'){go(slides.length-1);}
+    else if(e.key==='f'||e.key==='F'){ if(!document.fullscreenElement){document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen();} else {document.exitFullscreen&&document.exitFullscreen();} }
+  });
+  go(0);
+})();
+</script>
+</body>
+</html>

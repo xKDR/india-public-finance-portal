@@ -4,37 +4,39 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Karnataka Budget Data Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       color-scheme: light;
-      --ink: #18202a;
+      --ink: #212529;
       --muted: #5e6975;
-      --line: #d9dee5;
-      --paper: #f7f7f4;
+      --line: #e0ddd9;
+      --paper: #f2f1f0;
       --white: #ffffff;
-      --accent: #0f6b63;
-      --accent-soft: #dcece8;
+      --accent: #f57d6a;        /* XKDR coral — used for rules/fills, and text only on the dark footer */
+      --accent-ink: #b5462f;    /* deepened coral that meets WCAG AA for small text on the paper */
+      --accent-soft: #fdeae6;
       --warn: #9b4f14;
+      --ink-2: #18202a;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--ink);
       background: var(--paper);
     }
+    h1, h2, h3 { font-family: "Montserrat", system-ui, sans-serif; color: var(--ink); }
     header {
-      padding: 40px 28px 26px;
+      padding: 44px 28px 26px;
       border-bottom: 1px solid var(--line);
       background: var(--white);
     }
-    main {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 28px;
-    }
+    main { max-width: 1120px; margin: 0 auto; padding: 8px 28px 28px; }
     .eyebrow {
-      color: var(--accent);
+      color: var(--accent-ink);
       font-size: 12px;
       font-weight: 700;
       letter-spacing: .08em;
@@ -43,31 +45,27 @@
     h1 {
       margin: 8px 0 10px;
       max-width: 880px;
-      font-size: clamp(32px, 5vw, 56px);
-      line-height: 1.04;
-      letter-spacing: 0;
+      font-size: clamp(30px, 5vw, 52px);
+      font-weight: 700;
+      line-height: 1.05;
     }
     h2 {
-      margin: 0 0 10px;
-      font-size: 24px;
-      letter-spacing: 0;
-    }
-    h3 {
-      margin: 0 0 8px;
-      font-size: 16px;
-      letter-spacing: 0;
-    }
-    p {
       margin: 0 0 12px;
-      max-width: 760px;
-      color: var(--muted);
+      font-size: 23px;
+      font-weight: 600;
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
     }
+    h3 { margin: 18px 0 6px; font-size: 15px; font-weight: 700; }
+    p { margin: 0 0 12px; max-width: 760px; color: var(--muted); }
+    a { color: var(--accent-ink); }
     code {
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: .93em;
-      background: #eef1f2;
+      font-size: .9em;
+      background: #eceae7;
       padding: 2px 5px;
       border-radius: 4px;
+      color: var(--ink);
     }
     pre {
       overflow-x: auto;
@@ -75,181 +73,318 @@
       padding: 14px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: #111820;
+      background: var(--ink-2);
       color: #eef6f3;
     }
-    pre code {
-      background: transparent;
-      padding: 0;
-      border-radius: 0;
-      font-size: inherit;
-      color: inherit;
-    }
-    section {
-      padding: 26px 0;
-      border-bottom: 1px solid var(--line);
-    }
+    pre code { background: transparent; padding: 0; border-radius: 0; font-size: inherit; color: inherit; }
+    section { padding: 30px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 12px; }
+    section > p:first-of-type { margin-top: 4px; }
+    /* Header stats */
     .stats {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 1px;
       margin-top: 22px;
       border: 1px solid var(--line);
       background: var(--line);
     }
-    .stat {
-      min-height: 92px;
-      padding: 16px;
+    .stat { min-height: 88px; padding: 14px; background: var(--white); }
+    .stat b { display: block; font-size: 22px; font-family: "Montserrat", system-ui, sans-serif; }
+    .stat span { color: var(--muted); font-size: 12px; }
+    /* In-page nav */
+    nav.toc {
+      margin: 22px 0 0;
+      padding: 14px 16px;
       background: var(--white);
-    }
-    .stat b {
-      display: block;
-      font-size: 24px;
-    }
-    .stat span {
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .ladder {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(120px, 1fr));
-      gap: 8px;
-      margin-top: 16px;
-    }
-    .step {
-      min-height: 130px;
-      padding: 14px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: var(--white);
     }
-    .step strong {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--accent);
-    }
-    .step small {
-      color: var(--muted);
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      align-items: start;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 14px;
-      background: var(--white);
-    }
-    th, td {
-      padding: 10px;
-      border: 1px solid var(--line);
-      text-align: left;
-      vertical-align: top;
-    }
-    th {
-      background: #edf2f0;
-      font-size: 13px;
-    }
-    .note {
-      border-left: 4px solid var(--accent);
-      padding: 12px 14px;
-      background: var(--accent-soft);
-      color: #1d3c38;
-      border-radius: 0 8px 8px 0;
-    }
-    .warning {
-      border-left-color: var(--warn);
-      background: #f4e6d8;
-      color: #4c2f17;
-    }
+    nav.toc b { font-family: "Montserrat", system-ui, sans-serif; font-size: 13px; }
+    nav.toc ol { margin: 8px 0 0; padding-left: 18px; columns: 2; column-gap: 28px; }
+    nav.toc li { margin: 2px 0; }
+    /* Ladder */
+    .ladder { display: grid; grid-template-columns: repeat(6, minmax(120px, 1fr)); gap: 8px; margin-top: 16px; }
+    .step { min-height: 132px; padding: 14px; border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 8px; background: var(--white); }
+    .step strong { display: block; margin-bottom: 8px; color: var(--ink); }
+    .step small { color: var(--muted); }
+    /* Two-column grid */
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+    /* Tables */
+    .tablewrap { overflow-x: auto; margin-top: 14px; }
+    table { width: 100%; border-collapse: collapse; background: var(--white); }
+    th, td { padding: 9px 10px; border: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 14px; }
+    th { background: #edeae6; font-size: 12.5px; }
+    tr.leaf td { background: var(--accent-soft); }
+    tr.nonadd td { color: var(--muted); font-style: italic; }
+    .sumcol { text-align: center; font-weight: 700; }
+    figure { margin: 0; }
+    figure img { width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+    figcaption { color: var(--muted); font-size: 13px; margin-top: 8px; }
+    .legend { font-size: 13px; color: var(--muted); margin-top: 10px; }
+    .legend .chip { display: inline-block; width: 12px; height: 12px; border: 1px solid var(--line); background: var(--accent-soft); vertical-align: middle; margin-right: 5px; }
+    /* Callouts */
+    .note { border-left: 4px solid var(--accent); padding: 12px 14px; background: var(--accent-soft); color: var(--ink); border-radius: 0 8px 8px 0; }
+    .note.warning { border-left-color: var(--warn); background: #f4e6d8; color: #4c2f17; }
+    /* Dictionary groups */
+    details.dict { margin-top: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--white); }
+    details.dict > summary { cursor: pointer; padding: 12px 14px; font-family: "Montserrat", system-ui, sans-serif; font-weight: 700; font-size: 14px; }
+    details.dict > summary small { font-weight: 400; color: var(--muted); font-family: system-ui, sans-serif; }
+    details.dict[open] > summary { border-bottom: 1px solid var(--line); }
+    details.dict table { border: 0; }
+    details.dict th, details.dict td { border-left: 0; border-right: 0; }
+    .toplink { font-size: 12px; color: var(--accent-ink); text-decoration: none; float: right; }
+    /* Footer */
+    footer { background: var(--ink-2); color: var(--paper); padding: 30px 28px; }
+    footer a { color: var(--accent); }
+    footer .inner { max-width: 1120px; margin: 0 auto; }
     @media (max-width: 880px) {
       .stats, .ladder, .grid { grid-template-columns: 1fr; }
-      header, main { padding-left: 18px; padding-right: 18px; }
+      nav.toc ol { columns: 1; }
+      header, main, footer { padding-left: 18px; padding-right: 18px; }
+    }
+    @media print {
+      a { color: var(--ink); }
+      pre { background: #fff; color: var(--ink); border: 1px solid #999; }
+      footer { background: #fff; color: var(--ink); border-top: 1px solid #999; }
+      footer a { color: var(--ink); }
+      nav.toc, .toplink { display: none; }
+      details.dict[open] > summary { border-bottom: 1px solid var(--line); }
+      details.dict { break-inside: avoid; }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="eyebrow">IndiaBudgets research data</div>
+    <div class="eyebrow">India public finance &middot; Karnataka</div>
     <h1>Karnataka budget data guide</h1>
-    <p>How to read the CSVs, interpret the budget hierarchy, and use validation findings without losing the shape of the original PDF.</p>
+    <p>What the source documents are, what one page looks like, what the columns mean, and how to total the data without counting it twice.</p>
+    <!-- Stats below are from karnataka-state-finance/package_stats.json @ v0.2.0-draft.
+         Update them here when a new data release changes the figures. -->
     <div class="stats">
       <div class="stat"><b>v0.2.0-draft</b><span>Package version</span></div>
       <div class="stat"><b>11</b><span>Fiscal years</span></div>
       <div class="stat"><b>220,211</b><span>Budget rows</span></div>
       <div class="stat"><b>192,804</b><span>Validation rows</span></div>
+      <div class="stat"><b>77</b><span>Source PDFs</span></div>
     </div>
+    <nav class="toc" aria-label="Contents">
+      <b>On this page</b>
+      <ol>
+        <li><a href="#intro">Introduction to the documents</a></li>
+        <li><a href="#snapshot">A snapshot of the budget document</a></li>
+        <li><a href="#columns">The columns you'll use first</a></li>
+        <li><a href="#ladder">The accounting ladder</a></li>
+        <li><a href="#totals">Don't double-count</a></li>
+        <li><a href="#voted">Voted and charged</a></li>
+        <li><a href="#measures">The three measures</a></li>
+        <li><a href="#validation">Validation drilldown</a></li>
+        <li><a href="#files">Files to use</a></li>
+        <li><a href="#dictionary">Full column reference</a></li>
+      </ol>
+    </nav>
   </header>
   <main>
-    <section>
-      <h2>What this package is</h2>
-      <p>Budget PDFs are hard to parse and harder to analyze. This package is an attempt to represent Karnataka expenditure volumes as CSV and JSON while preserving the source row structure, page references, and validation checks.</p>
-      <p class="note">The CSV is document-shaped by design. It includes leaf rows, headers, totals, and summary rows so users can compare the table back to the PDF.</p>
+
+    <section id="intro">
+      <h2>Introduction to the documents</h2>
+      <p>Every year the Government of Karnataka publishes its <strong>Detailed Estimates of Expenditure</strong> as a set of seven volumes (EXPVOL1&ndash;EXPVOL7) &mdash; the per-department backing detail behind the Demand for Grants. Each volume is a long PDF of accounting tables: for every department (a &ldquo;demand&rdquo;), money is broken down through a fixed hierarchy of account heads, with four money columns &mdash; prior-year Accounts, current Budget Estimate, current Revised Estimate, and next-year Budget Estimate.</p>
+      <p>These PDFs are built for printing, not analysis. This package extracts them to CSV and JSON while keeping the document&rsquo;s shape, so any number can be traced back to the page it came from.</p>
+      <p class="note">The CSV is <strong>document-shaped by design</strong>. It keeps headers, totals, and summary rows so you can line the table back up against the PDF &mdash; and that same shape is the one thing you must respect when you total a column (see <a href="#totals">Don&rsquo;t double-count</a>).</p>
     </section>
 
-    <section>
+    <section id="snapshot">
+      <h2>A snapshot of the budget document</h2>
+      <p>Here is one real page and the rows we extracted from it. Every printed line becomes a row; the extractor also records what <em>kind</em> of line it is.</p>
+      <div class="grid">
+        <figure>
+          <a href="img/budget-page-2024-25-expvol1-p2.png">
+            <img src="img/budget-page-2024-25-expvol1-p2.png"
+                 alt="Scan of a Karnataka 2024-25 budget page. An account-head heading, 'Commissioner for Excise and Other Establishments', is followed by indented object-head lines (Pay-Officers, Pay-Staff, Interim Relief, Dearness Allowance, and more), each with four money columns, ending in a bold 'HOA Total' line of 31,335.31." />
+          </a>
+          <figcaption><code>KA_2024_25_EXPVOL1.pdf</code>, page 2 &mdash; Demand 03 (Finance), Major Head 2039 (State Excise). Excise administration sits under the Finance Department, so it appears in Demand 03. Click the image to open it full-size.</figcaption>
+        </figure>
+        <div>
+          <p>The table below is the machine-readable version of that page (the current-year Budget Estimate column shown):</p>
+          <div class="tablewrap">
+            <table>
+              <thead>
+                <tr><th scope="col">Sum?</th><th scope="col">row_type</th><th scope="col">row_level</th><th scope="col">row_header</th><th scope="col">object_<br>head_code</th><th scope="col">BE 2024-25<br>(&#8377; lakh)</th></tr>
+              </thead>
+              <tbody>
+                <tr class="nonadd"><td class="sumcol">&times;</td><td>Header</td><td>Detailed-Head</td><td>Commissioner for Excise and Other Establishments</td><td></td><td></td></tr>
+                <tr class="leaf"><td class="sumcol">&#10003;</td><td>Data</td><td>Object-Head</td><td>Pay-Officers</td><td>002</td><td>1,733.00</td></tr>
+                <tr class="leaf"><td class="sumcol">&#10003;</td><td>Data</td><td>Object-Head</td><td>Pay-Staff</td><td>003</td><td>13,001.00</td></tr>
+                <tr class="leaf"><td class="sumcol">&#10003;</td><td>Data</td><td>Object-Head</td><td>Interim Relief</td><td>004</td><td>2,501.00</td></tr>
+                <tr class="leaf"><td class="sumcol">&#10003;</td><td>Data</td><td>Object-Head</td><td>Dearness Allowance</td><td>011</td><td>7,312.00</td></tr>
+                <tr class="nonadd"><td class="sumcol">&#10003;</td><td colspan="4">&hellip; 13 more Object-Head leaf rows (all visible on the page image) &hellip;</td><td>6,788.31</td></tr>
+                <tr class="nonadd"><td class="sumcol">&times;</td><td>Total</td><td>Detailed-Head</td><td>HOA Total <small>(Head&nbsp;of&nbsp;Account)</small></td><td></td><td>31,335.31</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="legend"><span class="chip"></span> Tinted rows are the <strong>additive leaves</strong> (<code>row_type = Data</code> and <code>row_level = Object-Head</code>) &mdash; the only rows you add up. The 17 leaf rows sum to <strong>31,335.31</strong>. The grey <code>Total</code> row repeats that same <strong>31,335.31</strong>: add up everything and you count it twice.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="columns">
+      <h2>The columns you&rsquo;ll use first</h2>
+      <p>You don&rsquo;t need all 30-odd columns to start. These few answer most first questions. (The complete reference is at the <a href="#dictionary">end of this guide</a>.)</p>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th scope="col">Column</th><th scope="col">What it is</th></tr></thead>
+          <tbody>
+            <tr><td><code>fiscal_year</code></td><td>The year an amount refers to, e.g. <code>2024-25</code>.</td></tr>
+            <tr><td><code>measure</code></td><td>One of <code>BE</code>, <code>RE</code>, <code>Actuals</code> (see <a href="#measures">the three measures</a>). In the raw CSV these are separate amount columns instead.</td></tr>
+            <tr><td><code>demand_number</code></td><td>The department / grant, e.g. <code>03</code> = Finance. Map numbers to names with <code>demand_names.json</code>.</td></tr>
+            <tr><td><code>major_head_code</code> / <code>major_head_name</code></td><td>Broad function, e.g. <code>2210</code> Medical and Public Health.</td></tr>
+            <tr><td><code>object_head_code</code> / <code>object_head_description</code></td><td>The line item, e.g. <code>003</code> Pay-Staff (see <a href="#ladder">the ladder</a>).</td></tr>
+            <tr><td><code>amount_lakh</code></td><td>The amount, in INR lakh. Divide by 100 for crore.</td></tr>
+            <tr><td><code>type_of_table</code>, <code>row_type</code>, <code>row_level</code></td><td>The three columns that tell you which rows are safe to add (see <a href="#totals">Don&rsquo;t double-count</a>). Needed for the raw CSV; the <code>examples/</code> tidy table has already applied them.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="ladder">
       <h2>The accounting ladder</h2>
-      <p>The DEA Budget Manual describes six tiers in Detailed Demands for Grants. In this package they appear as code/name columns from Major Head through Object Head.</p>
+      <p>The DEA Budget Manual describes six tiers in the Detailed Demands for Grants. In this package they appear as code/name columns from Major Head down to Object Head.</p>
       <div class="ladder">
         <div class="step"><strong>Major Head</strong><small>4 digits. Broad function, such as tax collection or education.</small></div>
         <div class="step"><strong>Sub-Major Head</strong><small>2 digits. Sub-function within a major head. <code>00</code> often means no sub-major split.</small></div>
         <div class="step"><strong>Minor Head</strong><small>3 digits. Programme-level classification.</small></div>
         <div class="step"><strong>Sub-Head</strong><small>2 digits. Scheme-level classification.</small></div>
         <div class="step"><strong>Detailed Head</strong><small>2 digits. Sub-scheme or detailed activity.</small></div>
-        <div class="step"><strong>Object Head</strong><small>2 digits. Object or primary unit of appropriation. This is the usual additive leaf level.</small></div>
+        <div class="step"><strong>Object Head</strong><small>2 digits. Object or primary unit of appropriation. This is the usual additive <em>leaf</em> level.</small></div>
       </div>
     </section>
 
-    <section class="grid">
-      <div>
-        <h2>Safe totals</h2>
-        <p>Do not sum the whole table. Totals and summary rows repeat amounts already present in leaf rows.</p>
-        <pre><code>WHERE type_of_table = 'object_head'
-  AND row_type = 'Data'
-  AND row_level = 'Object-Head'</code></pre>
-      </div>
-      <div>
-        <h2>Voted and charged</h2>
-        <p><code>vote_charge_marker</code> captures the source distinction where printed. Charged expenditure is not submitted for vote under the Constitution; voted expenditure is subject to legislative vote.</p>
-        <p class="note warning">Validation is an internal consistency signal, not a guarantee that every PDF character was extracted correctly.</p>
-      </div>
+    <section id="totals">
+      <h2>Don&rsquo;t double-count</h2>
+      <p>You just saw it: the object-head leaf rows under &ldquo;Commissioner for Excise&rdquo; sum to 31,335.31, and the <code>HOA Total</code> row says 31,335.31 again. <strong>Do not sum the whole table. Totals and summary rows repeat amounts already present in leaf rows.</strong></p>
+      <p>To total safely, keep only the additive leaf rows &mdash; all three conditions are required:</p>
+      <pre><code>WHERE type_of_table = 'object_head'
+  AND row_type      = 'Data'
+  AND row_level     = 'Object-Head'</code></pre>
+      <p>About <strong>37%</strong> of rows are headers, totals, or summary rows &mdash; all excluded by this predicate. The <code>examples/</code> tidy table (<code>karnataka_budget_tidy.csv</code>) has this filter already applied, so you can sum it directly with no predicate.</p>
     </section>
 
-    <section>
+    <section id="voted">
+      <h2>Voted and charged</h2>
+      <p><code>vote_charge_marker</code> captures the source distinction where it is printed. Charged expenditure is not submitted for vote under the Constitution; voted expenditure is subject to legislative vote.</p>
+      <p class="note warning">Validation is an internal consistency signal, not a guarantee that every PDF character was extracted correctly.</p>
+    </section>
+
+    <section id="measures">
+      <h2>The three measures: plan, revision, actual</h2>
+      <p>Each year carries three measures: <strong>BE</strong> (Budget Estimate, the plan), <strong>RE</strong> (Revised Estimate, the mid-year correction), and <strong>Actuals</strong> (what was actually spent). The same fiscal year is reported across several yearly documents; the package&rsquo;s <em>canonical source rule</em> takes each measure from one document &mdash; BE from the document&rsquo;s own year, RE from the next year&rsquo;s document, Actuals from the year-after&rsquo;s document &mdash; so a value is never counted from two sources. The <code>examples/</code> tidy table applies this rule for you.</p>
+    </section>
+
+    <section id="validation">
       <h2>Validation drilldown</h2>
       <p>Example key:</p>
       <pre><code>KA.2021-22.expvol_1.in_schema.object_head.minor.03_2043_00_101</code></pre>
-      <table>
-        <thead><tr><th>Part</th><th>Meaning</th></tr></thead>
-        <tbody>
-          <tr><td><code>KA</code></td><td>Karnataka.</td></tr>
-          <tr><td><code>2021-22</code></td><td>Source budget year.</td></tr>
-          <tr><td><code>expvol_1</code></td><td>Expenditure volume 1.</td></tr>
-          <tr><td><code>in_schema</code></td><td>The check stays inside one source table family.</td></tr>
-          <tr><td><code>object_head</code></td><td>The table family being checked.</td></tr>
-          <tr><td><code>minor</code></td><td>The rollup level: object-head rows are compared with a printed minor-head total.</td></tr>
-          <tr><td><code>03_2043_00_101</code></td><td>Demand 03, Major Head 2043, Sub-Major 00, Minor Head 101.</td></tr>
-        </tbody>
-      </table>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th scope="col">Part</th><th scope="col">Meaning</th></tr></thead>
+          <tbody>
+            <tr><td><code>KA</code></td><td>Karnataka.</td></tr>
+            <tr><td><code>2021-22</code></td><td>Source budget year.</td></tr>
+            <tr><td><code>expvol_1</code></td><td>Expenditure volume 1.</td></tr>
+            <tr><td><code>in_schema</code></td><td>The check stays inside one source table family.</td></tr>
+            <tr><td><code>object_head</code></td><td>The table family being checked.</td></tr>
+            <tr><td><code>minor</code></td><td>The rollup level: object-head rows are compared with a printed minor-head total.</td></tr>
+            <tr><td><code>03_2043_00_101</code></td><td>Demand 03, Major Head 2043, Sub-Major 00, Minor Head 101.</td></tr>
+          </tbody>
+        </table>
+      </div>
       <p>In <code>checks_2021-22.csv</code>, this key has four financial-column comparisons. Two pass exactly; two differ by INR lakh 1 and fail the <code>0.01</code> threshold. A <code>0.01</code> difference is one-hundredth of the package amount unit; if <code>INR_lakh</code> is correct, that is Rs 1,000.</p>
     </section>
 
-    <section>
+    <section id="files">
       <h2>Files to use</h2>
-      <table>
-        <thead><tr><th>File</th><th>Use</th></tr></thead>
-        <tbody>
-          <tr><td><code>years/&lt;year&gt;/csv/budget_&lt;year&gt;.csv</code></td><td>Extracted source rows with hierarchy, row type, row level, amount columns, and PDF provenance.</td></tr>
-          <tr><td><code>years/&lt;year&gt;/csv/checks_&lt;year&gt;.csv</code></td><td>Validation comparisons by check, account key, and financial column.</td></tr>
-          <tr><td><code>validation_summary.csv</code> / <code>validation_summary.html</code></td><td>Cross-year validation pass rates by year, demand, and hierarchy level.</td></tr>
-          <tr><td><code>data_dictionary.csv</code></td><td>Column definitions and controlled values.</td></tr>
-          <tr><td><code>README.md</code> (Caveats section)</td><td>Risks, affected areas, and user actions.</td></tr>
-        </tbody>
-      </table>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th scope="col">File</th><th scope="col">Use</th></tr></thead>
+          <tbody>
+            <tr><td><code>years/&lt;year&gt;/csv/budget_&lt;year&gt;.csv</code></td><td>Extracted source rows with hierarchy, row type, row level, amount columns, and PDF provenance.</td></tr>
+            <tr><td><code>years/&lt;year&gt;/csv/checks_&lt;year&gt;.csv</code></td><td>Validation comparisons by check, account key, and financial column.</td></tr>
+            <tr><td><code>validation_summary.csv</code> / <code>.html</code></td><td>Cross-year validation pass rates by year, demand, and hierarchy level.</td></tr>
+            <tr><td><code>data_dictionary.csv</code></td><td>Column definitions and controlled values for every table (the full reference below is drawn from it).</td></tr>
+            <tr><td><code>examples/</code></td><td>Worked analyses in Python, R, and SQL on the pre-filtered tidy table. Start with the warm-up &mdash; see the <a href="../README.md">examples index</a>.</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
+
+    <section id="dictionary">
+      <h2>Full column reference <a class="toplink" href="#intro">&uarr; top</a></h2>
+      <p>The complete <code>budget</code> table columns, grouped. Controlled values are shown as <code>code</code> chips. The machine-readable source, including the <code>checks</code> and <code>validation_summary</code> tables, is <code>karnataka-state-finance/data_dictionary.csv</code>.</p>
+
+      <details class="dict" open>
+        <summary>Identity &amp; provenance <small>&mdash; where the row came from</small></summary>
+        <div class="tablewrap"><table>
+          <thead><tr><th scope="col">Column</th><th scope="col">Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>document_year</code></td><td>Source publication year (e.g. <code>2024-25</code>). First column in every <code>budget_&lt;year&gt;.csv</code>.</td></tr>
+            <tr><td><code>state_code</code></td><td>Two-letter state code (always <code>KA</code> here).</td></tr>
+            <tr><td><code>volume_number</code></td><td>Source EXPVOL volume number.</td></tr>
+            <tr><td><code>page_number</code></td><td>Body arabic page number within the source PDF.</td></tr>
+            <tr><td><code>row_number</code></td><td>One-based row number within the extracted summary CSV.</td></tr>
+            <tr><td><code>source_file</code></td><td>Package-relative source PDF path.</td></tr>
+          </tbody>
+        </table></div>
+      </details>
+
+      <details class="dict" open>
+        <summary>Row role &amp; hierarchy <small>&mdash; what kind of row, and where it sits</small></summary>
+        <div class="tablewrap"><table>
+          <thead><tr><th scope="col">Column</th><th scope="col">Description</th><th scope="col">Values</th></tr></thead>
+          <tbody>
+            <tr><td><code>type_of_table</code></td><td>Source table family.</td><td><code>object_head</code> <code>minor_head</code> <code>sub_major_head</code></td></tr>
+            <tr><td><code>row_type</code></td><td>Printed row role.</td><td><code>Data</code> <code>Header</code> <code>Total</code></td></tr>
+            <tr><td><code>row_level</code></td><td>Printed hierarchy level.</td><td><code>Major-Head</code> &hellip; <code>Object-Head</code></td></tr>
+            <tr><td><code>row_header</code></td><td>Clean line-item label as printed.</td><td></td></tr>
+            <tr><td><code>demand_number</code></td><td>Grant / demand number.</td><td></td></tr>
+            <tr><td><code>*_head_code</code> / <code>*_head_name</code></td><td>The six-tier account hierarchy (major, sub-major, minor, sub, detailed, object). See <a href="#ladder">the accounting ladder</a>.</td><td></td></tr>
+            <tr><td><code>full_account_code</code></td><td>Full hierarchical code down to the detailed head.</td><td></td></tr>
+            <tr><td><code>vote_charge_marker</code></td><td>Voted / Charged marker as printed.</td><td></td></tr>
+          </tbody>
+        </table></div>
+      </details>
+
+      <details class="dict">
+        <summary>Amounts &amp; measures <small>&mdash; the numbers, one set per fiscal year</small></summary>
+        <div class="tablewrap"><table>
+          <thead><tr><th scope="col">Column</th><th scope="col">Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>accounts_&lt;year&gt;_amount</code></td><td>Prior actuals (document year &minus; 2), in <code>amount_unit</code>.</td></tr>
+            <tr><td><code>budget_estimate_&lt;year&gt;_amount</code></td><td>Budget estimate. Each CSV has two: restated prior-year BE (year &minus; 1) and current-year BE (the document year).</td></tr>
+            <tr><td><code>revised_estimate_&lt;year&gt;_amount</code></td><td>Revised estimate (document year &minus; 1).</td></tr>
+            <tr><td><code>amount_unit</code></td><td>Unit of all amounts. Value: <code>INR_lakh</code> (still source-unverified per volume).</td></tr>
+          </tbody>
+        </table></div>
+      </details>
+
+      <details class="dict">
+        <summary>Validation <small>&mdash; how trustworthy the row is</small></summary>
+        <div class="tablewrap"><table>
+          <thead><tr><th scope="col">Column</th><th scope="col">Description</th><th scope="col">Values</th></tr></thead>
+          <tbody>
+            <tr><td><code>has_check</code></td><td>Whether validation checks are attached to this row.</td><td><code>yes</code> <code>no</code></td></tr>
+            <tr><td><code>reference_check_id</code></td><td>Lookup key into <code>checks_&lt;year&gt;.csv</code>; populated on total and summary rows.</td><td></td></tr>
+            <tr><td><code>pass</code> / <code>pass_pct</code></td><td>Number and percentage of attached checks that passed.</td><td></td></tr>
+            <tr><td><code>diff</code> / <code>diff_pct</code></td><td>Total absolute gap across this row&rsquo;s checks, and as a percent of summed targets.</td><td></td></tr>
+          </tbody>
+        </table></div>
+      </details>
+    </section>
+
   </main>
+  <footer>
+    <div class="inner">
+      <p style="color:var(--paper);max-width:760px">Built from the Karnataka Detailed Estimates of Expenditure (FY 2014-15 to 2024-25), package <code style="background:#2a323c;color:#eef6f3">v0.2.0-draft</code>.</p>
+      <p style="color:var(--paper)"><a href="results.html">Results slideshow</a> &nbsp;&middot;&nbsp; <a href="../README.md">Examples index &amp; getting started</a> &nbsp;&middot;&nbsp; <a href="../../karnataka-state-finance/README.md">Data package README</a> &nbsp;&middot;&nbsp; <a href="#intro">Back to top</a></p>
+    </div>
+  </footer>
 </body>
 </html>
