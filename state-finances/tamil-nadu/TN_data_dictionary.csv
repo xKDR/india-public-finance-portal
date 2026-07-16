@@ -21,8 +21,8 @@ budget,sub_head_code,string,"2-letter sub-head (scheme) code, e.g. 'AA'.",
 budget,sub_head_name,string,Sub-head (scheme) name as printed.,
 budget,detailed_head_code,string,"Detailed head code as printed WITH its group prefix (3 digits in the IFHRMS era, e.g. '301').",
 budget,detailed_head_name,string,Detailed head name.,
-budget,sub_detailed_head_code,string,TN-specific additive leaf level (fills KA's object_head slot): 2-digit sub-detailed head code.,
-budget,sub_detailed_head_name,string,Sub-detailed head name.,
+budget,sub_detailed_head_code,string,"The additive leaf: 2-digit sub-detailed head code. This is the same level of the account hierarchy that Karnataka's documents call an OBJECT HEAD (KA column: object_head_code). Same thing, different word.",
+budget,sub_detailed_head_name,string,Sub-detailed head name (Karnataka's equivalent column is object_head_description).,
 budget,full_account_code,string,"Full D P Code exactly as printed, space-separated (e.g. '2011 02 101 AA 30101').",
 budget,vote_charge_marker,string,"Charged/Voted marker, kept verbatim (the extraction never invents values, so rare stray labels appear as printed).",Charged|Voted|Combined|
 budget,accounts_<Y-2>_amount_inThous,number,"Position-1 amount: Accounts (actuals) of document year minus 2, in INR thousand. Column name carries the fiscal year and the _inThous unit suffix (TN is INR_thousand; KA is INR_lakh).",
@@ -39,7 +39,7 @@ budget,diff,number,"Sum of abs_diff across attached comparisons, INR thousand.",
 budget,diff_pct,number,diff as a percentage of the summed |target amounts| (blank when the target sum is 0).,
 checks,document_year,string,Budget document year.,
 checks,reference_check_id,string,Anchor id shared with budget_<year>.csv: TN.<year>.dn_<demand>.in_schema.detailed_expenditure.<level>.<compared_key>.,
-checks,check_id,string,"Which roll-up identity is being tested (see the check glossary in README.md; TN uses V-series ids — same shape as KA's W-series, different arithmetic identities).",V01|V02|V03|V04|V05|V06|V07
+checks,check_id,string,"Which roll-up identity is being tested (see the check glossary in TN_README.md). Ids are the portal's shared W-series (W = within-schema), numbered once across all states so an id never means two different things. W06 is the same check Karnataka publishes as W06 — sum the object-level leaves under a detailed head, compare with the printed Detailed-Head (HOA) Total. Karnataka calls that leaf an object head; Tamil Nadu calls it a sub-detailed head: the same hierarchy level. W08-W13 are TN-only rungs (Sub-Head and Group/plan-band subtotals that Karnataka's documents do not print).",W06|W08|W09|W10|W11|W12|W13
 checks,check_type,string,Descriptive slug of the check.,
 checks,validation_scope,string,"TN has one uniform table, so every check is in_schema.",in_schema
 checks,source_table_family,string,Table family of the summed (child) side.,detailed_expenditure

@@ -137,7 +137,12 @@ PACKAGES = {
             "W = within-schema (single table); A = across-schema (two table "
             "types). Checks W03–W05 and A01–A03 apply only to years that "
             "included <code>minor_head</code> and <code>sub_major_head</code> "
-            "table types (2018-19–2022-23)."),
+            "table types (2018-19–2022-23). <b>W06 is shared with the Tamil Nadu "
+            "package</b> — the identical identity is tested there, on the same "
+            "level of the account hierarchy: what Karnataka's documents call an "
+            "<b>object head</b>, Tamil Nadu's call a <b>sub-detailed head</b>. "
+            "W08–W13 exist only in the TN package (Sub-Head and Group/plan-band "
+            "rungs that Karnataka's documents do not print)."),
         "anomalies": (
             "<p><b>Animal Husbandry &amp; Fisheries (Demand 02), 2024-25 — "
             "Actuals/BE ratio ≈ 14×:</b> In 2024-25, Actuals (col 1) for Demand "
@@ -164,19 +169,28 @@ PACKAGES = {
             "one pipeline; 2021-22 is the interim (Revised Budget Estimate) "
             "publication and covers demands 01–37 only."),
         "glossary": [
-            ("V01", "in_schema", "Σ Sub-Detailed leaves → Detailed-Head Total"),
-            ("V02", "in_schema", "Σ Detailed-Head Totals → Sub-Head Total"),
-            ("V03", "in_schema", "Σ Sub-Head Totals → Group (plan-band) Total"),
-            ("V04", "in_schema", "Σ Group Totals → Minor-Head Total"),
-            ("V05", "in_schema", "Σ Minor-Head Totals → Sub-Major Total"),
-            ("V06", "in_schema", "Σ Sub-Major Totals → Major-Head Total"),
-            ("V07", "in_schema", "Σ Sub-Head Totals → Minor-Head Total (group-independent bridge)"),
+            ("W06", "in_schema", "Σ Sub-Detailed-Head leaves → Detailed-Head (HOA) Total "
+                                 "— the same check Karnataka publishes as W06"),
+            ("W08", "in_schema", "Σ Detailed-Head Totals → Sub-Head Total"),
+            ("W09", "in_schema", "Σ Sub-Head Totals → Group (plan-band) Total"),
+            ("W10", "in_schema", "Σ Group Totals → Minor-Head Total"),
+            ("W11", "in_schema", "Σ Minor-Head Totals → Sub-Major Total"),
+            ("W12", "in_schema", "Σ Sub-Major Totals → Major-Head Total"),
+            ("W13", "in_schema", "Σ Sub-Head Totals → Minor-Head Total (group-independent bridge)"),
         ],
         "glossary_note": (
-            "TN publishes one uniform detailed table, so every check is "
-            "within-schema (V-series). The V ids are deliberately distinct from "
-            "Karnataka's W-series: the identities tested differ because the two "
-            "states print different hierarchy levels."),
+            "W = within-schema, numbered once across the whole portal so an id "
+            "never means two different things. <b>W06 is shared with Karnataka</b>: "
+            "both states test the identical identity — sum the object-level leaves "
+            "under a detailed head, compare with the printed Detailed-Head / HOA "
+            "Total. <b>Karnataka's documents call that leaf an “object head”; "
+            "Tamil Nadu's call it a “sub-detailed head” — the same level of the "
+            "account hierarchy under a different name.</b> W08–W13 are rungs only "
+            "Tamil Nadu can check, because Karnataka's documents print no Sub-Head "
+            "or Group (plan-band) subtotals. Conversely Karnataka's W01/W02/W07 fan "
+            "out from the leaves straight to the Minor / Sub-Major / Major totals; "
+            "Tamil Nadu prints those per plan-band and over a recoveries ladder, so "
+            "that fan-out is not a meaningful identity here and is not computed."),
         "anomalies": None,
     },
 }

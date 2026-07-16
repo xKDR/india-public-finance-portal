@@ -19,8 +19,8 @@ budget,sub_head_code,string,Sub-head code.,
 budget,sub_head_name,string,Sub-head name.,
 budget,detailed_head_code,string,Detailed head code.,
 budget,detailed_head_name,string,Detailed head name.,
-budget,object_head_code,string,Object-head classification code. It is not a summability flag; use it with full_account_code after applying the additive-leaf predicate.,
-budget,object_head_description,string,Object-head description.,
+budget,object_head_code,string,"Object-head classification code - the additive leaf level. Tamil Nadu's documents call this same hierarchy level a SUB-DETAILED HEAD (TN column: sub_detailed_head_code). It is not a summability flag; use it with full_account_code after applying the additive-leaf predicate.",
+budget,object_head_description,string,"Object-head description (Tamil Nadu's equivalent column is sub_detailed_head_name).",
 budget,full_account_code,string,Full hierarchical account code down to the detailed head.,
 budget,vote_charge_marker,string,Voted/Charged marker as printed in the source.,
 budget,accounts_<year>_amount,string,"Prior-actuals amount (document year − 2), in amount_unit. Column header encodes the correct fiscal year (e.g. accounts_2022_23_amount in the 2024-25 document). All labels corrected in v0.2.0-draft; years through 2022-23 were previously mislabelled.",
@@ -36,7 +36,7 @@ budget,diff,string,Total absolute gap = sum of abs_diff across this row's attach
 budget,diff_pct,string,Total absolute gap as a percent of the summed absolute target amounts; blank where the target sum is zero.,
 checks,document_year,string,"Budget document year (the source folder year, e.g. 2024-25). Present as the first column in every checks_<year>.csv.",
 checks,reference_check_id,string,Lookup key into checks_<year>.csv; populated on total rows (within-schema) and summary rows (across-schema).,
-checks,check_id,string,"Validation check identifier, e.g. W01 or A01.",
+checks,check_id,string,"Validation check identifier (W = within-schema, A = across-schema), numbered once across the whole portal so an id never means two different things. W06 is shared with the Tamil Nadu package - the identical identity is tested there. W08-W13 exist only in the TN package.",W01;W02;W03;W04;W05;W06;W07;A01;A02;A03
 checks,check_type,string,Validation check family.,
 checks,validation_scope,string,Validation scope: in_schema or across_schema.,in_schema;across_schema
 checks,source_table_family,string,"Source side table family for a validation check, or source row table family in budget.",object_head;minor_head;sub_major_head

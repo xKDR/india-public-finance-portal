@@ -157,25 +157,72 @@ Three layers, same shapes, same semantics:
    financial column, with a column legend. Rebuild with
    `python3 tools/build_validation_summary.py --package tamil-nadu`.
 
-### Check glossary (V-series)
+### Check glossary (W-series)
 
 TN prints one uniform detailed table, so every check is `in_schema` within
-`detailed_expenditure` — a vertical roll-up chain:
+`detailed_expenditure` — a vertical roll-up chain. Check ids are the portal's
+shared **W**-series (W = within-schema), numbered once across all states so an
+id never means two different things:
 
-| ID | check_type | Verifies |
-|----|------------|----------|
-| V01 | `sub_detailed_data_to_detailed_head_total` | Σ Sub-Detailed leaves = Detailed-Head Total |
-| V02 | `detailed_head_total_to_sub_head_total` | Σ Detailed-Head Totals = Sub-Head Total |
-| V03 | `sub_head_total_to_group_total` | Σ Sub-Head Totals = Group (plan-band) Total |
-| V04 | `group_total_to_minor_head_total` | Σ Group Totals = Minor-Head Total |
-| V05 | `minor_head_total_to_sub_major_total` | Σ Minor-Head Totals = Sub-Major Total |
-| V06 | `sub_major_total_to_major_head_total` | Σ Sub-Major Totals = Major-Head Total |
-| V07 | `sub_head_total_to_minor_head_total_group_independent` | Σ Sub-Head Totals = Minor-Head Total (bridges past the group level) |
+| ID | check_type | Verifies | Also in KA? |
+|----|------------|----------|-------------|
+| W06 | `object_data_to_detailed_head_total_hoa_total_within_object_head` | Σ Sub-Detailed-Head leaves = Detailed-Head (HOA) Total | **Yes — identical check** |
+| W08 | `detailed_head_total_to_sub_head_total` | Σ Detailed-Head Totals = Sub-Head Total | No |
+| W09 | `sub_head_total_to_group_total` | Σ Sub-Head Totals = Group (plan-band) Total | No |
+| W10 | `group_total_to_minor_head_total` | Σ Group Totals = Minor-Head Total | No |
+| W11 | `minor_head_total_to_sub_major_total` | Σ Minor-Head Totals = Sub-Major Total | No |
+| W12 | `sub_major_total_to_major_head_total` | Σ Sub-Major Totals = Major-Head Total | No |
+| W13 | `sub_head_total_to_minor_head_total_group_independent` | Σ Sub-Head Totals = Minor-Head Total (bridges past the group level) | No |
 
-The V ids are deliberately **not** named W01… like Karnataka's: the identities
-tested differ (different printed hierarchy levels), and reusing the ids would
-suggest a false equivalence. The reporting model — columns, pass semantics,
-reference ids — is identical.
+**W06 is the same check in both states**, on the same level of the account
+hierarchy — see the terminology note below. It is the primary check in each
+package: the one that tests the extracted leaf figures directly against a
+printed total.
+
+**Why TN has W08–W13 and not KA's W01–W05/W07.** The two documents print
+different things, so the two packages can check different identities:
+
+* Karnataka's expenditure volumes print Minor, Sub-Major and Major totals inside
+  the object-head table, so KA can **fan out** — summing the *same* leaves
+  straight into each ancestor total (W01, W02, W07), plus separate
+  `minor_head` / `sub_major_head` table checks (W03–W05) that TN's single-table
+  documents have no equivalent of.
+* Tamil Nadu prints a full **ladder** of subtotals inline — detailed head, sub
+  head, plan-band group, minor, sub-major, major — each split by plan-band and
+  by Charged/Voted, over a `Deduct – Recoveries` ladder. So TN checks each rung
+  against the next (W08–W13). KA's fan-out is *not* a meaningful identity on TN
+  data (a naive leaf→Major-Head sum reconciles for only ~65% of keys, because
+  the printed Major total is not a plain sum of the leaves beneath it), so it is
+  deliberately not computed rather than published as spurious failures.
+
+If you are tracing a finding back to the extraction pipeline in
+`PRJ-India-s-state-budgets-with-LLMs`, its validators emit an older `V`-series:
+V01→W06, V02→W08, V03→W09, V04→W10, V05→W11, V06→W12, V07→W13.
+
+### Terminology: sub-detailed head ≡ object head
+
+**What Tamil Nadu's budget documents call a _sub-detailed head_, Karnataka's
+call an _object head_.** It is the same level of the account hierarchy — the
+bottom, the individual line item that money is actually spent on (Pay, Travel
+Expenses, Medical Charges …), and in both packages it is the **additive leaf**:
+the only row type safe to sum.
+
+| Concept | Karnataka's word | Tamil Nadu's word |
+|---|---|---|
+| The additive leaf (bottom of the hierarchy) | Object head | Sub-detailed head |
+| Column in `budget_<year>.csv` | `object_head_code` / `object_head_description` | `sub_detailed_head_code` / `sub_detailed_head_name` |
+| `row_level` value | `Object-Head` | `Sub-Detailed-Head` |
+| `type_of_table` value | `object_head` | `detailed_expenditure` |
+
+This is why **W06 carries the same id and the same `check_type`
+(`object_data_to_detailed_head_total_...`) in both packages** — the `check_type`
+keeps Karnataka's wording so the string matches across states, even though TN's
+own column is named `sub_detailed_head_code`. If you are comparing the two
+states, treat `object_head` (KA) and `sub_detailed_head` (TN) as the same thing.
+
+Note the two levels **above** the leaf differ in name too: TN's `detailed_head`
+is printed *with* its group prefix (e.g. `301 Salaries`), whereas KA's
+`detailed_head` is a bare 2-digit code.
 
 `reference_check_id` format:
 `TN.<year>.dn_<demand>.in_schema.detailed_expenditure.<level>.<compared_key>`

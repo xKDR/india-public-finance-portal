@@ -236,9 +236,35 @@ Years through 2022-23 have lower pass rates; treat those volumes with extra caut
 2023-24 onward: 99%+.
 
 Machine-readable detail: `KA_validation_summary.csv` (columns: document_year, fiscal_year, level,
-demand_number, major_head_code, …, n_checks, n_passed, pass_pct). Browser-viewable summary:
-`KA_validation_summary.html`. The `KA_checks_<year>.csv` and `KA_checks_<year>.ndjson` files contain the
+demand_number, major_head_code, …, n_checks, n_passed, pass_pct, mu_accuracy_pct,
+sigma_accuracy_pct). Browser-viewable summary: `KA_validation_summary.html`, which carries a legend
+explaining every column. The `KA_checks_<year>.csv` and `KA_checks_<year>.ndjson` files contain the
 full row-level comparison data for drill-down.
+
+### Check ids across states
+
+Check ids are numbered once across the whole portal (W = within-schema,
+A = across-schema), so an id never means two different things in two packages.
+
+**`W06` is shared with the Tamil Nadu package** — both states test the identical
+identity: sum the object-level leaves under a detailed head and compare with the
+printed Detailed-Head (HOA) Total. It is the primary check in each package.
+
+> **Terminology.** What Karnataka's documents call an **object head**, Tamil
+> Nadu's documents call a **sub-detailed head**. It is the same level of the
+> account hierarchy — the bottom, the individual line item money is spent on,
+> and the additive leaf in both packages. KA columns: `object_head_code` /
+> `object_head_description`, `row_level = Object-Head`. TN columns:
+> `sub_detailed_head_code` / `sub_detailed_head_name`,
+> `row_level = Sub-Detailed-Head`. Treat the two as the same thing when
+> comparing states.
+
+`W01`–`W05` and `W07` are Karnataka-only: they depend on Minor / Sub-Major /
+Major totals printed inside the object-head table, and on the separate
+`minor_head` / `sub_major_head` tables, which Tamil Nadu's single-table
+documents do not have. `W08`–`W13` are Tamil-Nadu-only rungs (Sub-Head and
+Group/plan-band subtotals that Karnataka's documents do not print). See
+`state-finances/tamil-nadu/TN_README.md` for that side.
 
 ---
 

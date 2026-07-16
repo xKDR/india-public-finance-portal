@@ -120,15 +120,15 @@ if you looked up the number in the printed budget."</p>
 </ol>
 <h2>Check-Code Glossary</h2>
 <table><tr><th>Code</th><th>Scope</th><th>Meaning</th></tr>
-<tr><td><b>V01</b></td><td>in_schema</td><td>Σ Sub-Detailed leaves → Detailed-Head Total</td></tr>
-<tr><td><b>V02</b></td><td>in_schema</td><td>Σ Detailed-Head Totals → Sub-Head Total</td></tr>
-<tr><td><b>V03</b></td><td>in_schema</td><td>Σ Sub-Head Totals → Group (plan-band) Total</td></tr>
-<tr><td><b>V04</b></td><td>in_schema</td><td>Σ Group Totals → Minor-Head Total</td></tr>
-<tr><td><b>V05</b></td><td>in_schema</td><td>Σ Minor-Head Totals → Sub-Major Total</td></tr>
-<tr><td><b>V06</b></td><td>in_schema</td><td>Σ Sub-Major Totals → Major-Head Total</td></tr>
-<tr><td><b>V07</b></td><td>in_schema</td><td>Σ Sub-Head Totals → Minor-Head Total (group-independent bridge)</td></tr>
+<tr><td><b>W06</b></td><td>in_schema</td><td>Σ Sub-Detailed-Head leaves → Detailed-Head (HOA) Total — the same check Karnataka publishes as W06</td></tr>
+<tr><td><b>W08</b></td><td>in_schema</td><td>Σ Detailed-Head Totals → Sub-Head Total</td></tr>
+<tr><td><b>W09</b></td><td>in_schema</td><td>Σ Sub-Head Totals → Group (plan-band) Total</td></tr>
+<tr><td><b>W10</b></td><td>in_schema</td><td>Σ Group Totals → Minor-Head Total</td></tr>
+<tr><td><b>W11</b></td><td>in_schema</td><td>Σ Minor-Head Totals → Sub-Major Total</td></tr>
+<tr><td><b>W12</b></td><td>in_schema</td><td>Σ Sub-Major Totals → Major-Head Total</td></tr>
+<tr><td><b>W13</b></td><td>in_schema</td><td>Σ Sub-Head Totals → Minor-Head Total (group-independent bridge)</td></tr>
 </table>
-<p><small>TN publishes one uniform detailed table, so every check is within-schema (V-series). The V ids are deliberately distinct from Karnataka's W-series: the identities tested differ because the two states print different hierarchy levels.</small></p>
+<p><small>W = within-schema, numbered once across the whole portal so an id never means two different things. <b>W06 is shared with Karnataka</b>: both states test the identical identity — sum the object-level leaves under a detailed head, compare with the printed Detailed-Head / HOA Total. <b>Karnataka's documents call that leaf an “object head”; Tamil Nadu's call it a “sub-detailed head” — the same level of the account hierarchy under a different name.</b> W08–W13 are rungs only Tamil Nadu can check, because Karnataka's documents print no Sub-Head or Group (plan-band) subtotals. Conversely Karnataka's W01/W02/W07 fan out from the leaves straight to the Minor / Sub-Major / Major totals; Tamil Nadu prints those per plan-band and over a recoveries ladder, so that fan-out is not a meaningful identity here and is not computed.</small></p>
 <h2>Drill-Down by Year</h2>
 <p>Tree depth: Demand ▸ Major Head.
 Each node shows pass%, μ/σ accuracy and check counts per financial-column position (1–4)
