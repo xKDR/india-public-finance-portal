@@ -83,7 +83,7 @@ sum amounts directly without this predicate.
 
 A small number of rows contain implausibly large values caused by OCR extraction errors. Known
 cases include a row in 2022-23 EXPVOL1 page 153 with Actuals ≈ 1.5 × 10²³ crore, and three
-rows in 2016-17 with similarly extreme values (see `karnataka-state-finance/README.md` for the
+rows in 2016-17 with similarly extreme values (see `state-finances/karnataka/KA_README.md` for the
 full list).
 
 Filter rule: drop any leaf where `abs(amount) > 5,000,000` in INR lakh (> ₹50,000 crore per
@@ -139,7 +139,7 @@ columns. For example, a newly-introduced programme may only have a current BE an
 
 Do not assume every document carries a full four-element amounts array. Iterate over
 `doc["amounts"]` and filter by `measure` and `fiscal_year` as shown in the quick-start snippets
-in `karnataka-state-finance/README.md`.
+in `state-finances/karnataka/KA_README.md`.
 
 ---
 
@@ -164,7 +164,7 @@ def parse_amount(s):
         return None
 
 total = 0.0
-with open("karnataka-state-finance/years/2024-25/csv/budget_2024-25.csv") as f:
+with open("state-finances/karnataka/KA_years/KA_2024-25/KA_csv/KA_budget_2024-25.csv") as f:
     for row in csv.DictReader(f):
         if is_additive_leaf(row):
             amt = parse_amount(row["budget_estimate_2024_25_amount"])

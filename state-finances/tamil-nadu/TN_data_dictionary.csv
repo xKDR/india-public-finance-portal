@@ -1,0 +1,90 @@
+table_name,column_name,type,description,controlled_values
+budget,document_year,string,"Budget document year (the source folder year, e.g. 2024-25). Identifies which year's budget publication this row comes from.",
+budget,state_code,string,Two-letter state code (always TN in this package).,TN
+budget,page_number,string,Printed page number within the per-demand source PDF (as extracted from the page).,
+budget,row_number,integer,1-based position of the row in the year's combined extraction CSV — the stable row address used in NDJSON _ids.,
+budget,type_of_table,string,"Source table family. TN detailed pages are one uniform table, so this is constant (contrast KA's object_head/minor_head/sub_major_head).",detailed_expenditure
+budget,row_type,string,Printed row role. TN emits no Header rows (page headers carry no data); non-leaf Data rows are hierarchy name-carriers.,Data|Total
+budget,row_level,string,Hierarchy level of the row. The -Net/-Gross/-Grand major-head levels are the recoveries ladder (Deduct-Recoveries reconciliation rows); they are not check targets.,Major-Head|Sub-Major-Head|Minor-Head|Group-Sub-Head|Sub-Head|Detailed-Head|Sub-Detailed-Head|Major-Head-Net|Major-Head-Gross|Major-Head-Grand
+budget,row_header,string,Printed English description of the row.,
+budget,demand_number,string,"Demand (grant) number, zero-padded to 2 digits. TN-specific: the demand PDF is the publication unit.",
+budget,demand_name,string,Printed demand name for this document year (canonical map in demand_names.json; printed names vary across years).,
+budget,hod_code,string,TN-specific: Head of Department code as printed (e.g. '005 03'). A demand spans multiple HODs.,
+budget,major_head_code,string,4-digit major head code.,
+budget,major_head_name,string,Major head name as printed.,
+budget,sub_major_head_code,string,2-digit sub-major head code ('00' when none).,
+budget,sub_major_head_name,string,Sub-major head name as printed.,
+budget,minor_head_code,string,3-digit minor head code.,
+budget,minor_head_name,string,Minor head name as printed.,
+budget,group_sub_head,string,"TN-specific: printed plan-band / funding-source label (e.g. ""State's Expenditure"", 'I.Non-Plan'). A label carried forward across a page break is kept verbatim here; the checks re-attribute bands positionally.",
+budget,sub_head_code,string,"2-letter sub-head (scheme) code, e.g. 'AA'.",
+budget,sub_head_name,string,Sub-head (scheme) name as printed.,
+budget,detailed_head_code,string,"Detailed head code as printed WITH its group prefix (3 digits in the IFHRMS era, e.g. '301').",
+budget,detailed_head_name,string,Detailed head name.,
+budget,sub_detailed_head_code,string,TN-specific additive leaf level (fills KA's object_head slot): 2-digit sub-detailed head code.,
+budget,sub_detailed_head_name,string,Sub-detailed head name.,
+budget,full_account_code,string,"Full D P Code exactly as printed, space-separated (e.g. '2011 02 101 AA 30101').",
+budget,vote_charge_marker,string,"Charged/Voted marker, kept verbatim (the extraction never invents values, so rare stray labels appear as printed).",Charged|Voted|Combined|
+budget,accounts_<Y-2>_amount_inThous,number,"Position-1 amount: Accounts (actuals) of document year minus 2, in INR thousand. Column name carries the fiscal year and the _inThous unit suffix (TN is INR_thousand; KA is INR_lakh).",
+budget,budget_estimate_<Y-1>_amount_inThous,number,"Position-2 amount: Budget Estimate of document year minus 1, INR thousand.",
+budget,revised_estimate_<Y-1>_amount_inThous,number,"Position-3 amount: Revised Estimate of document year minus 1, INR thousand.",
+budget,budget_estimate_<Y>_amount_inThous,number,"Position-4 amount: Budget Estimate of the document year, INR thousand.",
+budget,amount_unit,string,"Unit of the four amount columns. Divide by 100,000 for INR crore; by 100 for INR lakh.",INR_thousand
+budget,source_file,string,Package-relative path of the per-demand source PDF.,
+budget,has_check,string,Whether a validation check anchors on this row.,yes|no
+budget,reference_check_id,string,Links this printed Total row to its comparisons in checks_<year>.csv. A Charged/Voted split total shares one reference_check_id: the check compares the summed pair.,
+budget,pass,integer,Number of attached comparisons that passed.,
+budget,pass_pct,number,Percentage of attached comparisons that passed.,
+budget,diff,number,"Sum of abs_diff across attached comparisons, INR thousand.",
+budget,diff_pct,number,diff as a percentage of the summed |target amounts| (blank when the target sum is 0).,
+checks,document_year,string,Budget document year.,
+checks,reference_check_id,string,Anchor id shared with budget_<year>.csv: TN.<year>.dn_<demand>.in_schema.detailed_expenditure.<level>.<compared_key>.,
+checks,check_id,string,"Which roll-up identity is being tested (see the check glossary in README.md; TN uses V-series ids — same shape as KA's W-series, different arithmetic identities).",V01|V02|V03|V04|V05|V06|V07
+checks,check_type,string,Descriptive slug of the check.,
+checks,validation_scope,string,"TN has one uniform table, so every check is in_schema.",in_schema
+checks,source_table_family,string,Table family of the summed (child) side.,detailed_expenditure
+checks,source_row_level,string,Row level of the summed (child) side.,
+checks,source_row_type,string,Row type of the summed (child) side.,Data|Total
+checks,target_table_family,string,Table family of the printed-total side.,detailed_expenditure
+checks,target_row_level,string,Row level of the printed-total side.,
+checks,target_row_type,string,Row type of the printed-total side.,Total
+checks,compared_key,string,"Underscore-joined normalized key of the comparison (internal spaces become '-', e.g. HOD '001 01' -> '001-01').",
+checks,demand_number,string,Demand number of the compared key.,
+checks,hod_code,string,TN-specific: HOD code of the compared key.,
+checks,major_head_code,string,Major head of the compared key (blank when the check keys above this level).,
+checks,sub_major_head_code,string,Sub-major head of the compared key.,
+checks,minor_head_code,string,Minor head of the compared key.,
+checks,group_sub_head,string,TN-specific: normalized plan-band label of the compared key (V03 only).,
+checks,sub_head_code,string,Sub-head of the compared key.,
+checks,detailed_head_code,string,Detailed head of the compared key.,
+checks,financial_column_position,integer,Which of the four positional amount columns is compared.,1|2|3|4
+checks,financial_column_label,string,"Human label of that column, e.g. 'Accounts 2022-23', 'BE 2023-24'.",
+checks,source_amount,number,"Summed child amount, INR thousand.",
+checks,target_amount,number,"Printed total amount, INR thousand.",
+checks,diff,number,"source_amount - target_amount (signed), INR thousand.",
+checks,abs_diff,number,"Absolute difference, INR thousand.",
+checks,accuracy_pct,number,"100 - |diff|/|target|*100, floored at 0 (100 when target is 0 and source is too).",
+checks,passed,integer,1 iff abs_diff < threshold.,0|1
+checks,failed,integer,1 - passed.,0|1
+checks,metric_name,string,Always abs_diff.,abs_diff
+checks,metric_value,number,The abs_diff value.,
+checks,threshold,number,"Pass threshold in INR thousand (0.5): amounts are integers, so a pass means the figures match exactly. (KA's threshold is 0.01 INR lakh = 1 INR thousand.)",0.5
+checks,na_reason,string,Reason a metric is not applicable (blank here).,
+checks,source_file,string,Combined extraction CSV the comparison was computed from (analogous to KA's final-summary CSV family names; not a PDF).,
+checks,target_file,string,Same as source_file (single-table model).,
+validation_summary,document_year,string,Budget document year the aggregated checks belong to.,
+validation_summary,fiscal_year,string,Fiscal year of the aggregated financial column (blank on ALL-position rollups).,
+validation_summary,level,string,Aggregation level of the row: Year is the whole document year; Demand...Detailed drill into the account hierarchy; ALL-position rows aggregate the four financial columns together.,Year|Demand|MajorHead|SubMajor|Minor|SubHead|Detailed
+validation_summary,demand_number,string,Demand number (populated at Demand level and below).,
+validation_summary,major_head_code,string,Major head code (populated at MajorHead level and below).,
+validation_summary,sub_major_head_code,string,Sub-major head code.,
+validation_summary,minor_head_code,string,Minor head code.,
+validation_summary,sub_head_code,string,Sub-head code.,
+validation_summary,detailed_head_code,string,Detailed head code.,
+validation_summary,financial_column_position,string,Which positional amount column the row aggregates (ALL = the four together).,1|2|3|4|ALL
+validation_summary,financial_column_label,string,Human label of that column.,
+validation_summary,n_checks,integer,Number of comparisons aggregated into this row.,
+validation_summary,n_passed,integer,How many of them passed.,
+validation_summary,pass_pct,number,n_passed / n_checks * 100.,
+validation_summary,mu_accuracy_pct,number,Mean (mu) of accuracy_pct over the aggregated comparisons — passing comparisons count as 100.,
+validation_summary,sigma_accuracy_pct,number,Population standard deviation (sigma) of accuracy_pct over the aggregated comparisons — 0 when every comparison agrees equally.,

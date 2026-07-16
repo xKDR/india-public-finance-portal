@@ -136,7 +136,7 @@ not merely close.
 
 Notable observations from the build log:
 - 381,779 raw positional records loaded from 11 documents; 5 OCR outliers dropped (all identified
-  in the package README caveats); 285,604 canonical records survive.
+  in the package README caveats); 234,930 canonical records survive.
 - Per-year leaf counts match `package_stats.json` exactly for all 11 years.
 - DuckDB version 1.5.4 installed automatically by `make sql` when absent.
 

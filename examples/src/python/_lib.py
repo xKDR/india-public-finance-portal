@@ -30,8 +30,8 @@ import sys
 #       data/processed/canonical_numbers.json
 #       out/results_python.json          <- written by these scripts
 #       src/python/_lib.py               <- this file
-#     karnataka-state-finance/
-#     karnataka-state-finance/demand_names.json  <- read-only (package metadata)
+#     state-finances/karnataka/
+#     state-finances/karnataka/KA_demand_names.json  <- read-only (package metadata)
 #       years/<Y>/json/budget_leaves_<Y>.ndjson
 
 _HERE = os.path.dirname(os.path.abspath(__file__))       # examples/src/python
@@ -45,9 +45,9 @@ RESULTS_JSON   = os.path.join(EXAMPLES_DIR, "out", "results_python.json")
 
 # Package files (read-only; used only for the formats-lesson demo)
 DEMAND_NAMES_JSON = os.path.join(
-    REPO_ROOT, "karnataka-state-finance", "demand_names.json"
+    REPO_ROOT, "state-finances", "karnataka", "KA_demand_names.json"
 )
-NDJSON_DIR = os.path.join(REPO_ROOT, "karnataka-state-finance", "years")
+NDJSON_DIR = os.path.join(REPO_ROOT, "state-finances", "karnataka", "KA_years")
 
 
 # ---- Loaders ----------------------------------------------------------------
@@ -91,7 +91,7 @@ def load_demand_names():
 
     Example: demand_names["29"]["name"] == "Debt Servicing"
 
-    Source: karnataka-state-finance/demand_names.json (read-only).
+    Source: state-finances/karnataka/KA_demand_names.json (read-only).
     """
     with open(DEMAND_NAMES_JSON, encoding="utf-8") as f:
         return json.load(f)["demands"]

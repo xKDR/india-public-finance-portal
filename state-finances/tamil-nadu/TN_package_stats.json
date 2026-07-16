@@ -1,0 +1,127 @@
+{
+ "budget_rows_count": 914879,
+ "checks_rows_count": 1510200,
+ "pdfs_count": 686,
+ "per_year": {
+  "2014-15": {
+   "budget_rows": 60791,
+   "check_rows": 93124,
+   "json_budget_leaves": 23269,
+   "json_budget_nodes": 52,
+   "json_checks": 93124,
+   "json_summaries": 28142,
+   "pdf_count": 52
+  },
+  "2015-16": {
+   "budget_rows": 67999,
+   "check_rows": 104516,
+   "json_budget_leaves": 26043,
+   "json_budget_nodes": 54,
+   "json_checks": 104516,
+   "json_summaries": 31529,
+   "pdf_count": 54
+  },
+  "2016-17": {
+   "budget_rows": 65501,
+   "check_rows": 101196,
+   "json_budget_leaves": 24676,
+   "json_budget_nodes": 53,
+   "json_checks": 101196,
+   "json_summaries": 30482,
+   "pdf_count": 53
+  },
+  "2017-18": {
+   "budget_rows": 68196,
+   "check_rows": 105012,
+   "json_budget_leaves": 25808,
+   "json_budget_nodes": 54,
+   "json_checks": 105012,
+   "json_summaries": 31475,
+   "pdf_count": 54
+  },
+  "2018-19": {
+   "budget_rows": 69739,
+   "check_rows": 108044,
+   "json_budget_leaves": 26221,
+   "json_budget_nodes": 54,
+   "json_checks": 108044,
+   "json_summaries": 32182,
+   "pdf_count": 54
+  },
+  "2019-20": {
+   "budget_rows": 75643,
+   "check_rows": 130720,
+   "json_budget_leaves": 32397,
+   "json_budget_nodes": 54,
+   "json_checks": 130720,
+   "json_summaries": 32090,
+   "pdf_count": 54
+  },
+  "2020-21": {
+   "budget_rows": 78972,
+   "check_rows": 134632,
+   "json_budget_leaves": 33746,
+   "json_budget_nodes": 54,
+   "json_checks": 134632,
+   "json_summaries": 33422,
+   "pdf_count": 55
+  },
+  "2021-22": {
+   "budget_rows": 50227,
+   "check_rows": 84768,
+   "json_budget_leaves": 23103,
+   "json_budget_nodes": 37,
+   "json_checks": 84768,
+   "json_summaries": 20700,
+   "pdf_count": 37
+  },
+  "2022-23": {
+   "budget_rows": 76726,
+   "check_rows": 132680,
+   "json_budget_leaves": 33502,
+   "json_budget_nodes": 54,
+   "json_checks": 132680,
+   "json_summaries": 32190,
+   "pdf_count": 54
+  },
+  "2023-24": {
+   "budget_rows": 75690,
+   "check_rows": 129360,
+   "json_budget_leaves": 33350,
+   "json_budget_nodes": 54,
+   "json_checks": 129360,
+   "json_summaries": 31655,
+   "pdf_count": 54
+  },
+  "2024-25": {
+   "budget_rows": 74578,
+   "check_rows": 127788,
+   "json_budget_leaves": 32593,
+   "json_budget_nodes": 55,
+   "json_checks": 127788,
+   "json_summaries": 31279,
+   "pdf_count": 55
+  },
+  "2025-26": {
+   "budget_rows": 75844,
+   "check_rows": 129896,
+   "json_budget_leaves": 33314,
+   "json_budget_nodes": 55,
+   "json_checks": 129896,
+   "json_summaries": 31781,
+   "pdf_count": 55
+  },
+  "2026-27": {
+   "budget_rows": 74973,
+   "check_rows": 128464,
+   "json_budget_leaves": 32735,
+   "json_budget_nodes": 55,
+   "json_checks": 128464,
+   "json_summaries": 31471,
+   "pdf_count": 55
+  }
+ },
+ "release_version": "v0.1.0-draft",
+ "schema_version": "tn-public-two-table-v1",
+ "years_count": 13
+}

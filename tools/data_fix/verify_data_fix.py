@@ -31,8 +31,8 @@ YEARS = [
 ]
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-# tools/data_fix/ -> tools/ -> repo root -> karnataka-state-finance/
-PKG_ROOT = os.path.join(os.path.dirname(os.path.dirname(SCRIPT_DIR)), "karnataka-state-finance")
+# tools/data_fix/ -> tools/ -> repo root -> state-finances/karnataka/
+PKG_ROOT = os.path.join(os.path.dirname(os.path.dirname(SCRIPT_DIR)), "state-finances", "karnataka")
 SNAPSHOT_PATH = os.path.join(SCRIPT_DIR, "baseline_snapshot.json")
 CANARY_YEAR = "2024-25"
 CANARY_EXPECTED_LAKH = 37_065_844  # INR_lakh

@@ -68,7 +68,7 @@ across all years; the tidy table already excludes them.
 2. Group by `demand`
 3. Sum `amount_lakh` per demand
 4. Sort descending; take the top 5
-5. Join demand number to department name using `karnataka-state-finance/demand_names.json`
+5. Join demand number to department name using `state-finances/karnataka/KA_demand_names.json`
 
 **Concepts introduced:** reading the tidy table, filtering by year and measure, demand-level
 grouping, the demand-name lookup.

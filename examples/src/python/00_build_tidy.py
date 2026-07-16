@@ -6,9 +6,9 @@ Run from repo root:
     python3 examples/src/python/00_build_tidy.py
 
 Reads:
-    karnataka-state-finance/years/*/csv/budget_*.csv
-    karnataka-state-finance/demand_names.json
-    karnataka-state-finance/package_stats.json
+    state-finances/karnataka/KA_years/KA_*/KA_csv/KA_budget_*.csv
+    state-finances/karnataka/KA_demand_names.json
+    state-finances/karnataka/KA_package_stats.json
 
 Writes:
     examples/data/processed/karnataka_budget_tidy.csv
@@ -37,7 +37,7 @@ from collections import defaultdict
 _HERE = os.path.abspath(__file__)
 # examples/src/python/ -> examples/src/ -> examples/ -> repo_root/
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(_HERE))))
-PKG_ROOT = os.path.join(REPO_ROOT, "karnataka-state-finance")
+PKG_ROOT = os.path.join(REPO_ROOT, "state-finances", "karnataka")
 OUT_DIR = os.path.join(REPO_ROOT, "examples", "data", "processed")
 
 # --- constants ---------------------------------------------------------------
@@ -116,12 +116,14 @@ def build_raw_records():
     outliers = []
     leaf_counts = {}
 
-    files = sorted(glob.glob(os.path.join(PKG_ROOT, "years", "*", "csv", "budget_*.csv")))
+    files = sorted(glob.glob(os.path.join(PKG_ROOT, "KA_years", "KA_*", "KA_csv", "KA_budget_*.csv")))
     if not files:
-        raise FileNotFoundError(f"No budget CSVs found under {PKG_ROOT}/years/")
+        raise FileNotFoundError(f"No budget CSVs found under {PKG_ROOT}/KA_years/")
 
     for path in files:
-        doc_year = os.path.basename(os.path.dirname(os.path.dirname(path)))
+        # Year dirs are KA_<YYYY-YY>; strip the state prefix to get the year.
+        doc_year = os.path.basename(
+            os.path.dirname(os.path.dirname(path))).removeprefix("KA_")
         leaf_count = 0
 
         with open(path, newline="", encoding="utf-8") as f:
@@ -394,12 +396,12 @@ def main():
     print("=" * 62)
 
     # Load demand names
-    dn_path = os.path.join(PKG_ROOT, "demand_names.json")
+    dn_path = os.path.join(PKG_ROOT, "KA_demand_names.json")
     with open(dn_path, encoding="utf-8") as f:
         demand_names = json.load(f)["demands"]
 
     # Load package stats for leaf-count verification
-    ps_path = os.path.join(PKG_ROOT, "package_stats.json")
+    ps_path = os.path.join(PKG_ROOT, "KA_package_stats.json")
     with open(ps_path, encoding="utf-8") as f:
         per_year = json.load(f).get("per_year", {})
 

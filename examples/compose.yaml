@@ -2,7 +2,7 @@
 #   docker compose -f examples/compose.yaml run --rm examples
 #
 # The repo root is bind-mounted to /work so the container reads the data package
-# at ../karnataka-state-finance and writes results into examples/out on the host.
+# at ../state-finances/karnataka and writes results into examples/out on the host.
 services:
   examples:
     build:

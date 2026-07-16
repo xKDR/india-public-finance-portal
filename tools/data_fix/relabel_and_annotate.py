@@ -2,7 +2,7 @@
 """
 relabel_and_annotate.py — Task A2: correct mislabelled fiscal-year metadata.
 
-Transforms ALL years in karnataka-state-finance/years/<Y>/ (idempotent):
+Transforms ALL years in state-finances/karnataka/KA_years/KA_<Y>/ (idempotent):
 
 CSV — budget_<Y>.csv:
   - Rename 4 amount column headers (positional truth from folder year).
@@ -44,9 +44,9 @@ YEARS = [
     "2021-22", "2022-23", "2023-24", "2024-25", "2025-26", "2026-27",
 ]
 
-# tools/data_fix/ -> tools/ -> repo root -> karnataka-state-finance/
+# tools/data_fix/ -> tools/ -> repo root -> state-finances/karnataka/
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PKG_ROOT = os.path.join(os.path.dirname(os.path.dirname(_SCRIPT_DIR)), "karnataka-state-finance")
+PKG_ROOT = os.path.join(os.path.dirname(os.path.dirname(_SCRIPT_DIR)), "state-finances", "karnataka")
 
 
 # ── fiscal-year arithmetic ────────────────────────────────────────────────────

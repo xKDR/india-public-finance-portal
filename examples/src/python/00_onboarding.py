@@ -168,7 +168,7 @@ def formats_lesson(rows, scope):
       Just filter rows where measure=='BE', fiscal_year=='2026-27', and
       major_head_code in {'2210','2211'}, then sum amount_lakh / 100.
 
-    Source B: the raw NDJSON  (karnataka-state-finance/years/2026-27/json/budget_leaves_2026-27.ndjson)
+    Source B: the raw NDJSON  (state-finances/karnataka/KA_years/KA_2026-27/KA_json/KA_budget_leaves_2026-27.ndjson)
       One JSON object per line; each has an 'amounts' list and hierarchy metadata.
       The 'budget_leaves' file is already leaf-only (same predicate); you still
       need to pick the right fiscal_year and measure from the amounts list.
@@ -196,8 +196,8 @@ def formats_lesson(rows, scope):
     #   'accounts'          -> Actuals
     # The major head code lives at: record["hierarchy"]["major_head"]["code"]
     ndjson_path = os.path.join(
-        _lib.NDJSON_DIR, TARGET_DOC, "json",
-        f"budget_leaves_{TARGET_DOC}.ndjson"
+        _lib.NDJSON_DIR, f"KA_{TARGET_DOC}", "KA_json",
+        f"KA_budget_leaves_{TARGET_DOC}.ndjson"
     )
     ndjson_total_lakh = 0.0
     for record in _lib.load_ndjson(ndjson_path):

@@ -1,7 +1,7 @@
 # examples/data/
 
 This directory contains **processed** data derived from the Karnataka state budget package.
-Raw PDFs and NDJSON are **not duplicated** here — they remain in `karnataka-state-finance/`.
+Raw PDFs and NDJSON are **not duplicated** here — they remain in `state-finances/karnataka/`.
 
 ---
 
@@ -27,7 +27,7 @@ year × measure × leaf account). Safe to filter and SUM directly.
 | `amount_lakh` | Amount in INR lakh (source unit; divide by 100 for crore) |
 | `amount_unit` | Always `INR_lakh` |
 
-**Source:** `karnataka-state-finance/years/*/csv/budget_*.csv`
+**Source:** `state-finances/karnataka/KA_years/KA_*/KA_csv/KA_budget_*.csv`
 **How to regenerate:** `python3 examples/src/python/00_build_tidy.py`
 
 ### `processed/canonical_numbers.json`
@@ -64,7 +64,7 @@ OCR extraction errors and excluded. Five such values were identified across all 
 ### 4. Unit caveat
 
 All amounts are in **INR lakh** as extracted from the source PDFs. They have not been
-independently certified. See the "Caveats" section in `karnataka-state-finance/README.md` for details.
+independently certified. See the "Caveats" section in `state-finances/karnataka/KA_README.md` for details.
 
 ---
 
@@ -73,7 +73,7 @@ independently certified. See the "Caveats" section in `karnataka-state-finance/R
 The raw NDJSON budget leaves (one JSON object per leaf row) are at:
 
 ```
-karnataka-state-finance/years/<YEAR>/json/budget_leaves_<YEAR>.ndjson
+state-finances/karnataka/KA_years/KA_<YEAR>/KA_json/KA_budget_leaves_<YEAR>.ndjson
 ```
 
 These are read directly by some examples (the formats-lesson exercise). Do not copy them here.

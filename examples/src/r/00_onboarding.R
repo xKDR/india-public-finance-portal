@@ -87,8 +87,9 @@ cat(sprintf("(a) Health BE %s from CSV: %.2f crore\n", fy_hbe, crore(hbe_amt)))
     return(invisible(NULL))
   }
 
-  ndjson_path <- file.path(REPO_ROOT, "karnataka-state-finance", "years", demo_fy,
-                            "json", paste0("budget_leaves_", demo_fy, ".ndjson"))
+  ndjson_path <- file.path(REPO_ROOT, "state-finances", "karnataka", "KA_years",
+                            paste0("KA_", demo_fy), "KA_json",
+                            paste0("KA_budget_leaves_", demo_fy, ".ndjson"))
   if (!file.exists(ndjson_path)) {
     cat("(b) NDJSON not found:", ndjson_path, "\n")
     return(invisible(NULL))

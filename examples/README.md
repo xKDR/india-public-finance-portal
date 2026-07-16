@@ -82,7 +82,7 @@ examples/
 │       └── 03_demand_variation.sql
 ├── data/
 │   └── processed/
-│       ├── karnataka_budget_tidy.csv     285,604-row canonical tidy table (safe to SUM)
+│       ├── karnataka_budget_tidy.csv     234,930-row canonical tidy table (safe to SUM)
 │       └── canonical_numbers.json        Expected answers; reconciliation fixture
 ├── doc/
 │   ├── why-ndjson.md               CSV vs NDJSON comparison + exclusion predicates
@@ -141,7 +141,7 @@ row above. The author contract is in [`_spec/README.md`](_spec/README.md).
 
 ## The Tidy Table
 
-`data/processed/karnataka_budget_tidy.csv` is a 285,604-row canonical tidy table derived from
+`data/processed/karnataka_budget_tidy.csv` is a 234,930-row canonical tidy table derived from
 the Karnataka package. It is safe to filter and SUM directly — the additive-leaf predicate has
 already been applied, the canonical source rule has already been applied, and OCR outliers have
 been excluded.
@@ -172,8 +172,8 @@ Top 5 departments by 2024-25 actuals (from `canonical_numbers.json`):
 
 ## Raw Data
 
-Raw CSV and NDJSON files live in `karnataka-state-finance/` at the repo root — they are not
-duplicated here. See `karnataka-state-finance/README.md` for the full package documentation.
+Raw CSV and NDJSON files live in `state-finances/karnataka/` at the repo root — they are not
+duplicated here. See `state-finances/karnataka/KA_README.md` for the full package documentation.
 
 For the decision between CSV and NDJSON, and for the complete list of exclusions required before
 naive analysis, see `doc/why-ndjson.md`.
