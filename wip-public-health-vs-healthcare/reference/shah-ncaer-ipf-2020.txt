@@ -1,0 +1,1839 @@
+                                                                    AJAY SHAH*
+                                                                       xKDR Forum
+
+
+   Indian Health Policy in Light of COVID-19:
+           The Puzzle of State Capacity and
+                         Institutional Design§
+
+ABSTRACT The Coronavirus pandemic has been a severe stress test for the Indian
+health system. In this paper, we review India’s experience with COVID-19 in the
+first half of 2020. An array of initiatives are required in public health and health
+care in response to this experience. In testing and health care, the substantial role of
+the private sector needs to be recognized and integrated into thinking about health
+policy. There is a need to reform government organizations that wield coercive
+power or spend public money so as to refocus them on addressing market failures
+and improving state capacity. There is considerable knowledge in the field of building
+state capacity in India that can help in this task.
+
+Keywords: India, COVID-19, Health Policy, Public Health, Health Care, Market
+Failure, State Capacity, Regulation
+
+JEL Classification: H11, H23, H41, H42, H77, I11, I13, I15, I18, K23, K32, O53
+
+
+1. Introduction
+
+
+P     rior to the pandemic, there were many concerns about the working
+      of public health and health care in India. The pandemic constituted
+a severe stress test to these systems. In this paper, we pull together knowl-
+edge about the events in health and health policy in India in 2020, evaluate
+strengths and weaknesses, and obtain insights about the grand questions of
+health policy in India drawing upon these experiences.
+  * ajayshah@mayin.org
+   § This paper draws on conversations with Amrita Agarwal, Harleen Kaur, Ila Patnaik, K.
+
+P. Krishnan, Nachiket Mor, Naman K. Shah, Renuka Sané, Reuben Abraham, Shubho Roy,
+and Vijay Kelkar. We thank participants at the India Policy Forum 2020 Conference for
+insights and ideas for improving the paper. By agreement with the IPF Editors Shekhar Shah
+and Karthik Muralidharan, the paper presents a snapshot and a benchmark for what we knew
+of the pandemic by July 2020 and soon thereafter, but does not seek to bring the paper up to
+date with subsequent developments.
+                                                                                         31
+32 I n d i a p o l i c y f o r u m , 2020
+
+   At the time of writing this paper for the IPF 2020, the pandemic had
+not yet played out fully. There was no single epidemic curve for the entire
+country; each location was experiencing a curve with different characteris-
+tics and a different timeline. When the dust settles, it will become possible
+to look back and understand these events better. The ideas in this paper are
+thus necessarily preliminary and incomplete.
+
+1.1. Public Health
+Public health is primarily about disrupting the spread of the disease.
+Examples such as Taiwan, a country of 24 million people that has strong
+linkages to China and which had recorded a low 449 cases and 7 deaths
+as of July 5, 2020, hint at the possibilities of what institutional capacity in
+public health can achieve.
+   The standard recipe of public health involves testing many people,
+finding those who test positive, tracing their contacts, and isolating all
+these persons for a period of time. This requires institutional capabilities
+for contact tracing, including the management capacity to rapidly increase
+the contact tracing workforce at short notice. For the country as a whole,
+perhaps 300,000 contact tracing workers would be required. Contact tracing
+is not a particularly difficult problem in public administration; while there
+are multiple transactions, each transaction has low discretion, low stakes,
+and low opacity. There was significant heterogeneity within the country on
+how these functions work.
+   Enhanced social distancing can help slow the epidemic. The first element
+of this involves better choices by individuals and firms based on fine-grained
+data about the share of the population that is infected at the PIN code level.
+The public release of such data is not done in India. Second, the government
+ran a large-scale communication campaign for informing people about the
+disease and about measures that will enhance safety, which has helped
+modify behavior.
+   The third line of attack in enhanced social distancing is the use of the
+coercive power of the state to force reduced social interactions through
+varying degrees of “lockdowns.” There is room for greater sophistication
+in the policy analysis that leads to such decisions. These are best done in a
+decentralized way, reflecting the infection rate in a city and the trade-offs
+involved between public health objectives and social and economic objec-
+tives. The early lockdowns in India were led by the Union Government.
+Government-run testing facilities ramped up their work substantially. The
+bulk of the diagnostic laboratories in India are, however, in the private sector.
+                                                                  Ajay Shah   33
+
+There were weaknesses in the engagement strategy of the government with
+this private industry.
+    While there is a universal admonition to do more testing, there are actu-
+ally three distinct elements of testing that need to take place: testing in the
+context of clinical care (as part of the conversation between a doctor and a
+patient), testing special groups (e.g., finding out the infection rate among
+workers in a factory, which can be used to improve safety protocols), and
+testing in a neighborhood or a city in order to shape public health responses
+there. When there is considerable variation and shifting in testing protocols
+and capacity constraints in testing, the interpretation of aggregated data
+for the purpose of epidemiological research is problematic. Data on excess
+deaths, causes of death, and hospitalization could be a useful fallback for
+researchers, but these datasets also have constraints in India. Overall, we
+see a significant gap between the required systems of measurement and
+data release when compared with the requirements of private and public
+decision-makers in India.
+    There are many scientific questions about COVID-19 that are unique
+to India. There is a need for a better organized research community that
+can pursue these questions. In the coming months, one or more research
+teams worldwide will have efficacious vaccines against COVID-19. The
+Indian public health community needs to think about the variety of policy
+questions about how these developments can best be utilized in the Indian
+context.
+    These experiences encourage a renewed focus on public health in India.
+A more decentralized approach, with an emphasis on city governments, will
+help. Contact tracing is a key pillar of public health; there is a need to build
+organizational capability, including the option of surging this capacity when
+faced with an epidemic.
+    Recognizing the fact that the bulk of testing in India is in the private
+sector, and recognizing the presence of market failure in this market, there
+is need for multiple mechanisms to address this market failure. At the level
+of the Union Government, an organization roughly like the US Centers
+for Disease Control and Prevention (CDC) is required. This would require
+corresponding work in establishing the mandate, the law, the design, and
+the accountability mechanisms for such an organization.
+    While there is a case for public funding of scientific research, the bang
+for the buck can be maximized when the government contracts with pri-
+vate and public researchers through a system of grant-making and research
+review. Such an approach would work better than the conventional path of
+government hiring scientists as civil servants.
+34 I n d i a p o l i c y f o r u m , 2020
+
+   The essence of public health is more robust health statistics. Better mea-
+surement of births, deaths, and tests is required, and these datasets need to
+be connected to the research community while fully protecting the privacy
+of individuals.
+   Many elements of this public health reforms agenda involve the con-
+struction of state capacity. There is considerable knowledge in the field of
+state capacity in India—about the establishment of checks and balances, and
+about organization design—with the help of which capable state institutions
+can be constructed.
+
+1.2. Health Care
+The most important problem in health care, in each country that has faced
+the pandemic, is about surging health care system capacity for the relatively
+simple supportive care that is required for most patients. The pandemic
+came relatively late to India, the lockdowns bought more time, and India
+has relatively young demographics. This gave greater time to prepare the
+health care system for the peak surge of cases in most locations.
+   The public sector health care system has borne the brunt of health care
+for COVID-19. This is despite limitations in what was possible in the public
+sector, owing to pre-existing constraints such as the number of ICU beds or
+the number of specialists.
+   The bulk of health care in India is in the private sector. There is an
+important market failure in private health care in the form of asymmetric
+information between the provider and the patient. Mechanisms for address-
+ing this market failure—private clubs, domestic and overseas accreditation,
+sophisticated buyers including public sector buyers, and a light layer of law
+and regulation—are at early stages of development.
+   When the COVID-19 surge reached cities such as Mumbai, Delhi,
+and Bengaluru, this generated difficulties much like those seen in cities
+elsewhere in the world. There is an important possibility that needs to be
+harnessed, that of contracting with the private sector, in order to augment
+capacity.
+   The health care workforce faced difficulties through a combination of
+poor safety protocols, health care workers succumbing to the disease, the
+fear of workers about the possibility of getting sick and the consequences
+of getting sick, and the problems of commuting to workplaces under con-
+ditions of lockdown.
+   Private health care organizations also faced considerable difficulties. The
+decline of non-COVID-19 health care activity was an adverse shock to their
+cash flow. Their health care workforce was stretched. There was legal risk
+                                                                              Ajay Shah   35
+
+in the form of bans, lawsuits, and price controls, both as a flow of events
+and as uncertainty about future events of this nature. This has adversely
+impacted their ability to surge health care capacity.
+   Health care expenditures associated with COVID-19 have also interacted
+with the difficulties of health care financing in India. While employees of
+large private firms are covered by the Employees’ State Insurance (ESI),
+in practice, ESI facilities are inadequately present for most workers.
+Government-sponsored health insurance schemes have become a signifi-
+cant part of Indian health care financing. However, they face constraints
+concerning the complexities of contracting with private health care firms.
+   Looking forward, the lessons that we can draw for health care lie in find-
+ing private and public mechanisms to address market failure. This agenda is a
+more complex version of the market failure in testing. The solutions include
+private clubs, domestic and overseas accreditation, public procurement that
+has features designed to combat market failure, and a light-touch approach
+to regulation through law.
+
+
+2. Questions on Health Policy Raised by the Pandemic
+
+The Indian health system represents a slow evolution from the early begin-
+nings in colonial India. The academic community and the policy community
+have evolved in their thinking. Health policy has gone through three main
+phases: from an early focus on public health to an emphasis on government-
+run health care facilities starting with the Bhore Committee, and then into
+government-funded health insurance schemes such as the Rashtriya Swasthya
+Bima Yojana (RSBY).1 Through this period, health outcomes as seen in
+some standard metrics such as longevity, infant mortality, and maternal
+mortality have improved considerably, but remain at absolute levels that
+are inconsistent with a country at the present level of income.
+   There is a broad consensus on the difficulties in health policy in India.
+The foundations of public health (i.e., addressing market failure in the
+form of public goods and externalities) are in poor shape. In health care,
+the citizenry has begun to exit government-run facilities in a fashion that is
+similar to the exit from government-run schools that was seen in the field
+of elementary education. Private health care is now the dominant force in
+Indian health care. However, the private market for health care suffers from
+important market failure in the form of asymmetric information. The state
+
+  1. A history of ideas in Indian health policy is given in Patnaik et al. (2018).
+36 I n d i a p o l i c y f o r u m , 2020
+
+has retreated into an owner/operator of a network of hospitals with declining
+salience and has not played an adequate role in addressing market failure.
+   It was in this context that the novel Coronavirus appeared on Indian
+shores in early 2020. The following period has proved to be an acid test
+for the Indian health system. Can health policy make a difference to these
+outcomes?
+   In this paper, we sketch the key elements of how the Indian health system
+fared when faced with this challenge and utilize these experiences to obtain
+insights into Indian health policy. Thus, we try to address the following
+questions:
+
+   1. What happened in India when the pandemic appeared here?
+   2. How do these difficulties illuminate the traditional debates about
+      policy questions in health policy?
+   3. What insights can we draw from these experiences for the priorities
+      of health policy in the coming year and for the long run?
+
+  The rest of the paper is organized as a section on public health (Section 3)
+and a section on health care (Section 4). Finally, Section 5 concludes the
+paper.
+
+
+3. Public Health
+
+From the first principles of public economics, market failure in health has
+a clean split between public health and health care (Kelkar and Shah 2019).
+Public health is about externalities and public goods. In recent years, the
+WHO has initiated a “Common Goods for Health” initiative, aiming to
+bring back the focus in global health policy on these issues (Shah et al.
+2019; Soucat 2019).
+   The field of public health is about state interventions at the population
+level rather than at the level of one individual at a time. This primarily
+comprises scientific research, the statistical system in health, combating
+communicable disease (e.g., eradicating some diseases, fighting epidemics
+and disease vectors, disrupting disease transmission) and creating conditions
+in which morbidity will be reduced (e.g., improving air quality in North
+India). Going beyond the narrow confines of health policy, there is an array
+of fields in public policy that should be viewed as being part of the field of
+public health, areas such as water, sanitation, air quality, and road safety,
+among others.
+                                                                         Ajay Shah    37
+
+    Public health is largely about the prevention of ill health and not about
+curing people. There is an essential role for the state in public health. It is
+hard to envision coping mechanisms through which private persons can
+overcome failures of public health. The puzzles of public health are largely
+problems of state capacity; the expenditures involved in public health are
+relatively modest.
+    There is considerable interest in India in health care, including primary
+health care. Health care is, however, largely a private good, with some kinds
+of market failure (asymmetric information, when faced with a private pro-
+ducer, and positive externalities when communicable disease transmission
+is diminished). Health care and primary health care are distinct from public
+health.
+    In this section, we focus on public health, the population-scale activities
+of the state that combat market failures of public goods and externalities. The
+six big issues that have confronted Indian public health in 2020 are contact
+tracing, social distancing, testing, the statistical system, medical research,
+and the coming vaccines.
+
+3.1. Institutional Capacity for Contact Tracing
+The machinery of public health when faced with an epidemic consists of
+testing a large number of persons, finding persons who are infected, trac-
+ing their contacts, isolating and testing their contacts, and treating the sick.
+Through this, the epidemic is contained.
+    A critical step in this is contact tracing, which requires complex orga-
+nizational capability. Contact tracing requires a large workforce. A rough
+estimate suggests that India may require a contact tracing workforce for
+COVID-19 of about 0.3 million individuals for the entire country, or about
+0.1 million individuals if this is done in the dense cities that add up to a third
+of the population.2 This correspondingly calls for management capacity to
+overcome principal–agent problems and get frontline workers to be effective.
+It involves writing process manuals, training staff, and establishing oversight
+to monitor their work.
+    In the class of problems in public policy, contact tracing is not a par-
+ticularly difficult challenge for achieving state capacity. It is useful to
+think about this problem from the classification framework of Pritchett and
+
+   2. The values per 100,000 of population for some countries are as follows: the USA’s
+requirement is 66, Germany’s is 25, the UK’s is 37, and Iceland’s is 14 (Luo et al. 2020;
+Morris and Beck 2020; Triggle 2020); if we use a value for India of about 25 per 100,000,
+this scales up to an overall headcount of 337,500.
+38 I n d i a p o l i c y f o r u m , 2020
+
+Woolcock (2004), as extended by Kelkar and Shah (2019), which determines
+the complexity of building state capacity on a given problem by asking the
+following four questions:
+
+   1. Are there a lot of transactions? Contact tracing involves a high num-
+      ber of transactions.
+   2. Is there a lot of discretion with frontline workers? Contact tracing
+      involves low discretion in the hands of frontline workers.
+   3. Are the stakes high? In contact tracing, the stakes are low; the deci-
+      sions of frontline workers cannot have a large impact on an individual.
+   4. Is there opacity? It is possible to do contact tracing under conditions
+      of high transparency.
+
+   By this reasoning, contact tracing meets one test of what creates diffi-
+culty in building state capacity: it involves a lot of transactions. As with
+other transaction-intensive problems in Indian public administration,
+there is the ever-present danger of frontline workers sinking into apathy
+or becoming overbearing (Parsheera 2020). Some of the ideas about how
+this can work, which are well understood elsewhere in the world, do not
+port readily to most Indian settings; for example, Sané (2020) draws
+attention to the difficulties of ensuring isolation of infected persons in
+crowded Indian cities.
+   The public administration challenge with contact tracing for COVID-19
+was accentuated by the fact that in most of India institutional capacity for
+contact tracing was either fledgling or absent, and there was a need to build
+or scale this in merely one or two months.3 This is a unique dimension in
+the public administration challenge, one that has not been part of the rea-
+soning around the framework of transactions-discretion-stakes-transparency
+mentioned above.
+   Contact tracing for COVID-19 seems to have fared better in some
+states such as Kerala and Tamil Nadu, and it is important to understand
+how this was achieved (Das et al. 2020; Isaac and Sadanandan 2020;
+Sadanandan 2020). These states have foundations of public health in terms
+
+
+   3. In early February 2020, the first newspaper columns about the concerns about COVID-
+19 were appearing in India. Sethi and Shrivastava (2020) document two papers by govern-
+ment scientists in the Indian Journal of Medical Research which appeared in the last week
+of February. In early March, some health policy papers started appearing (e.g., Kelkar and
+Shah 2020; Rajagopalan and Tabarrok 2020; Shah 2020a), and the first nationwide lockdown
+began on March 25, 2020.
+                                                                           Ajay Shah     39
+
+of organizational structures and laws of the kind that are not seen elsewhere
+in India.4 At the same time, given the large differences in local conditions
+all across India, it is not easy to directly transplant the institutional design
+of public health in Kerala or Tamil Nadu into many other states. This is a
+problem that requires careful local solutions, one city at a time.
+    Given the difficulties of building state capacity for public health in the
+form of organizational capability to do contact tracing, there was some initial
+attraction to a technology-intensive solution: an application on a mobile
+phone that would keep track of every person-to-person contact, so that once
+a positive result is obtained, a central computer database would be able to
+show all the individuals who have been met in recent weeks. However, such
+an application is no substitute for the painstaking work of contact tracing by
+a large field force of trained contact tracing staff. In addition, there are many
+concerns associated with personal information being visible to the Indian
+State (Bhandari and Rahman 2020). There is a need to focus on process
+engineering for contact tracing, where the development of applications is
+an element of institution-building for contact tracing.
+
+3.2. Social Distancing
+Enhanced social distancing is an important mechanism through which
+human societies modify the dynamics of an epidemic and create incentives
+for pathogens to evolve towards reduced virulence.
+    The first element of this is the optimization by each individual (Cochrane
+2020). Each individual has an assessment about their own trade-offs and
+manages the tension between the health hazard and the economic/social
+imperative. Different persons will face different trade-offs. The first line
+of attack in public health must be to earn the trust of the populace, deliver
+accurate knowledge to the people, and obtain gains from non-coerced mod-
+ification of behavior. These individual decisions will be supported by better
+knowledge about mechanisms of virus propagation, better estimates of the
+conditional probability of grave illness or death, and neighborhood-specific
+updated data about the extent of infection. These three elements of knowl-
+edge are a public good, and there is a case for state provision. Alongside this,
+there is a need for a communication strategy, which can take this knowledge
+and send accurate and consistent messages on a population scale.
+    In India, there was fair access to information about virus propagation and
+the conditional probability of grave illness or death based on international
+
+  4. For example, there are public health laws in these states in the form of the Tamil Nadu
+Public Health Act, 1939, and the Travancore Cochin Public Health Act, 1955.
+40 I n d i a p o l i c y f o r u m , 2020
+
+experience. The government ran large-scale information communication
+programs, and these appear to have been effective. There was relatively little
+information about India-specific questions, for example, the links between
+COVID-19 and spitting paan. Similarly, an article such as Thomas (2020)
+utilizes papers done elsewhere in the world to illuminate what might hap-
+pen under Indian conditions of temperature, humidity, and insolation, but
+little research was available under Indian conditions that directly informed
+decision-making in India.
+    When an individual chooses to engage in economic and social activi-
+ties, there is a small negative externality that is imposed upon others. The
+magnitude of this negative externality is proportional to the infection rate
+prevalent at each point in time. In order to correct for this market failure,
+there is a case for using the coercive power of the state to force reduced
+social interactions.
+    In the limit, this leads to ideas such as lockdowns. While extreme mea-
+sures might sometimes appear attractive, it is important to bring logic and
+evidence to analyzing a lockdown (Melnick and Ioannidis 2020). For an
+analogy with cholera, though cholera is a waterborne disease, closing down
+the water supply of a city is not a wise path to control cholera.
+    Some countries have used lockdowns to successfully control the COVID-
+19 epidemic (Baker et al. 2020), but these were small populations with high
+state capacity. Asymptomatic transmission poses serious challenges for
+lockdown policies (Gandhi et al. 2020), which suggests that lockdowns are
+useful either when they are done very early, or when they are accompanied
+by very large-scale testing–tracing–isolation. An overall analysis (Islam
+et al. 2020) suggests that earlier and longer lockdowns were associated
+with reduced spread of the disease. However, conditions in India (high
+density housing, low state capacity in testing–tracing–isolating, and the
+economic imperative for many households to obtain an income) suggest
+that controlling the epidemic through lockdowns was going to be hard. A
+second class of arguments in favor of a lockdown is based on the objective
+of gearing up with increased health care capacity.
+    There are complex puzzles in addressing the trade-offs faced in such
+regulation. Using state power to close temples and bars appears reasonable.
+As an example, the “Ashadh pilgrimage” in Pandharpur, Maharashtra, was
+closed for the first time after 1944 in 2020. In contrast, the Kumbh Mela
+in Haridwar, Uttarakhand, which was scheduled for 2022, was moved to
+March/April 2021. In many other respects, the picture is less clear. There is
+a case for decentralized action that utilizes local data for the infection rate,
+weighs trade-offs in a way that is sensitive to local conditions of economic
+                                                                  Ajay Shah   41
+
+and social life, engages in a cost-benefit analysis, achieves democratic
+legitimacy through consultation and the display of expertise, and emerges
+with the cautious use of state coercion to increase social distancing, over
+and beyond the rational decisions of individuals.
+   The use of the coercive power of the state in forcing social distancing
+rules faces pitfalls in India owing to foundational difficulties on civil liber-
+ties. These weaknesses in the “invisible infrastructure” shape health policy
+thinking in India, while they are not a concern in mature liberal democracies.
+As an example, few health policy experts could have anticipated the episode
+in Tamil Nadu, where two persons were arrested for allegedly keeping their
+shop open for 15 minutes more than the time allowed in a lockdown and
+died in police custody.
+   In the Indian story, decisions about the design of social distancing regula-
+tions were taken at the Union Government level and not in cities; there was
+insufficient information available about the true infection rate, and a high
+extent of coercion was applied. It was hard to see a sophisticated analysis of
+trade-offs. These problems are related to the lack of checks and balances in
+the Epidemic Diseases Act, 1897, and the Disaster Management Act, 2005
+(Kaur 2020; Kumar 2020; Shah 2020c).
+   The lockdowns in India helped in gearing up the public sector health care
+system in terms of things such as PPEs, ventilators, and training. Most of the
+guidelines published by the Ministry of Health and Family Welfare came out
+after March 23, 2020. Alongside these successful elements, there was slow
+progress on engaging with the private sector, which holds the key to scaling
+up health care and testing. Improvements in the measurement of COVID-
+19, which could have been established during the lockdown, were limited.
+
+3.3. Testing
+Government-run testing facilities were significantly enhanced in response
+to the pandemic. The throughput through these labs went up dramatically
+once that happened. However, the bulk of testing capacity in India is in
+the private sector, particularly in the West and the South. The business of
+testing contains a market failure, asymmetric information, as it is hard for
+the customer to know the extent to which the test is accurate. There were
+long-standing gaps in private and public initiatives that could address this
+market failure. There is an interesting tension between state power and
+a private health care system. One element of this was seen in diagnostic
+laboratories, which do testing. This is analyzed in Kaur et al. (2020). There
+was a process of obtaining approvals through which the government gave
+42 I n d i a p o l i c y f o r u m , 2020
+
+approvals to over 200 private laboratories and only thereafter did testing in
+private laboratories start.
+   When the pandemic started, the Indian Council of Medical Research
+(ICMR) was thrust into a regulatory role on testing. ICMR is primarily a
+research organization, and it did not have the organizational capacity for
+regulation of a private industry. The laws that were employed for the pur-
+pose (the Epidemic Diseases Act, 1897, and the Disaster Management Act,
+2005) lacked checks and balances, and were, therefore, not conducive to the
+development of state capacity (Kaur 2020; Kumar 2020). ICMR and other
+state organizations drifted into an intrusive command-and-control approach
+toward private testing, featuring bans, price controls, and interference in
+the management choices of private persons. These intrusive actions are
+generally inefficient.
+   One pathway to utilizing the testing capacity in the private sector is public
+procurement. The government could become a large-scale purchaser of the
+services of private diagnostic laboratories. This procurement process can
+include elements that address market failure, for example, it can ensure
+minimal quality standards.
+
+3.4. Statistical System in Health
+A key function in public health is obtaining high-quality information about
+the state of health in the country. A statistical system needs to be con-
+structed in health featuring microdata from all across the country, where
+the information is timely. Statistical analysis of this data would then reveal
+outbreaks, epidemics, and pockets of unusual morbidity, which can kick
+off investigative work by public health authorities in order to solve these
+problems at their root cause.
+    All over the world, the response to COVID-19 has demanded high qual-
+ity data. These data (and models based on these) are required at the city
+and neighborhood levels in order to understand the threat, shape the public
+health response, optimize the behavioral decisions of each individual, and
+shape social distancing measures that are adopted at the community level.
+    There has been a clamor for “more testing” worldwide. Governments
+have come to compete on achieving more tests per day. There was a dramatic
+gain in the raw number of tests per day that took place in India over the
+early months of 2020. ICMR COVID Study Group et al. (2020) show basic
+facts about the measurement work at the ICMR in early 2020. However, it
+is important to see the four distinct elements of testing as delineated below
+(Malani, Mohanan, Balsari et al. 2020; Mukhopadhyay 2020a; Shah 2020b):
+                                                                  Ajay Shah   43
+
+   1. Testing in the health care context: When an individual reports certain
+      symptoms to a doctor, the doctor might prescribe an RT-PCR test.
+      The results of all RT-PCR tests can be aggregated and, as a high-
+      frequency time series, can be a valuable decision-making tool at the
+      neighborhood, village, district, or city level.
+   2. Public health objectives in small groups: Consider an at-risk group
+      such as nurses or railway employees. It would be valuable to obtain
+      a statistical estimate of the infection rate every week. This can guide
+      improvements in processes and improve the morale of these groups.
+   3. Public health objectives in a neighborhood: At a neighborhood level,
+      accurate and timely estimates of incidence are valuable as they feed
+      back into the decisions of each individual about the optimal level of
+      economic and social activities. These estimates can also be used to
+      shape state coercion on social distancing, which can be useful when
+      the probability of getting infected is high.
+   4. Restarting the economy: The scientific community is working on a
+      fuller understanding of immunity, which can ultimately lead to one
+      or more tests generating an “immunity passport,” which will tell the
+      individual that the disease is no longer a threat.
+
+    Each of these four objectives is important and needs to be pursued. In the
+present state of the science, the fourth is not yet feasible, so we discuss the
+first three. A large number of tests can take place in a clinical care context.
+However, for many reasons there are concerns about the extent to which
+the aggregate data is useful:
+
+   1. There have been fluctuations in the prescribed decision process (“pro-
+      tocol”) that a doctor is supposed to use when prescribing a test.
+   2. When each change in the prescribed protocol takes place, there are
+      vagaries in the communication of these changes to every doctor in
+      India.
+   3. There have been capacity constraints in testing.
+   4. The bulk of both health care and testing capacity in India is in the
+      private sector, but state coercion was used to limit the ability of private
+      doctors to prescribe tests and private labs to conduct tests.
+
+   In standard epidemiological models such as the Susceptible–Exposed–
+Infected–Recovered (SEIR) model, the measured I is the fraction of persons
+who are infected in the population. This should ideally be measured by a
+statistical sample. It can be approximated by using data from a clinical
+44 I n d i a p o l i c y f o r u m , 2020
+
+setting if the protocols are stable, applied consistently, with sound frontline
+measurement procedures, and are in place on a large scale. These features
+were not in place in India in early 2020. As a consequence, the conventional
+data about the number of tests and the fraction that test positive are difficult
+to interpret (Bajpai 2020; Bansal 2020; Das et al. 2020; Mukhopadhyay
+2020b; Rukmini 2020a; Sharma and Premkumar 2020). This limits the
+usefulness of papers such as Philip et al. (2020), which estimated that the
+age-adjusted case fatality rate in India was higher than would be expected
+based on estimates from 14 countries.
+   Some papers are more effective in estimation. As an example, Malani,
+Mohanan, Kumar et al. (2020) did antibody testing for a statistical sample
+of migrants returning to Bihar from many locations across the country and
+found numerical values that were difficult to reconcile with conventional
+estimates reported from source locations or for the whole country. While
+epidemiological modeling is a difficult area even with the best of data, in
+India, data limitations have particularly hampered the extent to which the
+analysis of aggregate data could become useful.
+   One natural fallback for measuring the state of the pandemic would have
+been to fall back from estimating the number of persons infected to estimat-
+ing the number of deaths. Here, we encounter the weaknesses of the systems
+that attribute the cause of death (Barnagarwala 2020; Rukmini 2020b; Sinha
+2020). In particular, once officials are evaluated on the number of deaths
+owing to COVID-19, they have an incentive to understate the number
+of deaths. Trusted daily statistics for birth and death, and hospitalization
+data, can also be highly influential for public health work, but they are not
+available in India. Novel approaches to estimating all-cause mortality using
+panel household survey data can be brought to bear on the problem (Sané
+and Shah 2021).
+   There is thus significant uncertainty surrounding published estimates of
+the number of infected persons at a point in time, the number of persons
+who were ever infected, and the number of deaths that can be attributed
+to COVID-19. Statistical sampling offers a natural path to sidestep these
+difficulties and obtain sound estimates of the number of persons infected
+(using the RT-PCR test) and a lower bound of the number of persons ever
+infected (using data from antibody tests). There was one such episode of
+measurement through statistical sampling, where the ICMR conducted a
+study in late April 2020 in 70 districts. A key finding of this appears to be
+the presence of high heterogeneity within these 70 districts, where some
+locations, such as the containment zones in Mumbai, had seroprevalence
+                                                                  Ajay Shah   45
+
+rates as high as 30 percent, while there were other districts with values near
+zero. There are some newspaper stories that give a sense of these results,
+but the dataset or paper has thus far not been released. As of this writing in
+July 2020, this one survey dataset from end-April 2020 was the most recent
+measurement project of this nature.
+    There are weaknesses in the information systems through which test data
+are assembled and released. With all its weaknesses, a substantial amount of
+testing has taken place in India, and there are many opportunities for utilizing
+these data in ways that would better inform the actions of citizens, firms,
+doctors, and various arms of the government. However, there are limita-
+tions in the mechanism through which aggregate time-series information is
+published (Agarwal and Kaur 2020). Unit-level information is not released.
+    Weaknesses in the statistical system are present in other aspects of
+COVID-19 also. As an example, assuming that useful forecasts could be
+obtained of future infections and hospitalizations, these would need to be
+compared against the health care system capacity in terms of the number of
+regular beds, ICU beds, and ventilators, among other things. These things
+are, however, not easily measured. The bulk of health care capacity in India
+is now in the private sector, and there is no measurement system that is able
+to obtain and update this information. The Ministry of Health has a National
+Health Resource Repository (NHRR) that enumerates facilities and their
+capabilities. The institutional infrastructure for continuous updating of the
+NHRR is not yet in place; it is updated episodically. It was last updated in
+2019, but there was no data release.
+    Within public sector health care, Roy (2020) points out that when officials
+are measured on the total number of beds, they have a tendency to portray
+progress on the total number of beds while sacrificing the ratios that are nor-
+mally maintained about the number of ICU beds and number of ventilators
+per unit hospital bed; this hampers the estimation of (say) ICU beds using
+thumb rules based on the total number of beds.
+    Overall, it appears that there was a gap between measurement and data
+dissemination in India when faced with the pandemic, as opposed to infor-
+mation production that would have been influential in improving decisions
+by many persons across the country. It is important to see these difficulties
+in the initial conditions in the core public health objectives of the statistical
+system in health that were in place before the pandemic arrived (Chandra
+Sharma 2019; Rajan and James 2016; Sharma 2016). From that starting
+point, the outcomes from the firefighting in a few months when the pandemic
+arose are not surprising.
+46 I n d i a p o l i c y f o r u m , 2020
+
+3.5. Medical Research
+Once the pandemic started, there was remarkable progress worldwide on
+producing research in real time, which unlocked many of the secrets of the
+virus and the disease. Knowledge is a global public good, and India has been
+a great beneficiary of this knowledge.
+   There is an array of scientific questions, however, that are more specific
+to India, and for which researchers elsewhere in the world will not ordi-
+narily embark upon research projects. Some examples of these include the
+following:
+
+   1. A significant body of evidence has been obtained from natural history
+      studies in Wuhan (China), Lombardy (Italy), and New York (USA).
+      The temperatures prevailing in the months of rapid growth of the
+      pandemic there were 3–11°C, 4–9°C, and 0–10°C, respectively. How
+      do Indian conditions of temperature, humidity, and insolation change
+      disease transmission?
+   2. What are the implications of Indian social practices (e.g., spitting
+      paan, customs in temples, death rituals) for disease transmission?
+   3. What statistical techniques of epidemiological research are required
+      to find patterns in Indian unit-level data about who gets infected and
+      who gets adversely affected when infected, so as to create feedback
+      loops that can help alter behavior by individuals?
+   4. How do the standard results about the probability of serious illness and
+      death, and their variation with age and comorbidities, get modified
+      under Indian conditions? Is there geographical variation? Is there
+      variation by income or other social class?
+   5. What are effective clinical protocols that are feasible under median
+      conditions in an Indian health care facility? As an example, once we
+      assume that ventilators cannot be used on a large scale in India, how
+      can oxygen therapy be best applied (Sudhir and Mor 2020)?
+   6. What is the immune system response in India to the Coronavirus?
+      What is the demographic variation seen in India on issues such as
+      cross-reactivity, antibody neutralization, and reinfection?
+   7. The high prevalence of adult malnutrition in India is unique; could it
+      interact with COVID-19 fatality in some ways?
+   8. India has the largest pool of persons who are or have been infected
+      with tuberculosis. To what extent is this an important comorbidity?
+   9. What variants are prevalent, and how effective will mainstream vac-
+      cines be against contemporary variants at different points in time?
+                                                                Ajay Shah   47
+
+   These are, of course, only examples. A robust process of the exchange
+of questions and ideas between researchers, persons in health policy, and
+medical practitioners is required through which questions are identified
+and answers are rapidly discovered. The ICMR has established teams as
+part of the COVID-19 “Rapid Response Team,” which are doing medical
+research. There is a need for a strong scientific community that is able to
+rapidly produce such papers, with large-scale capacity across the public
+and private sectors. This community will benefit from better linkages into
+researchers and research institutions outside India.
+
+3.6. The Coming Vaccines
+There is an active global race to build vaccines that protect against COVID-
+19. There are about 30 vaccine research projects in India, including the major
+work at Bharat Biotech. It is likely that in the coming months, multiple high-
+quality vaccines will come about. This optimism draws on the remarkable
+scientific advances in the development of vaccines that has come about in
+the last 20 years.
+   Even if good vaccines are invented outside India, India is an important
+producer of vaccines on a global scale. As an example, Ramu (2015) shows a
+global vaccine development project that chose to use certain elements of the
+overall project in India. Some of the prominent vaccine designers worldwide
+are likely to turn to Indian companies for their manufacturing capabilities.
+Whether through research or manufacturing, there will be significant move-
+ment on vaccines in India in the coming months.
+   At that point of time in the future, the following important questions
+will arise:
+
+  1. How can the vaccine approval processes of mature market economies
+     be harnessed to make decisions for the approval of vaccines in India?
+  2. How will Indian economic agents be able to purchase large quantities
+     of vaccines at relatively affordable prices? What can be done to secure
+     supplies of sufficiently high volumes at sufficiently low prices?
+  3. A vaccine is a private good with a positive externality. What is the
+     optimal combination of private purchase and public financing that
+     can share costs wisely?
+  4. How can a nationwide program be organized to distribute this vac-
+     cine to a large mass of people? The present state-led immunization
+     programs have many flaws. How can the private health care sector
+     be harnessed for this problem?
+48 I n d i a p o l i c y f o r u m , 2020
+
+   5. Assuming that there are supply limitations, is there a role for voucher
+      programs from the state in favor of certain persons? Should the vac-
+      cine first be given to high-risk populations, health care workers, or
+      front-line workers who could become super-spreaders because they
+      are in contact with many?
+   6. Herd immunity could be achieved in theory without immunizing the
+      entire population. What is an optimal strategy for India that puts the
+      epidemic to an end, protects those persons who are at risk, and yet
+      minimizes cost?
+
+  There is a need for innovative policy research on these questions in the
+coming months.
+
+3.7. Building a Public Health System in India
+The COVID-19 pandemic has brought fresh emphasis on building institu-
+tional capacity for public health in the country. Based on these experiences,
+we have fresh insights on elements of the public health system in India that
+would help deal with such a situation.
+
+3.7.1. The Gains from Decentralization
+A recurring theme is the importance of the Constitutional vision of India as
+a union of states. The bulk of the work in public health is best performed
+by cities and states. How to solve the trade-offs between livelihoods and
+contagion? How to allocate resources in testing? How to mobilize health
+care? What are the precise tactical details of organizing a response that
+would work well? This work is best placed at the level of the city or district
+government. Officials at the local level understand their neighborhoods and
+economic activities the best and face greater feedback loops of accountability.
+   Local context is highly important. As an example, in a Kerala setting with
+significant institutional capacity in contact tracing, there may be a certain
+optimal pathway for building sound institutional arrangements for contact
+tracing, and there might be a certain optimal role for contact tracing apps in
+that context. But this context, and thus the optimal role for a contact tracing
+app, could be quite different in other states. This emphasizes the need for
+a decentralized approach.
+   There is a small negative externality suffered by society when each
+individual interacts with others in the course of economic and social life.
+The magnitude of this negative externality is proportional to the infection
+rate prevalent at a point in time, which varies sharply across cities. The
+trade-offs about the kinds of economic and social activities that should be
+                                                                  Ajay Shah   49
+
+sacrificed depend upon local conditions. Hence, the best way to organize
+state coercion in social distancing is at the city level.
+   Public health work is best conducted through discussion and persuasion
+and not the use of coercive power. Officials at the local level are well
+connected to local human networks. They have the ability to organize
+meetings with residents of the city, engage in communication, persuasion,
+and negotiation layered with a small amount of coercion. An example of a
+feasible mechanism design at the local level, involving a “Social Distancing
+Committee,” is presented in the Appendix. One argument in favor of local
+control is that in fighting the epidemic, officials at the local level have
+to “eat their own dog food.” Success or failure will directly impact them
+through the health of their family and friends, and through the respect or
+criticism that they earn for their efforts. This is one element of the gains
+from decentralization from the subsidiarity principle, which argues that
+every government function is best placed at the lowest level of government
+where it can possibly be done efficiently.
+   The problems of the entire 3.3 million sq. km of India are dauntingly
+large. It is difficult for any one mind, or any one team, to envision the cor-
+rect strategies for health and economic policy on this large a scale. As an
+example, if a policy team had to think about doing antibody measurement
+for a random sample of India, this is a difficult project to design and execute.
+The problem statement, “Establish a random sample of 1,000 people in Pune
+and run an antibody test on them,” is a more tractable one when compared
+with the statement, “Establish an adequate sample of people all over India
+and run an antibody test on them.”
+   Large states of India are of the size of countries elsewhere in the world.
+The decentralization agenda in India is not just about decentralization to
+the state capital; it is critically about decentralizing all the way to the city.
+The most important level of government for high-transaction public health
+functions is the city government. This is another dimension in which states
+such as Tamil Nadu and Kerala have fared better than mainstream Indian
+arrangements.
+   At present, the organization of Union, state, and city governments in
+India has many problems. There is a fragmentation of authority between the
+state government and the city government. Officials in the city government
+or at the district level are often overloaded and find it difficult to meet this
+challenge. Policy design needs to recognize these capacity constraints and
+envision commensurate responses to these constraints. The decentralized
+approach to health policy needs to go hand in hand with capacity enlarge-
+ment for local government.
+50 I n d i a p o l i c y f o r u m , 2020
+
+   As an example, by default many functions are often placed with a chief
+medical officer (CMO), who easily slips into the role of being the point
+person for anything connected with health. However, problems of public
+health, and particularly the problem of COVID-19, are intersectoral and
+often go beyond the capacity of a CMO. The CMO may often be the point
+person for the operations of government hospitals, but public health is dis-
+tinct from hospital management.
+   In establishing a decentralized approach to health policy for COVID-19,
+there is a need to precisely articulate the problems that local governments
+have to solve, and the support that will be available to the leadership of local
+governments from state and Union governments.
+
+3.7.2. Building State Capacity for Contact Tracing
+Each state and city needs to address the problem of organization design
+and developing state capacity for contact tracing. Recent events remind
+us that this organization design is not like, say, hiring a lot of school-
+teachers. What is required is a flexible, small organization that is able to
+rapidly scale up when faced with an epidemic and go back to its original
+size after the epidemic has ended. The small “standing army” must be
+primarily about the option value of rapidly achieving large-scale contact
+tracing when the need arises. As an example, while New York City had
+world-class public health institutions, once the pandemic arrived, 3,000
+additional workers were hired into contact tracing. In this aspect, contact
+tracing presents a challenge in public administration that is a bit different
+from mainstream problems in organization design as seen, for example,
+with police and schoolteachers.
+
+3.7.3. Addressing Market Failure in Testing
+The private sector is the dominant force in the Indian diagnostic testing
+industry. There is a market failure due to asymmetric information in this
+area. This market failure needs to be addressed through a three-pronged
+effort with (a) private certification initiatives; (b) mechanisms of public
+procurement; and (c) a light layer of regulation.
+   In this, we need to recognize the difficulties associated with more intru-
+sive tools, such as price controls, bans, export bans, and government control
+of the technology used in testing. As an example, when the prices of PPE
+rose in India, this was not a cause for concern. In fact, this was the signal
+that worked its way through the market economy and induced a large supply
+response to the point where India is now a large exporter of PPE. Every state
+interference in the prices of PPE served to slow down this supply response.
+                                                                 Ajay Shah   51
+
+   The construction of state capacity for a light layer of regulation can
+draw upon modern thinking in India about the difficulties of building state
+capacity in regulation.
+
+3.7.4. Public Goods at the Level of the Union Government
+There is a need for institutional capacity that is akin to the US CDC. While
+the ICMR was placed into certain roles in the short run when the pandemic
+began, clear thinking is required about the role of the National Centre for
+Disease Control (NCDC), and a systematic effort needs to commence on
+building state capacity in the chosen organization.
+
+3.7.5. Scientific Research
+There is need to rethink the framework using which public resources are put
+to work through government research institutions, private research institu-
+tions, and private firms in order to achieve the requisite research capacity
+in the country that can be galvanized to address questions of importance to
+private and public decision-makers in India.
+   In the prevailing vision of science in India, there is a fusing of pub-
+lic expenditure and public production. It is more effective to use public
+funding through a grant mechanism to get the production of research out
+into non-government organizations. This creates greater competition and
+places management decisions about research organizations into the hands
+of non-government and private organizations that are better able to per-
+form these functions. For an analogy, the National Aeronautics and Space
+Administration in the US is a contracting organization; it does not have a
+vast scientific workforce, it does not do research, design spacecraft, or build
+spacecraft (Shah 2019).
+
+3.7.6. Health Statistics
+There is enormous value in building datasets and models around the ques-
+tions of health. As an example, Rivers and George (2020) draw an analogy
+between the public goods of government-run weather data and forecasting,
+and the required public goods of government-run health data and associated
+forecasting. A particularly simple dataset, which can be highly influential
+for public health research, is the daily release of accurate statistics about
+births, deaths, and hospitalizations.
+    When tests take place in a clinical care setting, these data need to be
+assembled into a single database and made available in anonymized form
+to the research community. The Union Government, state governments, and
+city governments must all have the ability to create time-series survey data,
+52 I n d i a p o l i c y f o r u m , 2020
+
+where some or all parts of the country are put into intensive surveillance
+using periodic waves of testing of random samples. Public health officials
+require the ability to commission testing of a random sample of, say, health
+workers in a given city as part of their process of isolating the problem.
+   The development of electronic health records, with an open ecosystem
+of multiple but interoperable software systems at health care organizations,
+will help create a more information-rich environment, though there are
+grave concerns about the privacy of individual information. The National
+Digital Health Mission could potentially play a useful role in protecting
+individuals and improving the data quality and interoperability of electronic
+health records.
+
+3.7.7. The Problem of Purchasing
+When an epidemic gathers momentum, a surge in testing is required. This
+necessitates the ability of the government to purchase testing services from
+private persons. This, in turn, requires establishing state capacity in contract-
+ing (procurement, dispute resolution, contract renegotiation, and payments)
+in public health authorities at all three levels of government.
+
+3.7.8. A Systematic Process for Constructing State Capacity
+Many of the steps mentioned above (e.g., contact tracing and the role of the
+NCDC) require the systematic creation of organizational capability. Poor
+public administration in India in public health meant that a diverse array of
+public servants was pulled out of essential health (and non-health) services in
+order to prioritize COVID-19, and that has had its own adverse consequences.
+There is need for the systematic construction of organizational capabilities
+on all fronts so that a diverse array of state functions can harmoniously take
+place even in a crisis.
+   The lack of checks and balances in the foundational laws is a key source
+of arbitrary power and, thereby, low state capacity; a key feature of the road
+ahead lies in establishing checks and balances in law.
+   The road ahead involves designing laws, organization diagrams, process
+manuals, accountability mechanisms, training procedures, and putting in
+the homeostatic functions of contracts, finance, human resource manage-
+ment, facilities management, and transparency. The public administration
+dimensions of this problem are similar to the mainstream state capacity
+problems seen in India, for example, as analyzed in Srikrishna (2013);
+Ministry of Corporate Affairs (2016); Roy et al. (2019); and Kelkar and
+Shah (2019).
+                                                                   Ajay Shah   53
+
+4. Health Care
+
+There are two strengths that worked in India’s favor in the pandemic in its
+early months. First, with young demographics, the fraction of those infected
+who required significant medical care as of this writing has been small.
+Second, there was more time to prepare, given that the pandemic came
+relatively late to India and with the additional months that were obtained
+through varying degrees of lockdown. By and large, this time was utilized
+to significantly galvanize the public sector health care system into action.
+    From the first principles of public economics, health care is largely a pri-
+vate good, with the special case of infectious disease where there is market
+failure in the form of positive externalities. When we think of the market
+for private health care, there is an important market failure in the form of
+asymmetric information. Most customers are not able to understand the
+extent to which the producer, doctor, or nurse acted in their best interests, or
+to be able to shop around and thus exert market pressure on pricing. There
+is thus a significant problem in consumer protection.
+    In India, there is one large health care organization—the government—
+which accounts for about a 30 percent market share of health care and about
+a 10 percent share of intensive care staff. The remainder of health care is
+produced by a large number of private health care firms within a competitive
+market structure. While in some other countries there is market failure in the
+form of excessive market power with a small number of health care firms,
+this is not a problem in India.
+    The prime focus of health policy in India has, however, been on the
+management, resourcing, and operation of health care organizations that
+the government controls. There has been little attempt at addressing market
+failure in the private market for health care, and in recognizing the important
+role of private health care providers, and utilizing them to achieve policy
+objectives.
+
+4.1. The COVID-19 Surge in Health Care Requirements
+As has been seen elsewhere in the world, the peak of the epidemic curve is
+associated with a surge in health care requirements that can overwhelm the
+health care system. In the Indian cities with the largest number of cases,
+Mumbai and Delhi, the health care system came under considerable stress.
+However, at the same time, in large parts of the country the epidemic did
+not enlarge sharply in early 2020. The timing of the epidemic in each city
+was different, but the features of the health care crisis in each city are similar
+54 I n d i a p o l i c y f o r u m , 2020
+
+and are reminiscent of those seen elsewhere in the world. As an example,
+Johnson (2020) is a recent story of the surge in Bengaluru.
+   Newspaper reports of the ICMR’s statistical sampling in 70 districts in
+late April 2020 suggest that in a large fraction of the districts the prevalence
+of the disease was rather small. In April and May 2020, the expansion of
+cases was limited by the lockdown, which also helped forestall the possi-
+bility of capacity constraints in health care.
+   In a strategic view of the COVID-19 pandemic in India, the challenge lay
+in utilizing the levers of public health to flatten the epidemic curve while
+simultaneously enlarging health care capacity so as to minimize the extent
+to which surges took place that exceeded the health care system capacity.
+The overarching issue in the normative analysis of the Indian health care
+system in 2020 is to think about the extent to which health care capacity
+was indeed enlarged.
+   Indeed, looking into the deep future, COVID-19 has brought new attri-
+butes into the challenge of health policy. In order to address the possibility
+of an epidemic in the future that cannot be contained by public health alone,
+it will be important to plan for a health care system that has the capacity
+to scale up its services on demand. This will of course come at a cost. For
+example, it will mean holding in reserve capital goods such as hospital
+beds and ICUs, and paying for operating expenses, for example, salaries of
+intensivists who are underutilized in normal times.
+   How can meaningful capacity surges in health care be managed? The first
+path lies in building additional health care capacity through the one large
+health organization—the government. The public sector health care system
+has worked very hard so far in 2020 and has played a disproportionate role
+in addressing health care requirements. Indeed, without these capabilities,
+the outcomes in India would have been significantly worse. However, given
+initial conditions, where only about 30 percent of ICUs or ventilators, and an
+even smaller share of specialist staff were available, it was difficult to obtain
+the supply response needed through the public sector health care system. This
+approach also faced the constraints of operational capabilities and quality.
+   The other path lies in establishing contracts with the private sector. While
+this would face the complexities of government contracting, it would be
+attractive in several respects: (a) the private sector started out with about
+70 percent capacity, and it is thus easier to obtain large expansions when
+working through the private sector and (b) the private sector is likely to have
+greater operational capabilities and quality.
+   For a city in India, there are many uncertainties about the magnitude of
+health care capacity required at a future date. A risk management perspective
+                                                                    Ajay Shah    55
+
+is useful in thinking about this sizing. It would be efficient for the govern-
+ment to establish contracts with private persons that would cover the cost
+of establishing enlarged facilities regardless of actual use, so that society
+would have the option of being able to utilize these facilities in the event
+of a surge in the disease.
+
+4.2. Difficulties Faced by Private Health Care Organizations
+In the epidemic, demand for health care other than for COVID-19 patients
+appears to have declined, perhaps through a combination of patients being
+afraid of infection at health care facilities, difficulties of transportation owing
+to the lockdowns, and financial constraints faced by households. Alongside
+this, some health care facilities pulled back from non-COVID-19 activities
+in order to prioritize COVID-19 activities, there were difficulties with the
+health care workforce, and some managers of health care facilities may
+have chosen to retreat from full-fledged operations. Monthly notifications
+of TB have dropped by 80 per cent, which gives a sense of the extent of the
+disruption (Ethiraj 2020).
+    The new government health care program, the Pradhan Mantri Jan
+Arogya Yojana (PMJAY), has become an important source of information
+about developments in health care. Smith et al. (2020) analyze the data for
+claims in PMJAY during the COVID-19 epidemic from January to June
+2020. The value of claims dropped by 76 percent in the early lockdown
+phase. There was a slight decline in claims by women, the young, and the
+old. The number of active hospitals in the PMJAY system dropped by half
+at first, with private hospitals gradually recovering. Elective surgeries such
+as cataract or joint replacement at first dropped to near zero levels.
+    Table 1 shows the 2020 returns on the stock market index of health care
+firms after the returns of the overall market index is subtracted. This shows
+
+T A B L E 1 . Excess Returns: Monthly Share Price Index of Health Care Firms
+Net of Overall Market Index during January–June 2020
+2020                                                               Returns (%)
+January                                                              14.0
+February                                                             –1.0
+March                                                               –27.0
+April                                                                11.0
+May                                                                  –2.0
+June                                                                   4.5
+Source: CMIE Overall Share Price Index.
+56 I n d i a p o l i c y f o r u m , 2020
+
+that in March 2020, with the lockdown, there was a 27 percent decline in
+health care stock prices reflecting these concerns. The large underlying
+declines in revenue driving the share price index are likely to have induced
+significant financial stress in private health care organizations. In an ideal
+world, private health care organizations should have been devoting their
+management skills to enlarging capacity; instead, their energies were sig-
+nificantly utilized in addressing their financial stress.
+
+4.3. Protecting Health Care Workers
+In the locations where the epidemic has surged, the health care system has
+faced significant constraints on the health care workforce. This reflects a
+combination of factors.
+    Given the substantial viral load that health care workers can be exposed
+to, many health care workers got sick and thus dropped out of the workforce.
+This problem was exacerbated by poor protocols in most Indian health
+care organizations. Concerns about possible sickness hampered labor force
+participation by some health care workers, particularly the elderly. In the
+lockdown, transportation constraints hindered the commute to work for
+junior staff. These problems added up to a decline in health care system
+capacity on account of the reduced workforce. Improved protocols, access
+to PPEs, and health insurance could help improve outcomes.
+
+4.4. Health Care Financing
+COVID-19-related health care expenses are a highly insurable risk; large
+expenditures are only incurred for a small fraction of the infected. One
+pathway for public resources to feed into health care financing lies in a
+government-run health care system. The other pathway lies in public financ-
+ing of private health care.
+   Employees State Insurance (ESI) is a mandatory program for workers
+of large private firms that offers expansive benefits alongside mandatory
+payments by workers. In principle, ESI could be the kernel around which a
+significant health care arrangement could come about. However, in practice,
+ESI has become one more, large public sector health care organization, with
+a prime focus on building and operating health care organizations. For most
+compulsory participants in ESI, the promise of service delivery in practice is
+not matched by supply-side capabilities. ESI could significantly enlarge its
+outreach by shifting gears from an emphasis on production to an emphasis
+on contracting, where it could become a sophisticated purchaser of private
+health care services.
+                                                                  Ajay Shah   57
+
+    The many elements of government-funded health insurance schemes
+could also play an important role in health care financing for COVID-19.
+There were initial delays in enlarging package designs to encompass testing
+and treatment for COVID-19. There is a need to build institutional capacity
+in the operations of these programs in order to respond to the coming surge
+in requirements.
+
+4.5. What Institutional Apparatus Would have Helped?
+The private market for health care suffers from market failure in the form
+of asymmetric information. The conventional response of the state has
+emphasized instruments such as bans, price limits, and the commandeer-
+ing of private facilities. It is desirable to address the market failure through
+a combination of private clubs, domestic and overseas certification, and
+sophisticated buyers (either public systems like ESI or PMJAY, or private
+health insurance companies), all centered around a small core of law and
+regulation. There is considerable complexity in identifying the minimal core
+of law and regulation that fits inside the envelope of what is feasible given
+the constraints on state capacity.
+   A key barrier that inhibits the relationship between public health policy
+and the private sector is that of contracting. Many government departments
+have low capacity in procurement, contract disputes, contract monitoring,
+contract renegotiation, and timely payments. Private persons have negative
+expectations of the extent to which the government will litigate or arbitrarily
+delay payments. Constraints in contracting have shaped up as a critical
+constraint inhibiting health policy.
+   At a practical level, in many cities there is an impending storm of the
+peak of the epidemic curve. The present landscape of actions by the Union
+Government, state governments, and city governments does not fully address
+the problem. It is in the self-interest of the health care industry and the busi-
+ness community in each city, and therefore of the city residents, to prepare
+better and to form local coalitions for coordination and action (Shah 2020d).
+
+
+5. Conclusion
+
+The pandemic has posed a huge challenge for health policy in all countries.
+There were significant weaknesses in Indian institutional arrangements
+before the pandemic commenced. These difficulties were partly grounded in
+the arrangements for health policy, and partly weaknesses of the homeostatic
+processes of the Indian State, such as in government contracting.
+58 I n d i a p o l i c y f o r u m , 2020
+
+   Some parts of the Indian health system have responded strongly to the
+pandemic. These include testing and health care in the public sector. At the
+same time, their pre-existing weaknesses have inhibited the scale of the
+response.
+   The stark light of the pandemic has created fresh insights on the diffi-
+culties and the priorities for reform. The enormous adverse consequences
+of the pandemic serve to reinforce the prioritization for public health. The
+possibilities for public health are summarized in one fact: Taiwan, a coun-
+try of 23 million with strong travel links to China, has had 9 deaths so far.
+While the adequacy of resources is an important element of public health,
+the primary problem is that of institutional reform. Doing the institutional
+reform and then devoting resources would reflect the long-standing Indian
+tradition of scaling up resources into pathways that have proven themselves
+in delivering sound outcomes.
+   There is now considerable knowledge in the field of state capacity, on the
+tangible elements of institutional design, of the establishment of checks and
+balances, through which greater capability can be obtained. This knowledge
+can now be usefully brought into the field of health policy, with the accent
+on public health.
+
+
+Appendix: Institutional Arrangements for
+Regulating Social Distancing
+
+The pre-COVID-19 world of social interactions is infeasible as it will give
+rise to an infection surge that will overwhelm existing health care facilities.
+The other extreme, a complete lockdown for the entire country, has a large
+impact upon livelihoods. When GDP declines, this will in and of itself gener-
+ate adverse health outcomes. As an example, infant mortality and maternal
+mortality go up when GDP declines. Similarly, the resources in the hands
+of the government that can possibly be brought to bear upon the COVID-19
+epidemic are linked to GDP; when GDP declines, tax collections and the
+resources available to fight COVID-19 also decline.
+   The puzzle lies in finding a balance between these two extremes. If an
+environment is created of the state trying to prevent personal freedoms and
+people trying to surreptitiously regain personal freedoms, then the people
+will always succeed, and the health policy objectives of social distancing
+will be lost. The emergence of an adversarial relationship with people will
+hamper the everyday public health work of tracing, testing, isolating, and
+                                                                  Ajay Shah   59
+
+reducing pathways of transmission. When scientific progress comes about in
+the form of a vaccine, a prophylactic, or a cure, trusted public health channels
+are of the essence in rolling out these advances on a nationwide scale. This
+will be impeded if an environment of coercion and conflict is established.
+   For these reasons, there is need for democratic legitimacy for the chosen
+path of social distancing. The strategy for social distancing should involve a
+great deal of discussion and very little coercion. While the state can introduce
+information into this decision-making, ultimately, each individual and each
+organization has to make these trade-offs.
+   This starts with public health officials persuading individuals and orga-
+nizations that there is an important threat. The government has made good
+progress in sending information into the populace about the dangers of
+the pandemic. If sickness or death takes place in a neighborhood, this will
+impact fear and concern in that neighborhood. Individuals will typically
+be amenable to thinking about this problem and changing their behavior in
+response to it. The sheer creation of accurate data and its timely release will
+create the requisite risk aversion.
+   Conversely, public health officials do not know enough about the life of
+each individual and each organization. The imposition of a single rulebook
+on all people at all times will induce difficulties. If anything, the imposition
+of a rulebook that lacks nuance and is insensitive to the particular condi-
+tions of each individual, household, or organization runs the risk of public
+health being seen as an out-of-touch imposition, leading to people devoting
+themselves to evasion.
+   Alongside social distancing measures (e.g., closing a mandi or mod-
+ifying the working of a mandi in ways that lead to reduced disease
+transmission), there are a host of public health measures that need to be
+considered. This raises questions relating to the use of masks, enclosed
+spaces with recirculated air, disinfection protocols for public places, and
+the use of hand sanitizers and hand washing, among others. All these
+problems need to be analyzed at a local level, reflecting local constraints
+and local trade-offs.
+   Democratic legitimacy comes from expertise, information, persuasion,
+and the minimal use of coercion. A policy framework for social distancing
+may hence be envisioned as the following steps:
+
+   • There should be Green, Blue, and Red manuals for social distancing.
+     The Green manual should have the mildest requirements and the Red
+     manual should have the highest requirements.
+60 I n d i a p o l i c y f o r u m , 2020
+
+   • A group of academics and intellectuals should be organized that
+     creates reference drafts of these three manuals at an all-India level.
+     These draft manuals should then be released on a website for public
+     commentary. There should be no state coercion around these manuals;
+     they should only be inputs for public discourse.
+   • Each of these manuals should involve the minimal use of force. The
+     bulk of the manual should involve reasoning and recommendations,
+     not threats of state violence. A tiny portion of the manual should
+     involve using powers under the Epidemic Diseases Act, 1897.
+   • Associated with these manuals should be the full reasoning about the
+     logic behind the design of these manuals. Communication materials
+     should be developed, which explain these manuals to officials and
+     private citizens.
+
+   This work can be organized by the Ministry of Health and Family Welfare,
+the NITI Aayog, and academic institutions. The manuals should be given as
+intellectual inputs to cities/districts. Armed with this knowledge, officials in
+the rural districts and cities should debate with their local interest groups and
+adapt the manuals for their own use. For some places, it may be feasible to
+close down a mandi, but for another city it may be essential to keep mandis
+open and the response there may lie in the extent of safety procedures built
+into the working of mandis. These decisions are best made locally.
+   Each city would utilize the raw material of the three draft manuals made
+at an all-India level and come up with their own practical manuals that are
+grounded in their reality. We might thus have a Nagpur Green, a Nagpur
+Blue, and a Nagpur Red manual that are discussed and released in Nagpur.
+Manuals for different cities and districts would appear on the Internet, and
+their merits would be debated.
+   The bulk of each city or district manual would involve voluntary actions
+by various communities, associations, and organizations. The use of state
+coercion should be minimal. Local officials would have to manage this pro-
+cess of engaging with the community, developing these manuals, developing
+consensus around the design of the manuals, and getting to the right design
+of the manuals while using minimal state coercion.
+   Once a city/district has chosen its design of the Green/Blue/Red manuals,
+how might it transition between these manuals? When social distancing
+measures are brought in with greater predictability, economic activity can
+be better designed around this stochastic environment, and a given level of
+social distancing can then have a smaller impact upon economic activity
+and, eventually, GDP.
+                                                                       Ajay Shah    61
+
+   In order to achieve democratic legitimacy, predictability, and high
+compliance, each city should establish a Social Distancing Committee to
+control which manual is presently in use.5 Designing the working of this
+Committee involves thinking about its composition and operations. Here
+are some suggestions.
+   Composition and Appointment of a Social Distancing Committee:
+
+   1. It should be made up of two officials (the most senior officials of
+      the city government), three scientists, and two businesspersons, thus
+      adding up to seven persons.
+   2. The appointment of these seven persons should be done by the city
+      government.
+   3. All seven persons must be residents of the city and each must have
+      at least six family members living in the city.
+   4. We may note that in a committee of seven, winning requires four
+      votes. If the two city officials have made up their mind on a given
+      idea, they have two votes in hand. For this idea to go through, they
+      would require the support of two more votes from among the remain-
+      ing five persons. Thus, we see that there is a healthy tension between
+      having an important say for the officials and requiring that they carry
+      at least two of the five other private citizens and their thought pro-
+      cesses with them.
+
+   Operations of the Social Distancing Committee:
+
+   1. This committee should meet every Friday to review the current data
+      about conditions in the city and the neighboring environment, and
+      vote on a possible change over from one manual to another.
+   2. City officials and their associated researchers would make a pres-
+      entation to the committee at the start of the meeting, which would
+      provide the committee with the requisite information, based on which
+      a decision can be made. This presentation would be released into the
+      public domain.
+   3. Each individual in the committee should be required to release a one-
+      or two-page of a rationale statement about why they voted in the way
+      that they did. The public release of the voting record, and the rationale,
+      would generate accountability. In the future, if it is clear (with the
+
+  5. These ideas draw on knowledge in the field of monetary economics on the working of
+monetary policy committees, for example, Shah (2014).
+62 I n d i a p o l i c y f o r u m , 2020
+
+      benefit of hindsight) that a decision to go to the Red manual was a
+      mistake, this will generate an adverse impact upon the reputation of
+      the individual. Meetings and voting should take place on a Friday and
+      take effect from the next Tuesday, thus giving everyone three days to
+      gear up for the changed setting.
+   4. This committee would also have the authority to modify the text of
+      the three manuals over time. These decisions would also take place
+      through voting, rationale statements, and transparency.
+
+    Such a committee process ensures that there is deliberation and demo-
+cratic legitimacy in the decisions about social distancing. In their ordinary
+life, each of the seven persons would meet and hear the viewpoints of hun-
+dreds of persons, and all this knowledge would feed into thinking about the
+trade-offs and discovering low-cost mechanisms to improve public health
+that can be used to modify the manuals.
+    A well-known empirical fact in the history of epidemics is that democ-
+racies fare better in epidemics. The tools of public discussion, consensus
+building, transparency, and lack of the concentration of power will yield
+the best decisions. The democratic legitimacy of the Social Distancing
+Committee will help ensure that people cooperate with its decisions instead
+of trying to get around the constraints. The bulk of the actions envisioned
+in the three manuals would be voluntary actions of individuals and private
+organizations without bringing state coercion into the picture.
+
+
+References
+Agarwal, Natasha, and Harleen Kaur. 2020. “Information about COVID-19 in India.”
+   The Leap Blog, June 13. Available at https://blog.theleapjournal.org/2020/06/
+   information-about-covid-19-in-india_13.html (accessed May 25, 2021).
+Bajpai, Vikas. 2020. “Half-Truths and Twisted Data Won’t Help Control COVID-
+   19.” The Wire, June 28. Available at https://science.thewire.in/health/covid-
+   19-icmr-response-seroprevalence-survey-critique/ (accessed May 25, 2021).
+Baker, Michael G., Nick Wilson, and Andrew Anglemyer. 2020. “Successful
+   Elimination of COVID-19 Transmission in New Zealand.” New England Journal
+   of Medicine, 383: e56, DOI: 10.1056/NEJMc2025203. Available at https://www.
+   nejm.org/doi/full/10.1056/NEJMc2025203 (accessed May 25, 2021).
+Bansal, Samarth. 2020. “Indian Govt. Trots Out Meaningless Data as COVID-
+   19 Cases Rocket despite Lockdown.” HuffPost, May 20. Available at https://
+   www.huffingtonpost.in/entry/india-coronavirus-cases-response-data-crisis_
+   in_5ec49658c5b6956f4169fb4f (accessed May 25, 2021).
+                                                                  Ajay Shah   63
+
+Barnagarwala, Tabassum. 2020. “451 Missing Deaths in Mumbai, BMC Updating
+   Records after Mismatch.” The Indian Express, June 16. Available at https://
+   indianexpress.com/article/cities/mumbai/mumbai-missing-covid-deaths-bmc-
+   records-mismatch-6460939/ (accessed May 25, 2021).
+Bhandari, Vrinda, and Faiza Rahman. 2020. “Constitutionalism during a Crisis: The
+   Case of Aarogya Setu.” The Leap Blog, May 25. Available at https://blog.the-
+   leapjournal.org/2020/05/constitutionalism-during-crisis-case-of.html (accessed
+   25 May 2021).
+Chandra Sharma, Neetu. 2019. “Why India Lacks Quality in Its Demographic and
+   Health Data?” Mint, July 25. Available at https://www.livemint.com/news/india/
+   why-india-lacks-quality-in-its-demographic-and-health-data-1564048796002.
+   html (accessed May 25, 2021).
+Cochrane, John H. 2020. “An SIR Model with Behavior.” The Grumpy Economist,
+   May 4. Available at https://johnhcochrane.blogspot.com/2020/05/an-sir-model-
+   with-behavior.html (accessed May 25, 2021).
+Das, Jishnu, Neelanjan Sircar, and Partha Mukhopadhyay. 2020. “A Blueprint
+   for a Testing Strategy.” Hindustan Times, April 22. Available at https://www.
+   hindustantimes.com/analysis/a-blueprint-for-a-testing-strategy-analysis/story-
+   OEx409xxBbAXbzLDV1diGI.html (accessed May 25, 2021).
+Das, Mehul, Isalyne Gennaro, Sneha Menon, Anahita Shah, Kadambari Shah, Tvesha
+   Sippy, and Priya Vedavalli. 2020. “Kerala’s Strategies for COVID-19 Response:
+   Guidelines and Learnings for Replication by Other Indian States”, May 11
+   Mumbai: IDFC Institute. Available at http://www.idfcinstitute.org/site/assets/
+   files/15617/kerala_strategies_for_covid-19_response_updated_may_11_2020-1.
+   pdf (accessed May 25, 2021).
+Ethiraj, Govindraj. 2020. “‘COVID Will Set Back India’s TB Programme by a
+   Decade’: Madhukar Pai.” IndiaSpend, May 13. Available at https://www.indi-
+   aspend.com/covid-will-set-back-indias-tb-programme-by-a-decade/ (accessed
+   May 25, 2021).
+Gandhi, Monica, Deborah S. Yokoe, and Diane V. Havlir. 2020. “Asymptomatic
+   Transmission, the Achilles’ Heel of Current Strategies to Control COVID-19.”
+   New England Journal of Medicine, 382 (22): 2158–160.
+ICMR COVID Study Group, COVID Epidemiology and Data Management Team,
+   COVID Laboratory Team, and VRDLN Team, Indian Council of Medical
+   Research. 2020. “Laboratory Surveillance for SARS-Cov-2 in India: Performance
+   of Testing and Descriptive Epidemiology of Detected COVID-19, January 22–
+   April 30, 2020.” Indian Journal of Medical Research, 15 (5): 424–37. Available
+   at http://www.ijmr.org.in/article.asp?issn=0971-5916;year=2020;volume=151;i
+   ssue=5;spage=424;epage=437;aulast=ICMR (accessed May 25, 2021).
+Isaac, T. N. Thomas, and Rajeev Sadanandan. 2020. “COVID-19, Public Health
+   System and Local Governance in Kerala.” Economic & Political Weekly, 55 (21),
+   May 23. Available at https://www.epw.in/journal/2020/21/perspectives/covid-
+   19-public-health-system-and-local-governance.html (accessed May 25, 2021).
+64 I n d i a p o l i c y f o r u m , 2020
+
+Islam, Nazrul, Stephen J. Sharp, Gerardo Chowell, Sharmin Shabnam, Ichiro
+   Kawachi, Ben Lacey, Joseph M. Massaro, Ralph B. D’Agostino, and Martin
+   White. 2020. “Physical Distancing Interventions and Incidence of Coronavirus
+   Disease 2019: Natural Experiment in 149 Countries.” British Medical Journal,
+   370 (2020): m2743. Available at https://doi.org/10.1136/bmj.m2743 (accessed
+   May 25, 2021).
+Johnson, T. A. 2020. “Bengaluru Battle: Amid Spike, Shortage of Staff and ICU Beds
+   with Ventilators.” The Indian Express, July 6. Available at https://indianexpress.
+   com/article/india/bengaluru-battle-amid-spike-shortage-of-staff-icu-beds-with-
+   ventilators-6491895/ (accessed May 25, 2021).
+Kaur, Harleen. 2020. “Can the Indian Legal Framework Deal with the COVID-19
+   Pandemic? A Review of the Epidemic Diseases Act.” Bar and Bench, March 27.
+   Available at https://www.barandbench.com/columns/can-the-indian-legal-frame-
+   work-deal-with-the-covid-19-pandemic-a-review-of-the-epidemics-diseases-act
+   (accessed May 25, 2021).
+Kaur, Harleen, Ameya Paleja, and Siddhartha Srivastava. 2020. “Legal and
+   Regulatory Framework for Laboratory Testing in India: A Case Study for
+   COVID-19.” The Leap Blog. Available at https://blog.theleapjournal.org/2020/07/
+   legal-and-regulatory-framework-for.html (accessed May 25, 2021).
+Kelkar, Vijay, and Ajay Shah. 2019. In Service of the Republic: The Art and Science
+   of Economic Policy. Bristol: Penguin Allen Lane.
+———. 2020. “The Epidemic of 2020: Setting Course for a V-Shaped Recovery.”
+   Business Standard, April 7. Available at http://www.mayin.org/ajayshah/
+   MEDIA/2020/covid19_india.html (accessed May 25, 2021).
+Kumar, Alok Prasanna. 2020. “Lawless Law-making in a COVID-19 World.”
+   Economic & Political Weekly, 55 (25), June 20. Available at https://www.epw.
+   in/journal/2020/25/law-and-society/lawless-lawmaking-covid-19-world.html
+   (accessed May 25, 2021).
+Luo, Eric, Nicholas Chong, Clese Erikson, Candice Chen, Sara Westergaard, Edward
+   Salsberg, and Patricia Pittman. 2020. “Contact Tracing Workforce Estimator.”
+   Washington, DC: Fitzhugh Mullan Institute for Health Workforce Equity, The
+   George Washington University. Available at https://www.gwhwi.org/estima-
+   tor-613404.html (accessed May 25, 2021).
+Malani, Anup, Manoj Mohanan, Chanchal Kumar, Jake Kramer, and Vaidehi
+   Tandel. 2020. “Prevalence of SARS-Cov-2 among Workers Returning to Bihar
+   Gives Snapshot of COVID across India.” medRxiv, June 28. Available at https://
+   www.medrxiv.org/content/10.1101/2020.06.26.20138545v1.full.pdf (accessed
+   May 25, 2021).
+Malani, Anup, Manoj Mohanan, Sanchit Balsari, and Anu Acharya. 2020.
+   “Rethinking COVID-19 Testing Strategy.” The Hindu Business Line, May 29.
+   Available at https://www.thehindubusinessline.com/opinion/rethinking-covid-
+   19-testing-strategy/article31697253.ece (accessed May 25, 2021).
+Melnick, Edward R., and John P. A. Ioannidis. 2020. “Should Governments Continue
+   Lockdown to Slow the Spread of COVID-19?” British Medical Journal, 369
+                                                                  Ajay Shah   65
+
+   (2020): m1924. Available at https://doi.org/10.1136/bmj.m1924 (accessed
+   May 25, 2021).
+Ministry of Corporate Affairs. 2016. “Report of the Working Group on the Building
+   of the Insolvency and Bankruptcy Board of India.” New Delhi: Government of
+   India. Available at https://www.ibbi.gov.in/Wg-01%20Report.pdf (accessed
+   May 25, 2021).
+Morris, Loveday, and Luisa Beck. 2020. “While U.S. Struggles to Roll Out
+   Coronavirus Contact Tracing, Germany Has Been Doing It from the Start.” The
+   Washington Post, May 25. Available at https://www.washingtonpost.com/world/
+   europe/contact-tracing-coronavirus-germany/2020/05/24/7e59a668-93c1-11ea-
+   87a3-22d324235636_story.html (accessed May 25, 2021).
+Mukhopadhyay, Partha. 2020a. “Locking Down Is Not Enough. Ramp Up Testing.”
+   Hindustan Times, March 27. Available at https://www.hindustantimes.com/analy-
+   sis/locking-down-is-not-enough-ramp-up-testing-writes-partha-mukhopadhyay/
+   story-uInlUzJnkbca7iPXeysuUI.html (accessed May 25, 2021).
+———. 2020b. “The Stability of Test Positivity in India.” New Delhi: Centre for
+   Policy Research, May 19. Available at https://www.cprindia.org/news/stability-
+   test-positivity-india (accessed May 25, 2021).
+Parsheera, Smriti. 2020. “Street-level Officials in India’s COVID-19 Response.”
+   The Leap Blog, April 6. Available at https://blog.theleapjournal.org/2020/04/
+   street-level-officials-in-indias-covid.html (accessed May 25, 2021).
+Patnaik, Ila, Shubho Roy, and Ajay Shah. 2018. “The Rise of Government-funded
+   Health Insurance in India” (Working Paper No. 18/231). New Delhi: National
+   Institute of Public Finance and Policy.
+Philip, Minu, Debraj Ray, and S. Subramanian. 2020. “Decoding India’s Low
+   COVID-19 Case Fatality Rate” (Working Paper No. 27896). Cambridge: National
+   Bureau of Economic Research. Available at https://www.nber.org/papers/w27696
+   (accessed May 25, 2021).
+Pritchett, Lant, and Michael Woolcock. 2004. “Solutions When the Solution Is the
+   Problem: Arraying the Disarray in Development.” World Development, 32 (2):
+   191–212.
+Rajagopalan, Shruti, and Alexander Tabarrok. 2020. “Pandemic Policy in Developing
+   Countries: Recommendations for India”, Policy Briefs. Arlington, VA: Mercatus
+   Center, George Mason University, April 9. Available at https://www.mercatus.
+   org/publications/covid-19-policy-brief-series/pandemic-policy-developing-
+   countries-recommendations-india (accessed May 25, 2021).
+Rajan, S. Irudaya, and K. S. James. 2008. “Third National Family Health Survey in
+   India: Issues, Problems and Prospects.” Economic & Political Weekly 43, (48):
+   33–38, November 29.
+Ramu, Swapnika. 2015. “MenAfriVac: A Novel Strategy for Building a Vaccine.”
+   The Leap Blog, May 10. Available at https://blog.theleapjournal.org/2015/05/
+   menafrivac-novel-strategy-for-building.html (accessed May 25, 2021).
+Rivers, Caitlin, and Dylan George. 2020. “How to Forecast Outbreaks and
+   Pandemics: America Needs the Contagion Equivalent of the National Weather
+66 I n d i a p o l i c y f o r u m , 2020
+
+   Service.” Foreign Affairs, June 29. Available at https://www.foreignaffairs.
+   com/articles/united-states/2020-06-29/how-forecast-outbreaks-and-pandemics
+   (accessed May 25, 2021).
+Roy, Shubho. 2020. “Skepticism about Measurement: Hospital Beds Edition.”
+   The Leap Blog, June 24. Available at https://blog.theleapjournal.org/2020/06/
+   skepticism-about-measurement-hospital.html (accessed May 25, 2021).
+Roy, Shubho, Ajay Shah, B. N. Srikrishna, and Somasekhar Sundaresan. 2019.
+   “Building State Capacity for Regulation in India.” In Regulation in India: Design,
+   Capacity, Performance, edited by Devesh Kapur and Madhav Khosla. Oxford:
+   Hart Publishing.
+Rukmini, S. 2020a. “ICMR Data Shows India’s COVID Testing Is Not in Right
+   Shape–5 Things That Need Fixing.” The Print, June 1. Available at https://
+   theprint.in/opinion/icmr-data-shows-indias-covid-testing-is-not-in-right-shape-
+   5-things-that-need-fixing/433077/ (accessed May 25, 2021).
+———. 2020b. “Why Audits, Reconciled Death Data Are Still Missing COVID
+   Deaths.” IndiaSpend, July 1. Available at https://www.indiaspend.com/why-
+   audits-reconciled-death-data-are-still-missing-covid-deaths/ (accessed May 25,
+   2021).
+Sadanandan, Rajiv. 2020. “Kerala’s Response to COVID-19.” Indian Journal of
+   Public Health 4 (6): 99–101. Available at http://www.ijph.in/downloadpdf.
+   asp?issn=0019-557X;year=2020;volume=64;issue=6;spage=99;epage=101;aul
+   ast=Sadanandan;type=2 (accessed May 25, 2021).
+Sané, Renuka. 2020. “Isolation: A Weak Link in Indian Public Health.” The Leap
+   Blog, March 20. Available at https://blog.theleapjournal.org/2020/03/isolation-
+   weak-link-in-indian-public.html (accessed 25 May 2021).
+Sané, Renuka, and Ajay Shah. 2021. “Excess Deaths in the COVID-19 Pandemic
+   in India.” Preprint. doi:10.2139/ssrn.3750679
+Sethi, Nitin, and Kumar Sambhav Shrivastava. 2020. “Frustration in National
+   COVID-19 Task Force.” Article 14, January 27. Available at https://www.
+   article-14.com/post/no-action-taken-frustration-in-national-covid-19-task-force
+   (accessed May 25, 2021).
+Shah, Ajay. 2014. “Designing the Monetary Policy Committee.” The Leap Blog,
+   January 25. Available at https://blog.theleapjournal.org/2014/01/designing-
+   monetary-policy-committee.html (accessed May 25, 2021).
+———. 2019. “Buy, Not Build, Spacecraft.” Business Standard, September 9.
+   Available at http://www.mayin.org/ajayshah/MEDIA/2019/isro_spillovers.html
+   (accessed May 25, 2021).
+———. 2020a. “Responding to the New Coronavirus: An Indian Policy Perspective.”
+   NIPFP Working Paper No. 309, March 11. Available at https://www.nipfp.org.
+   in/media/medialibrary/2020/07/WP_309_2020.pdf (accessed May 25, 2021).
+———. 2020b. “More Testing: From Concept to Implementation.” The Leap Blog,
+   April 12. Available at https://blog.theleapjournal.org/2020/04/more-testing-from-
+   concept-to.html (accessed May 25, 2021).
+                                                                      Ajay Shah   67
+
+Shah, Ajay. 2020c. “The de-Lockdown Needs a Better Institutional Foundation.”
+   Business Standard, May 4. Available at http://www.mayin.org/ajayshah/
+   MEDIA/2020/delockdown.html (accessed 25 May 2021).
+———. 2020d, June 15. “COVID-19 in India in the Coming Months: The Puzzles
+   Faced by Leaders of Health Care Organisations.” The Leap Blog. Available at
+   https://blog.theleapjournal.org/2020/06/covid-19-in-india-in-coming-months.
+   html (accessed May 25, 2021).
+Shah, Ajay, Sanhita Sapatnekar, Harleen Kaur, and Shubho Roy. 2019. “Financing
+   Common Goods for Health: A Public Administration Perspective from India.”
+   Health Systems & Reform, 5 (4): 391–96.
+Sharma, Jeevan Prakash, and Siddharth Premkumar. 2020. “India’s Coronavirus
+   Data Is Infected with Flaws. Numerophobia?” Outlook, June 22. Available at
+   https://www.outlookindia.com/magazine/story/india-news-covid-19-special-
+   why-indias-data-on-coronavirus-is-infected-with-flaws/303323 (accessed
+   May 25, 2021).
+Sharma, Smriti. 2016. “Problems of the Health Management Information System
+   (HMIS): The Experience of Haryana.” The Leap Blog, June 13. Available at
+   https://blog.theleapjournal.org/2016/06/problems-of-health-management.html
+   (accessed May 25, 2021).
+Sinha, Amitabh. 2020. “Coronavirus Numbers Explained: Behind India’s Unusual
+   Spike in COVID-19 Deaths.” The Indian Express, June 19. Available at https://
+   indianexpress.com/article/explained/coronavirus-numbers-explained-india-
+   death-toll-mismatch-6462899/ (accessed May 25, 2021).
+Smith, Owen, Parul Naib, Pulkit K. Sehgal, and Sheena Chhabra. 2020. “PMJAY
+   under Lockdown: Evidence on Utilisation Trends” (PM-JAY Policy Brief). New
+   Delhi: National Health Authority. Available at https://pmjay.gov.in/sites/default/
+   files/2020-06/Policy-Brief-8_PM-JAY-under-Lockdown-Evidence_12-06-20_
+   NHA_WB.pdf (accessed May 25, 2021).
+Soucat, Agnes. “Financing Common Goods for Health: Fundamental for Health, the
+   Foundation for UHC.” Health Systems & Reform, 5 (4): 263–67.
+Srikrishna, B. N. 2013. Report of the Financial Sector Legislative Reforms
+   Commission, Vol. 1. New Delhi: Union Ministry of Finance, Government of
+   India. Available at https://dea.gov.in/sites/default/files/fslrc_report_vol1_1.pdf
+   (accessed May 25, 2021).
+Sudhir, Amita, and Nachiket Mor. 2020. “Indicative Protocol for a First
+   Level Oxygen Therapy Centre for Patients with Suspected or Confirmed
+   COVID-19.” Preprint. Available at file:///C:/Users/amehta/Downloads/
+   IndicativeProtocolforaFirstLevelOxygenTherapyCentreSudhirandMor300620
+   (accessed May 25, 2021).
+Thomas, Suja. 2020. “Covid-19 in the Tropics: How Will High Heat and Humidity
+   Shape the Outcomes?” The Leap Blog, May 4. Available at https://blog.the-
+   leapjournal.org/2020/05/covid-19-in-tropics-how-will-high-heat.html (accessed
+   May 25, 2021).
+68 I n d i a p o l i c y f o r u m , 2020
+
+Triggle, Nick. 2020. “Coronavirus: Track and Trace System in Place from June—
+   PM.” BBC News, May 20. Available at https://www.bbc.com/news/uk-52741331
+   (accessed May 25, 2021).
+
+
+
+   To view the entire video of this IPF session and the General
+   Discussion that ended the session, please scan this QR code
+   or use the following URL
+   https://www.youtube.com/watch?v=U1mmv_uUoYE
+                                  Comments and Discussion*
+                                                              Chair: Rajesh Bhushan
+  Secretary, Ministry of Health and Family Welfare, Government of India
+
+
+
+K. P. Krishnan
+NCAER & former Secretary, Ministry of Skill Development and
+Entrepreneurship
+
+Given my experience in government, the lesson that I want to start with is
+that for a number of complex questions of public policy, very often what
+is required is a good understanding of something as basic as information
+asymmetry and the two initial characteristics of public goods, namely, non-
+rival and non-excludable. Whether it is finance, urban development, land,
+skills, or cooperatives, these public good concepts can explain far more than
+what people realize. And not understanding or not applying them can also
+explain many egregious mistakes in public policy. The Kelkar–Shah book
+(2019), from which a lot of Ajay’s presentation today comes, applies these
+principles very sensibly.
+   This paper draws mostly the right conclusions. I want to go a little beyond
+the paper and relate my remarks to what I am observing of COVID-19 and
+the government’s response.
+   The first point I want to make is that public goods have a jurisdictional
+dimension, particularly important in a federal country. India’s Constitution
+provides for three levels of government and distributes responsibilities
+across them. As economists, we should study whether the principles of
+public goods and their jurisdictional dimension are embedded in that
+distribution of constitutional responsibilities. The Constitution’s 7 th
+Schedule deals with the distribution of responsibilities between the Union
+and the states for both legislative and executive powers. The 11th and 12th
+Schedules, added in 1992, deal with the powers of rural panchayats and
+urban municipalities. The 7th Schedule has three lists: the Union, the State,
+and the Concurrent. The third is somewhat peculiar to India, as not many
+
+    * To preserve the sense of the discussions at the India Policy Forum, these discussants’
+
+comments the views expressed at the IPF and do not necessarily take into account revisions to
+the conference version of the paper in response to these and other comments in preparing the
+final, revised version published in this volume. The original conference version of the paper
+is available on NCAER’s website at the links provided at the end of this section.
+
+                                                                                          69
+70 I n d i a p o l i c y f o r u m , 2020
+
+other countries have a concurrent list over which both the Union and the
+states have jurisdiction.
+    Where does public health figure on these lists? Item 6 on the State List
+includes public health, sanitation, hospitals, and dispensaries, so prima facie
+public health is a state responsibility. However, dig deeper and item 28 on
+the Union List mentions port quarantine, including related hospitals, in the
+context of shipping. In the present context, item 81 on the Union List is
+about inter-state migration and inter-state quarantine—it would appear that
+some founding father of the Constitution actually visualized a pandemic.
+Even more to the point, item 29 in the Concurrent List says, “Prevention
+of the extension from one State to another of infectious or contagious dis-
+eases….” Looking to the third tier of local government, the Constitution’s
+11th Schedule contains item 23, referring to “health and sanitation, includ-
+ing hospitals, primary health centers, and dispensaries,” which leaves little
+doubt when read with Article 243G relating to panchayats. In parallel, item
+6 of the 12th Schedule, when read with Article 243W of the Constitution
+dealing with urban municipalities, assigns public health and sanitation to
+urban municipalities.
+    I wanted to make the point that public health is allocated to state govern-
+ments as well as local governments, but there are many elements of public
+health relating to contagious diseases and pandemics that are also in the Union
+and Concurrent Lists. So one could say either of the following: (a) there is
+confusion and a lack of clarity on this issue or (b) public health is indeed
+complex, and there are elements that are national, state-level, and local,
+requiring close coordination between them. These issues speak directly to
+the topic of the paper on state capacity and institutional design.
+    Second, let me turn to the Disaster Management Act of 2005, the lynch-
+pin of the Government of India’s initial response to the pandemic using the
+Act’s provisions extensively. The Act defines a disaster as a catastrophe, a
+mishap, a calamity, or a grave occurrence arising from natural or man-made
+causes or by accident or negligence. But disaster management also includes
+prevention, mitigation, and reduction of the risk of any disaster or the severity
+of its consequences. The National Disaster Management Authority (NDMA)
+constituted under this Act under the Home Ministry has a large number of
+powers that include steps for disaster mitigation, prevention, and preparedness.
+    Section 11 of the Act mandates the NDMA to draw up a national plan
+for disaster management and has a requirement, again mandatory, that it
+needs to be reviewed and updated annually. I think that, at some point, this
+is something that should be looked at by all agencies concerned with public
+accountability.
+                                                                    Ajay Shah   71
+
+   In light of these constitutional and legislative issues concerning public
+health disasters, what are the questions we should pose for future research
+arising from Ajay Shah’s paper? First, is fighting a pandemic a national
+public good, a regional public good, or a local public good—how do we
+unpack this? Clearly, there are elements of all three involved. Migration
+rights need to be dealt with nationally. However, ICU beds and oxygen
+supplies perhaps need to be dealt with at the state level. The examples that
+Ajay quoted of Tamil Nadu, Kerala, and subsequently Mumbai, which have
+been successful in contact tracing and enforcing quarantine, clearly show
+that this is best done at the municipal and panchayat levels. I think we have
+to break this broad entity called “public health” into its many constituent
+elements and do a more detailed analysis of their nature and characteristics
+in building state capacity.
+   Second, the NDMA clearly had its work cut out in preparing a national
+plan to combat COVID-19 in January 2020 when we formally reported cases
+that the Ministry of Health and Family Welfare was aware of, not in large
+numbers, but certainly the beginnings of what looked like a pandemic. By
+the end of the first lockdown, we clearly should have had a revised national
+plan ready. Monday morning quarterbacking is easy and in retrospect we all
+have excellent vision, but I think in terms of lessons to be learnt, not getting
+this right led to a lot of problems.
+   I want to highlight a final data problem before I conclude: the wrong
+unit or locus for decision-making clearly led to a lot of perverse behavior.
+One perversity that I am aware of is in a cross-roads district through which
+a lot of thoroughfare traffic passes. A large public charity was ready to set
+up an excellent mobile COVID-19 testing facility offering free testing. The
+district magistrate banned it under the Disaster Management Act since he was
+concerned that his district count of COVID-19 would go up. We have seen
+other districts and states doing this. The absence of more coherent planning
+and a deeper understanding of the public good nature of the fight against a
+pandemic led to many such perverse consequences.
+   Based on Ajay’s paper and other data that are coming in, there is a good
+opportunity for us to research these serious public economics and public
+health questions.
+
+
+Reference
+Kelkar, Vijay, and Ajay Shah. 2019. In Service of the Republic: The Art and Science
+  of Economic Policy. Gurgaon: Penguin Random House.
+72 I n d i a p o l i c y f o r u m , 2020
+
+Randeep Guleria
+Director, All India Institute of Medical Sciences
+
+I would like to start by complimenting Ajay Shah for an excellent paper. It
+is really good at flagging the challenges that we are facing on COVID-19.
+Let me start with the situation pre-COVID-19 and then see what the health
+sector did when COVID-19 came into India in a big way and what it should
+continue to do.
+    Prior to COVID-19, health care was dominated by the private sector
+roughly in a 70:30 ratio, with a lot of out-of-pocket expenditures. The gov-
+ernment had a lot of schemes, including PMJAY and Ayushman Bharat that
+were making a difference, but a large section of the middle class had the
+problem of having to pay out of pocket—you could go into an ICU and really
+lose all your savings. We saw that a lot because we had to shift patients to
+the All India Institute of Medical Sciences not because the patients were not
+being managed properly, but because the families had just run out of money.
+Then there was public sector underinvestment and issues of the quality of
+care, especially in smaller cities and district hospitals. We were already
+facing an increasing burden of non-communicable diseases (NCDs). The
+disease burden in India shifted somewhere around 2003 from communicable
+diseases to NCDs, and now almost 60 percent of the Indian disease burden
+is NCDs, including diabetes, cancers, and chronic respiratory diseases.
+    There were also huge human resource challenges, such as a shortage of
+doctors and health personnel in both urban and rural India. Much effort was
+being made to increase medical colleges, to get the private sector hospitals
+to become teaching centers, to start Diplomate of National Board courses,
+and to get nurses to become nurse practitioners. We were also looking at
+the concept of family physicians, a concept that was missing in India with
+the move towards specialists, which was not working in smaller cities and
+district hospitals. So, this was the background when the SARS-CoV-2
+pandemic hit us.
+    India faced immediate challenges. It is not that India was totally unpre-
+pared or that, in recent history, it had never anticipated a pandemic. In 2005,
+and even as early as 2000, there was talk in the government of planning
+for a pandemic. The Government of India had set up a joint monitoring
+group to look at outbreak management at the time of the Zika virus. We
+had discussions about this in 2003 after SARS, and in responding to H5N1
+bird or avian flu, which caused a significant amount of poultry deaths in
+Maharashtra, West Bengal, and the Northeast. Luckily, the virus did not
+                                                                 Ajay Shah   73
+
+exhibit sustained human transmission, though it had a case fatality rate of
+more than 60 percent. At that point of time, there was a huge pandemic
+concern in India and globally. We had the H1N1 pandemic in 2009. So there
+were lessons that we had learnt. But still, you are never really prepared for
+a pandemic until it really hits you.
+   The government was proactive early. We had early screening at airports
+and the very aggressive initial lockdown gave us time to prepare. We
+had COVID-19 care centers, COVID-19 hospitals, and COVID-19 ICUs.
+Oxygen facilities were actually made available and ventilators, to some
+extent, were also made available. There were issues on testing and training
+that we handled.
+   But there were a lot of downsides we faced, and those are the lessons that
+we need to really look at. First was the decline in private sector involvement.
+I mentioned that the private sector has been big in health care, but when it
+came to the pandemic, the involvement was much less, and this put a lot of
+stress on the already strained government health sector. A strategy needs
+to be developed to get more private sector involvement when it comes to
+outbreak management because the bulk of ICU and ventilator care still lies
+in the private sector. In a large number of district and smaller hospitals, we
+do not have oxygen supply, which can be easily made available. Second, on
+equipment and personnel, we did not have a large number of ventilators and
+critical care specialists, and this became one of the major issues.
+   Third, aggressive contact tracing, which the paper discusses very well,
+was another major challenge. The biggest problem was the stigma that got
+associated with COVID-19. We need an effective public outreach program
+to help people get over their stigma. I know many individuals who had
+classical COVID-19 symptoms—fever, cough, or shortness of breath—but
+refused to get themselves tested, and many then went into respiratory failure
+and had to be rushed to the hospital. Faced with this stigma, contact tracing
+cannot work well. I know that in certain areas of New Delhi, where stigma
+was prominent, this led to an increased disease burden and cluster formation
+in that area. So, under-reporting led to surges.
+   Fourth, testing was also a huge challenge, and the paper brings this
+out. When we started—and we had realized this way back in 2009 when
+looking at H1N1—there were very few, good quality virology labs in the
+country, and that became a big challenge. Our virology lab framework was
+designed initially with support from the US Centers for Disease Control
+and Prevention and the National Institute of Virology in Pune, but this was
+geared to influenza surveillance. Virology labs need a lot of investment in
+74 I n d i a p o l i c y f o r u m , 2020
+
+infection control to come up to BSL2 (Biosafety Level-2) standards, and
+this was something which was not available at the beginning. This was
+upscaled during the lockdown. We got medical colleges to build labs and
+start testing, and from when we had just about 100–150 labs, we have now
+gone to over 1,000 labs and the number of tests from 10,000–20,000 to
+200,000 per day. Here again, the challenge remains persuading the private
+medical colleges to invest in setting up testing labs and to ramp up testing.
+We need a public–private partnership arrangement here.
+   Finally, the paper mentions the need for good data on the pandemic: data
+on antibodies, those who have tested positive, the mortality rate, or even just
+hospital data. We have to look at what comorbidities are: we really have no
+idea. Does malnutrition serve as a risk factor for severe COVID-19? Does
+past history of tuberculosis serve as a risk factor? If you have underlying bad
+lungs, do you get more severe COVID-19? We have a younger population,
+but we have a higher number of diabetics; so are the younger people who
+are diabetic more prone to develop COVID-19? We need data to answer
+many of these research questions. We need to develop an electronic national
+health database that can be used even after the pandemic because it will help
+on disease surveillance.
+   The challenge will be to identify who will collect the data and ensure
+that they are collected correctly. Doctors, who are already overburdened,
+cannot do it. The paper notes that often states try to hide the data because
+they want to show that they are doing better than others. If fatalities are
+undercounted, infection rates are low because you are asked to test less
+people, then data credibility is the casualty, and we need to look at this.
+We also need to make sure the data are readily available to researchers in a
+timely way. If we have a national database that is available to all research-
+ers, they can then do a deep dive into the data and help come up with
+solutions that could help save lives and help in better policy design and
+operational management. This is something that we really need to develop
+in the long term, not only for COVID-19 but also for post-COVID-19
+management as we look to the shift toward NCDs that needs a lot of data
+if we are to respond effectively.
+   I will conclude by recapping the lessons we have learnt so far—we need
+to increase investment in health, we need to focus on primary health, we
+need aggressive surveillance, and we need to have a good public–private
+partnerships so that the private sector can come on board quickly. There has
+also been a lot of talk that we need an incremental, insurance-based approach
+so that health care becomes a right in India.
+                                                                 Ajay Shah   75
+
+General Discussion
+
+Participants in the General Discussion included Karthik Muralidharan,
+Rohini Somanathan, Pankaj Shrivastava, C. N. Raghupati Cavale, and
+Subhomoy Bhattacharjee.
+   To get a sense of the richness of this discussion, we invite you to view the
+video of the General Discussion segment of this IPF session. Please use the
+appropriate hyperlink on the IPF 2020 Program available at the links below.
+
+
+
+  The session video and all slide presentations for this IPF
+  session are hyperlinked on the IPF Program available by
+  scanning this QR code or going to
+  https://www.ncaer.org/IPF2020/Agenda/Agenda_IPF_2020.pdf
+
