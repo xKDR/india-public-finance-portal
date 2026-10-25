@@ -1,0 +1,122 @@
+/* Shared site chrome, read by every page: landing, resources, and the
+   state portal alike. Headings are serif (display), body and controls
+   are sans (--sans), numbers are mono (--mono) — see tokens.css. The
+   quiet data-surface vocabulary (hairline rules, whitespace, tabular
+   numerals) stays for tables and figures. */
+
+/* Computer Modern (bundled, SIL OFL, assets/fonts/OFL.txt) */
+@font-face{font-family:"Computer Modern Serif";src:url("../assets/fonts/cmunrm.woff") format("woff");
+  font-weight:normal;font-style:normal;font-display:swap}
+@font-face{font-family:"Computer Modern Serif";src:url("../assets/fonts/cmunbx.woff") format("woff");
+  font-weight:bold;font-style:normal;font-display:swap}
+@font-face{font-family:"Computer Modern Serif";src:url("../assets/fonts/cmunti.woff") format("woff");
+  font-weight:normal;font-style:italic;font-display:swap}
+@font-face{font-family:"Computer Modern Serif";src:url("../assets/fonts/cmunbi.woff") format("woff");
+  font-weight:bold;font-style:italic;font-display:swap}
+@font-face{font-family:"Computer Modern Typewriter";src:url("../assets/fonts/cmuntt.woff") format("woff");
+  font-weight:normal;font-style:normal;font-display:swap}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:78px;background:var(--paper)}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--sans);
+  font-size:16.5px; font-weight:450; line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+button,input,select{font:inherit;color:inherit}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--coral-deep)}
+code,.hcode{font-family:var(--mono);font-size:.95em}
+
+:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+::selection{background:var(--coral-soft);color:var(--maroon-deep)}
+
+/* light mode only, the dark theme is gone, so the toggle is too */
+#theme{display:none}
+
+.page{max-width:1480px;margin:0 auto;padding:0 30px 120px}
+.page.narrow{max-width:880px}
+
+/* ------------------------------------------------------------ site header */
+/* Canonical header for every page. Depth-0 pages (website/) link this
+   file at ../public-finance/css/base.css; depth-1 pages (public-finance/,
+   resources/) at css/base.css / ../public-finance/css/base.css; depth-2
+   (public-finance/ka|tn/) at ../css/base.css. See spec.md for the
+   relative-path rule and the canonical nav markup. */
+.site-head{position:sticky;top:0;z-index:50;display:flex;align-items:center;
+  gap:16px;flex-wrap:wrap;padding:0 4px;min-height:64px;
+  background:rgba(253,252,251,.94);backdrop-filter:blur(12px);
+  border-top:3px solid var(--maroon);border-bottom:2px solid var(--coral);
+  margin-bottom:28px}
+.site-head .brand{display:inline-flex;align-items:center;gap:2px;
+  font-family:var(--serif);font-weight:bold;font-size:21px;
+  color:var(--maroon-deep);text-decoration:none}
+.site-head .brand:hover{color:var(--maroon)}
+.site-head .brand .dot{color:var(--coral-deep)}
+.site-head nav{display:flex;gap:4px;flex-wrap:wrap;min-width:0}
+.site-head nav a{display:inline-block;padding:5px 11px;
+  font-size:15.5px;color:var(--ink-2);text-decoration:none;
+  border-bottom:2px solid transparent}
+.site-head nav a:hover{background:var(--ground-2);color:var(--maroon);
+  border-bottom-color:var(--coral)}
+.site-head nav a[aria-current="page"]{background:var(--accent);color:var(--surface);
+  border-bottom-color:transparent}
+.site-head .sp{flex:1}
+
+@media (max-width:640px){
+  .site-head{flex-direction:column;align-items:flex-start;gap:2px;padding:10px 4px}
+  .site-head nav{flex-basis:100%}
+}
+
+h1{font-family:var(--serif);font-weight:700;font-size:38px;letter-spacing:-.015em;margin:0 0 6px}
+h2{font-family:var(--serif);font-weight:700;font-size:25px;margin:26px 0 8px}
+h3{font-weight:650;font-size:17px;margin:0 0 8px}
+.sub{color:var(--ink-2);font-size:18px;margin:0 0 4px;max-width:78ch}
+.meta{color:var(--muted);font-size:14px;margin:0}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 6px}
+.kicker::before{content:"";display:inline-block;width:20px;height:1px;
+  margin:0 8px 2px 0;background:var(--coral);vertical-align:middle}
+
+/* --------------------------------------------------------------- tables */
+.tw{overflow-x:auto}
+table{border-collapse:collapse;font-size:16.5px;width:100%}
+th,td{padding:6px 10px;text-align:right;white-space:nowrap;
+  border-bottom:1px solid var(--hair)}
+th{font-weight:600;color:var(--maroon);font-size:14px;
+  background:var(--paper-warm);text-transform:uppercase}
+th.l,td.l{text-align:left;font-family:var(--sans)}
+td{font-variant-numeric:tabular-nums;font-family:var(--mono)}
+td.nil{color:var(--muted)}
+tbody tr:hover{background:var(--ground-2)}
+.tbl-cap{font-size:12.5px;color:var(--muted);margin-top:6px}
+
+/* --------------------------------------------------------------- footer */
+.foot{margin-top:44px;padding-top:16px;border-top:1px solid var(--hair);
+  font-size:13px;color:var(--muted);max-width:84ch}
+.foot p{margin:0 0 8px}
+.foot a{color:var(--ink-2)}
+
+.hint{font-size:12.5px;color:var(--muted)}
+.nowrap{white-space:nowrap}
+
+/* stat tiles (landing, summaries) */
+.stat{display:flex;flex-direction:column;gap:2px}
+.stat .lab{font-size:14px;font-weight:650;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted)}
+.stat .val{font-size:clamp(24px,2.1vw,30px)}
+
+/* One style for every display figure on the site (stat tiles, landing
+   metrics, explorer measures, guide tiles, results deck). Mono stays for
+   table cells and code only. nowrap keeps a value and its unit
+   ("₹4,47,992 cr") on one line. */
+.stat .val,.metric strong,.xside dl.measures dd,.stat-tile b,.fig{
+  font-family:var(--sans);font-weight:700;
+  font-variant-numeric:tabular-nums lining-nums;letter-spacing:-.02em;
+  line-height:1.1;white-space:nowrap;color:var(--ink)}
+.stat .sub{font-size:13.5px;color:var(--muted)}
+
+@media (max-width:900px){
+  .page{padding:18px 14px 90px}
+}

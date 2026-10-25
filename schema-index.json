@@ -1,0 +1,86 @@
+{
+  "levels": [
+    {
+      "k": "sm",
+      "label": "Sub-major head"
+    },
+    {
+      "k": "mn",
+      "label": "Minor head"
+    },
+    {
+      "k": "sh",
+      "label": "Sub-head"
+    },
+    {
+      "k": "dh",
+      "label": "Detailed head"
+    },
+    {
+      "k": "lf",
+      "label": "Object head"
+    }
+  ],
+  "sector_groups": [
+    {
+      "k": "rev-gen",
+      "label": "General Services",
+      "lo": 2011,
+      "hi": 2201
+    },
+    {
+      "k": "rev-soc",
+      "label": "Social Services",
+      "lo": 2202,
+      "hi": 2399
+    },
+    {
+      "k": "rev-eco",
+      "label": "Economic Services",
+      "lo": 2401,
+      "hi": 3599
+    },
+    {
+      "k": "grants",
+      "label": "Grants-in-aid and Contributions",
+      "lo": 3601,
+      "hi": 3999
+    },
+    {
+      "k": "cap-gen",
+      "label": "Capital — General Services",
+      "lo": 4001,
+      "hi": 4201
+    },
+    {
+      "k": "cap-soc",
+      "label": "Capital — Social Services",
+      "lo": 4202,
+      "hi": 4399
+    },
+    {
+      "k": "cap-eco",
+      "label": "Capital — Economic Services",
+      "lo": 4401,
+      "hi": 5999
+    },
+    {
+      "k": "debt",
+      "label": "Public Debt Repayment",
+      "lo": 6001,
+      "hi": 6010
+    },
+    {
+      "k": "loans",
+      "label": "Loans and Advances",
+      "lo": 6011,
+      "hi": 7999
+    },
+    {
+      "k": "other",
+      "label": "Other",
+      "lo": 8000,
+      "hi": 9999
+    }
+  ]
+}

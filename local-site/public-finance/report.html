@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report a data error</title>
+<script>try{var t=localStorage.getItem('portal-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="css/tokens.css?v=sync10">
+<link rel="stylesheet" href="css/base.css?v=sync10">
+<link rel="stylesheet" href="css/controls.css?v=sync10">
+<style>
+.rform{display:flex;flex-direction:column;gap:18px;max-width:640px}
+.rform .row2{display:flex;gap:18px;flex-wrap:wrap}
+.rform textarea{min-height:110px}
+#rnote{min-height:1.2em;font-size:13.5px;color:var(--accent)}
+</style>
+</head>
+<body><aside style="padding:8px 16px;background:#fff4cf;color:#493a14;font:13px system-ui">Local recovered preview · Budget data rebuilt from GitHub. Raw extraction values may differ from live processed data. Detailed quality badges and deeper comparison search are pending; see local README.</aside>
+<div class="page narrow">
+<div class="site-head">
+  <a class="brand" href="../index.html">India Public Finance<span class="dot">·</span>Portal</a>
+  <nav aria-label="Site">
+    <a href="index.html">States</a>
+        <a href="../explore.html">Explore</a>
+    <a href="compare.html">Compare</a>
+    <a href="../resources/guide.html">Guide</a>
+    <a href="about.html">About</a>
+  </nav>
+  <span class="sp"></span>
+  <nav aria-label="Utility">
+    <a href="report.html" aria-current="page">Report an error</a>
+    <a href="https://github.com/xKDR/india-public-finance-portal">GitHub</a>
+  </nav>
+</div>
+
+  <p class="kicker">Data quality</p>
+  <h1>Report an error</h1>
+  <p class="sub">Seen a number that does not match the printed budget? Tell
+    us. Submitting opens a prefilled GitHub issue; every report is public,
+    tracked, and feeds the correction queue. You will need a (free) GitHub
+    account to press the final button.</p>
+
+  <div class="rform">
+    <div class="row2">
+      <div class="field"><label>State</label>
+        <select id="rstate"></select></div>
+      <div class="field"><label>Document year</label>
+        <select id="ryear"></select></div>
+    </div>
+    <div class="field"><label>Account head or code</label>
+      <div class="searchbox" id="rcode"><input type="text"
+        placeholder="Type a code or head name, e.g. 2210 01 110"
+        autocomplete="off"></div></div>
+    <div class="row2">
+      <div class="field"><label>Which column</label>
+        <select id="rcol"></select></div>
+      <div class="field"><label>Value shown on the portal</label>
+        <input type="text" id="rshown" placeholder="e.g. 4,890.2"></div>
+      <div class="field"><label>Value in the PDF</label>
+        <input type="text" id="rexpected" placeholder="e.g. 489.02"></div>
+    </div>
+    <div class="field"><label>What is wrong?</label>
+      <textarea id="rcomment" placeholder="Anything that helps us find it:
+the page number, what you compared against, what you expected."></textarea>
+    </div>
+    <div>
+      <button class="btn primary" id="rsubmit" type="button">
+        Open the prefilled report on GitHub →</button>
+    </div>
+    <p id="rnote"></p>
+  </div>
+
+  <div class="foot">
+    <p>Reports land as issues labelled <code>data-error</code> in
+      <a href="https://github.com/xKDR/india-public-finance-portal/issues">the
+      repository</a>, where they can be checked against the source PDF and
+      corrected upstream. Prefer email? The repository README lists
+      maintainer contacts.</p>
+  </div>
+</div>
+<script>window.PORTAL={root:''}</script>
+<script src="js/common.js?v=sync10"></script>
+<script src="js/engine.js?v=sync10"></script>
+<script src="js/store.js?v=sync10"></script>
+<script src="js/search.js?v=sync10"></script>
+<script src="js/report.js?v=sync10"></script>
+</body>
+</html>

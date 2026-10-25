@@ -1,0 +1,53 @@
+/* Figure chrome, quiet vocabulary; the only buttons are the small
+   text-buttons in the figure head (table toggle, downloads). */
+
+.fig{margin:0 0 24px;background:var(--surface);border:1px solid var(--edge);
+  padding:22px 24px 16px;min-width:0;max-width:100%;box-sizing:border-box}
+.fig .tbl-cap{white-space:normal;overflow-wrap:anywhere;line-height:1.5}
+.fig-head{display:flex;align-items:baseline;gap:10px;margin:0 0 8px;flex-wrap:wrap}
+.fig-title{font-size:19px;font-weight:650}
+.fig-sub{font-size:15px;color:var(--muted)}
+.fig-sp{flex:1}
+.fig-btn{background:none;border:0;padding:2px 4px;font-size:13px;
+  color:var(--accent);cursor:pointer;text-decoration:underline;
+  text-underline-offset:3px;white-space:nowrap}
+.fig-btn:hover{color:var(--ink)}
+
+.plot{position:relative;width:100%}
+.plot svg{display:block;width:100%;height:auto;overflow:visible}
+.plot .empty{color:var(--muted);font-size:14px;padding:44px 8px;text-align:center}
+.hidden{display:none}
+
+/* legend */
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:10px 0 2px;
+  font-size:15.5px;color:var(--ink-2)}
+.legend .lg-it{display:inline-flex;align-items:center;gap:6px;min-width:0}
+.legend .lg-it{max-width:100%;white-space:normal;overflow-wrap:anywhere;line-height:1.5}
+.legend .lg-it .sw,.legend .lg-it .hcode{flex-shrink:0}
+.legend .lg-it.click{cursor:pointer}
+.legend .lg-it.click:hover{color:var(--ink);text-decoration:underline;
+  text-underline-offset:3px}
+.legend .sw{flex:0 0 18px;height:3px;display:inline-block}
+.legend .sw.sq{flex-basis:11px;width:11px;height:11px}
+.legend .hcode{font-size:11.5px;color:var(--muted)}
+.legend .lg-note{font-size:12px;color:var(--muted)}
+
+/* stat tiles: big value + tiny trend line (base.css sets .stat/.lab/.sub) */
+.stat .spark{display:block;margin:3px 0;line-height:0}
+.stat .spark svg{display:block;width:120px;height:30px}
+
+/* tooltip */
+.tip{position:absolute;pointer-events:none;z-index:5;min-width:170px;
+  max-width:320px;background:var(--surface);border:1px solid var(--edge);
+  padding:10px 13px;font-size:15px;opacity:0;
+  transition:opacity .1s}
+.tip.on{opacity:1}
+.tip .th{font-size:12px;color:var(--muted);margin-bottom:5px;
+  overflow-wrap:anywhere;white-space:normal}
+.tip .r{display:flex;align-items:center;justify-content:space-between;
+  gap:12px;padding:1px 0}
+.tip .r .k{display:inline-flex;align-items:center;gap:6px;min-width:0;
+  color:var(--ink-2)}
+.tip .r b{font-variant-numeric:tabular-nums;font-weight:650}
+.tip .dot{display:inline-block;width:8px;height:8px;border-radius:50%}
+.tip .note{font-size:11.5px;color:var(--accent);margin-top:5px}

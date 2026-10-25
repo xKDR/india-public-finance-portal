@@ -1,0 +1,223 @@
+/* The cascading account-head explorer. Quiet vocabulary: hairline rows,
+   indentation carries the hierarchy, tabular numerals right-aligned. */
+
+.xlayout{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;
+  align-items:start}
+@media (max-width:1020px){.xlayout{grid-template-columns:1fr}
+  .xside{position:static}
+  /* collapsed by default (see explorer.js wireSidePanel); tap the header
+     bar to expand, the panel now sits after the tree, not before it */
+  .xside h3{cursor:pointer;display:flex;align-items:center;
+    justify-content:space-between;gap:8px}
+  .xside h3 .caret{display:inline-block}
+  .xside.closed #xside-body{display:none}
+  .xhead,.xrow{grid-template-columns:minmax(280px,1fr) 56px 108px 108px 108px}
+  .xrow .xshare .track{display:none}
+  /* below this width .xwrap needs its own horizontal scrollbar, which
+     makes it a scroll container and breaks position:sticky against the
+     page for .xhead and .xrow.stick, accepted, ancestor rows stop
+     pinning on narrow screens where the tree is already narrower */
+  .xwrap{overflow-x:auto}
+  .xrow.stick{position:static}}
+
+.xtree{min-width:940px;--xheadH:44px;--xrowH:29px}
+
+.xhead,.xrow{display:grid;
+  grid-template-columns:minmax(280px,1fr) 120px 108px 108px 108px;
+  gap:0 10px;align-items:center}
+.xhead{border-bottom:1.5px solid var(--axis);padding:4px 6px;
+  position:sticky;top:0;background:var(--ground);z-index:3}
+.xhead .amt{font-size:11px;font-weight:700;color:var(--muted);
+  text-align:right;letter-spacing:.02em;white-space:normal;line-height:1.25}
+.xhead .amt.rank{color:var(--accent)}
+.xhead .amt.off{opacity:.45}
+.xhead .lbl{font-size:11px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.06em}
+
+/* column-semantics info button (T11), .xhead is already position:sticky,
+   which establishes the containing block for this absolute button */
+.xhead .info-btn{position:absolute;top:3px;right:4px;width:15px;height:15px;
+  border-radius:50%;border:1.5px solid var(--muted);background:var(--surface);
+  color:var(--muted);font-size:10px;font-weight:700;line-height:1;padding:0;
+  display:flex;align-items:center;justify-content:center;cursor:pointer}
+.xhead .info-btn:hover,.xhead .info-btn[aria-expanded="true"]{
+  border-color:var(--accent);color:var(--accent)}
+.popover.colinfo{max-width:360px}
+.popover.colinfo .collist{margin:8px 0 0;padding:0;list-style:none;
+  display:flex;flex-direction:column;gap:4px;font-size:12px;
+  color:var(--ink-2)}
+
+.xrow{border-bottom:1px solid var(--hair);padding:5px 6px;width:100%;
+  background:none;border-left:0;border-right:0;border-top:0;text-align:left;
+  font:inherit;color:inherit;cursor:default}
+.xrow.can{cursor:pointer}
+.xrow:hover{background:var(--ground-2)}
+.xrow.sel{background:var(--accent-soft)}
+.xrow .lead{display:flex;align-items:center;gap:8px;min-width:0;
+  padding-left:calc(var(--depth,0) * 22px)}
+.xrow .car{flex:0 0 13px;font-size:10px;color:var(--muted);
+  transition:transform .12s}
+.xrow.open .car{transform:rotate(90deg)}
+.xrow .code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:12.5px;font-weight:700;color:var(--accent);flex:0 0 auto}
+.xrow .name{min-width:0;overflow:hidden;text-overflow:ellipsis;
+  white-space:nowrap;font-size:13.5px}
+.xrow .kids{flex:0 0 auto;font-size:11px;color:var(--muted);white-space:nowrap}
+.xrow .amt{text-align:right;font-variant-numeric:tabular-nums;font-size:13px;
+  white-space:nowrap}
+.xrow .amt.rank{font-weight:650}
+.xrow .amt.off{color:var(--muted)}
+.xrow .amt.neg{color:var(--bad)}
+
+/* share-of-parent column: mini bar + right-aligned percentage */
+.xrow .xshare{display:flex;align-items:center;gap:6px;min-width:0}
+.xrow .xshare .track{flex:1 1 auto;min-width:0;height:8px;
+  background:var(--ground-2);overflow:hidden}
+.xrow .xshare .fill{display:block;height:100%;background:var(--b3);
+}
+.xrow .xshare .pct{flex:0 0 auto;min-width:34px;text-align:right;
+  font-variant-numeric:tabular-nums;font-size:12px;color:var(--ink-2)}
+.xrow .xshare .pct.dim{color:var(--muted)}
+
+/* "start with a question" strip */
+.starter{display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+  margin:14px 0 4px}
+.starter .slbl{font-size:12px;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--muted)}
+.starter a{display:inline-block;padding:5px 12px;background:var(--surface);
+  border:var(--ctl-border);
+  font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;
+}
+.starter a:hover{background:var(--accent-soft)}
+
+/* section rows: the standard budget groupings, top level of the cascade */
+.xrow.grp{background:var(--ground-2);border-bottom:1.5px solid var(--axis)}
+.xrow.grp:hover{background:var(--accent-soft)}
+.xrow.grp .name{font-weight:700;font-size:13px;letter-spacing:.02em;
+  text-transform:uppercase}
+.xrow.grp .code{display:none}
+.xrow.grp .amt{font-weight:600}
+
+/* sticky ancestor rows: while scrolled inside an open head, up to 3 open
+   ancestor rows (section/major/node) stay pinned below the sticky column
+   header, stacked by --stick-level so the reader keeps their place */
+.xrow.stick{position:sticky;
+  top:calc(var(--xheadH) + var(--stick-level,0) * var(--xrowH));
+  z-index:2;background:var(--ground)}
+
+/* the side panel's inline figure */
+.xside .fig{margin:14px 0 0;padding:10px 10px 6px}
+.xside .fig-title{font-size:12px}
+.xside .fig-sub{display:none}
+.xside .legend{font-size:11px;gap:4px 10px}
+
+/* level band: mini stat-tiles under an expanded head, single-year mode */
+.band{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:flex-end;
+  background:var(--ground-2);border-bottom:1px solid var(--hair);
+  padding:8px 10px;padding-left:calc(var(--depth,0)*22px + 6px)}
+.band .bt{min-width:100px}
+.band .bl{display:block;font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.band .bv{display:block;font-size:18px;font-weight:bold;
+  font-variant-numeric:tabular-nums;color:var(--ink)}
+.band .bv .yr{font-size:11px;font-weight:600;color:var(--muted)}
+.band .spark{display:block;margin-top:2px}
+.band .spark svg{display:block}
+.band .tail{font-size:12px;color:var(--ink-2);align-self:center;
+  display:flex;gap:6px 12px;flex-wrap:wrap;align-items:center}
+/* the chip itself reuses the shared .chip.verify badge look (controls.css) */
+
+/* clickable band tiles: any tile with a full chart behind it */
+button.bt{background:none;border:0;padding:0;font:inherit;color:inherit;
+  text-align:left;cursor:pointer}
+button.bt:hover .bl,button.bt[aria-expanded="true"] .bl{color:var(--accent)}
+button.bt .bx{font-weight:700;color:var(--accent)}
+button.bt[aria-expanded="true"] .bx{display:inline-block;transform:rotate(180deg)}
+/* focus ring is handled globally by base.css :focus-visible */
+
+/* the expanded chart row under a band */
+.bandfig{background:var(--surface);border-bottom:1px solid var(--hair);
+  padding:14px 12px 8px;padding-left:calc(var(--depth,0)*22px + 6px)}
+.bandfig .fig{margin:0;border:1px solid var(--edge)}
+
+.xmore{padding:5px 6px 7px}
+.xmore button{background:none;border:0;padding:2px 0;font-size:12.5px;
+  color:var(--accent);cursor:pointer;text-decoration:underline;
+  text-underline-offset:3px}
+.xloading{padding:8px 6px;font-size:12.5px;color:var(--muted)}
+.xcount{font-size:12.5px;color:var(--muted);margin:8px 0 6px}
+
+/* ------------------------------------------------- overview (before the tree) */
+.overview{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:18px 28px;margin:18px 0 14px;padding:16px 20px;background:var(--surface);
+  border:1px solid var(--edge)}
+.topheads{margin:0 0 8px;padding:14px 20px 10px;background:var(--surface);
+  border:1px solid var(--edge)}
+.topheads h3{font-size:11.5px;font-weight:700;margin:0 0 10px;
+  color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.topheads .throw{display:grid;
+  grid-template-columns:minmax(180px,280px) 1fr 92px 64px;
+  gap:0 14px;align-items:center;padding:3px 0;font-size:13px;cursor:pointer;
+  background:none;border:0;width:100%;text-align:left;color:inherit}
+.topheads .throw:hover .nm{text-decoration:underline;text-underline-offset:3px}
+.topheads .throw .nm{min-width:0;overflow:hidden;text-overflow:ellipsis;
+  white-space:nowrap}
+.topheads .throw .nm code{color:var(--accent);font-weight:700;font-size:11.5px;
+  margin-right:6px}
+.topheads .track{display:block;height:10px;background:var(--ground-2);
+  overflow:hidden}
+.topheads .fill{display:block;height:100%;background:var(--b3);
+}
+.topheads .v{text-align:right;font-variant-numeric:tabular-nums}
+.topheads .s{text-align:right;font-variant-numeric:tabular-nums;
+  color:var(--muted);font-size:12px}
+
+/* ratios block in the side panel */
+.xside .ratios{margin-top:12px;padding-top:10px;border-top:1px solid var(--hair)}
+.xside .ratios h4{font-size:11px;font-weight:700;margin:0 0 6px;
+  color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+
+/* "this level" composition block, same .ratios card, plus a top-3 dl
+   whose left (code+name) column ellipsizes instead of wrapping */
+.xside .lvl .sum{font-size:12.5px;margin:0 0 6px}
+.xside .lvl dt{overflow:hidden}
+.xside .lvl .nm{display:block;min-width:0;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.xside .lvl .nm code{color:var(--accent);font-weight:700;font-size:11.5px;
+  margin-right:4px}
+.xside .lvl .chg{font-size:12px;color:var(--muted);margin:6px 0 0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* side summary, quiet card, sticky */
+.xside{position:sticky;top:16px;background:var(--surface);
+  border:1px solid var(--edge);padding:22px 24px}
+.xside h3{font-size:13px;font-weight:700;margin:0 0 10px;color:var(--muted);
+  letter-spacing:.06em;text-transform:uppercase}
+.xside h3 .caret{display:none;font-size:10px}
+.xside .bc{font-size:12px;color:var(--ink-2);margin:0 0 10px;line-height:1.6;
+  overflow-wrap:anywhere}
+.xside .bc code{color:var(--accent);font-weight:700;font-size:11.5px}
+.xside dl{margin:0 0 4px;display:grid;grid-template-columns:1fr auto;
+  gap:6px 12px;font-size:14.5px;align-items:baseline}
+.xside dt{color:var(--ink-2)}
+.xside dd{margin:0;font-variant-numeric:tabular-nums;text-align:right;
+  font-weight:bold;font-size:19px}
+.xside dd.dim{color:var(--muted);font-weight:400}
+
+/* dashboard summary: each measure is a stat tile, label over a big number */
+.xside dl.measures{display:block;margin:0 0 6px}
+.xside dl.measures dt{font-size:14px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);margin-top:14px}
+.xside dl.measures dt:first-child{margin-top:0}
+.xside dl.measures dd{text-align:left;font-size:clamp(24px,2.1vw,30px);
+  line-height:1.15;padding-bottom:10px;border-bottom:1px solid var(--hair)}
+.xside dl.measures dd:last-of-type{border-bottom:0;padding-bottom:0}
+.xside dl.measures dd.dim{font-size:20px}
+.xside .links{display:flex;flex-direction:column;gap:8px;margin-top:16px;
+  padding-top:14px;border-top:1px solid var(--hair);font-size:15px}
+.xside .chiprow{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap}
+.xside .note{font-size:12px;color:var(--muted);margin-top:10px}
+
+/* Tile labels run to one or two lines; reserve two so every figure in
+   the overview row sits on the same baseline. */
+.overview .stat .lab{line-height:1.3;min-height:2.6em}

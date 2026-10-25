@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About the portal · method and data notes</title>
+<script>try{var t=localStorage.getItem('portal-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="css/tokens.css?v=sync10">
+<link rel="stylesheet" href="css/base.css?v=sync10">
+<link rel="stylesheet" href="css/controls.css?v=sync10">
+<link rel="stylesheet" href="css/charts.css?v=sync10">
+<style>.prose{max-width:76ch}.prose p{margin:0 0 12px}.prose li{margin:0 0 6px}</style>
+</head>
+<body><aside style="padding:8px 16px;background:#fff4cf;color:#493a14;font:13px system-ui">Local recovered preview · Budget data rebuilt from GitHub. Raw extraction values may differ from live processed data. Detailed quality badges and deeper comparison search are pending; see local README.</aside>
+<div class="page narrow">
+<div class="site-head">
+  <a class="brand" href="../index.html">India Public Finance<span class="dot">·</span>Portal</a>
+  <nav aria-label="Site">
+    <a href="index.html">States</a>
+        <a href="../explore.html">Explore</a>
+    <a href="compare.html">Compare</a>
+    <a href="../resources/guide.html">Guide</a>
+    <a href="about.html" aria-current="page">About</a>
+  </nav>
+  <span class="sp"></span>
+  <nav aria-label="Utility">
+    <a href="report.html">Report an error</a>
+    <a href="https://github.com/xKDR/india-public-finance-portal">GitHub</a>
+  </nav>
+</div>
+
+  <p class="kicker">Method &amp; data notes</p>
+  <h1>How to read these numbers</h1>
+
+  <div class="prose">
+    <h2>Where the data comes from</h2>
+    <p>Each state's package in
+      <a href="https://github.com/xKDR/india-public-finance-portal">
+      xKDR/india-public-finance-portal</a> holds the printed detailed
+      expenditure volumes (PDFs), the extracted line-level CSVs, and a full
+      set of arithmetic checks. This site is a static rendering of those
+      CSVs; nothing is computed server-side, and every number can be traced
+      back to a printed page.</p>
+
+    <h2>What gets summed</h2>
+    <p>Only the additive leaf rows are ever added up: Tamil Nadu's
+      sub-detailed heads and Karnataka's object heads (the same level under
+      two names). The volumes' own printed subtotals are deliberately not
+      used as data; they serve as an independent check on the leaf sums.
+      Where a printed total and the sum of the rows beneath it disagree, the
+      head is flagged with a chip rather than silently corrected.</p>
+
+    <h2>One fiscal year, three vintages</h2>
+    <p>Each budget volume prints four money columns about three fiscal
+      years. The portal files every amount under the year it is
+      <em>about</em>:</p>
+    <ul>
+      <li><b>Budget estimate (BE)</b> for year Y: from year Y's volume;</li>
+      <li><b>Revised estimate (RE)</b> for Y: from the following volume;</li>
+      <li><b>Actuals</b> for Y: from two volumes later;</li>
+    </ul>
+    <p>That is why the measures cover different spans: actuals stop where
+      the accounts stop, and the newest years have only estimates. A dash is
+      a figure not printed yet, never a zero.</p>
+
+    <h2>Units</h2>
+    <p>Tamil Nadu prints INR thousand, Karnataka INR lakh. Everything on
+      this site is converted to ₹ crore, nominal; no deflation, no per
+      capita scaling.</p>
+
+    <h2>Error chips</h2>
+    <p>The extraction pipeline tests every printed subtotal against the
+      rows beneath it (check ids W01–W13 in the package READMEs). A grey
+      <b>±</b> chip marks a small gap; an amber <b>verify against PDF</b>
+      chip marks heads where checks disagree enough that the printed page
+      should be consulted (the chip links to it); a red chip marks a large
+      extraction gap where the PDF should be trusted over the portal.</p>
+
+    <h2>Extraction quality by year</h2>
+    <div id="quality"></div>
+
+    <h2>Caveats</h2>
+    <ul>
+      <li>This is a research preview, not a certified statistical release. The build manifest records the exact input files and any skipped malformed amount values; check it before citing a figure.</li>
+      <li>State totals here are the sum of all expenditure heads, including
+        debt servicing and loans; they are not the "budget size" quoted in
+        speeches, which nets differently.</li>
+      <li>Negative lines (deduct-recoveries) are summed as printed, so
+        branch totals are net of recoveries.</li>
+      <li>Head names are normalised across years for matching; codes, not
+        names, are the stable identity of a head.</li>
+      <li>The build reads locally generated <code>*_cleaned.csv</code>
+        files; <code>build_manifest.json</code> in this site's root records
+        the exact inputs behind every deploy.</li>
+    </ul>
+
+    <h2>Licences</h2>
+    <p>Data and code under the repository's licence. India map ©
+      <a href="https://github.com/datameet/maps">DataMeet contributors</a>,
+      CC-BY 4.0, simplified; boundaries follow the Survey of India
+      depiction.</p>
+  </div>
+
+  <div class="foot">
+    <p>Data and code are on <a href="https://github.com/xKDR/india-public-finance-portal">GitHub</a>, under the repository's licence. See <a href="report.html">Report an error</a> to flag a figure, or the <a href="../resources/guide.html">Guide</a> for a walkthrough of how the numbers are built.</p>
+  </div>
+</div>
+<script>window.PORTAL={root:''}</script>
+<script src="js/common.js?v=sync10"></script>
+<script src="js/engine.js?v=sync10"></script>
+<script src="js/store.js?v=sync10"></script>
+<script src="js/about.js?v=sync10"></script>
+</body>
+</html>

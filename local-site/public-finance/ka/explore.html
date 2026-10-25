@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Karnataka budget explorer</title>
+<script>try{var t=localStorage.getItem('portal-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../css/tokens.css?v=sync10">
+<link rel="stylesheet" href="../css/base.css?v=sync10">
+<link rel="stylesheet" href="../css/controls.css?v=year-controls-1">
+<link rel="stylesheet" href="../css/charts.css?v=sync10">
+<link rel="stylesheet" href="../css/explorer.css?v=no-summary-1">
+</head>
+<body><aside style="padding:8px 16px;background:#fff4cf;color:#493a14;font:13px system-ui">Local recovered preview · Budget data rebuilt from GitHub. Raw extraction values may differ from live processed data. Detailed quality badges and deeper comparison search are pending; see local README.</aside>
+<div class="page">
+<div class="site-head">
+  <a class="brand" href="../../index.html">India Public Finance<span class="dot">·</span>Portal</a>
+  <nav aria-label="Site">
+    <a href="../index.html">States</a>
+        <a href="../../explore.html">Explore</a>
+    <a href="../compare.html">Compare</a>
+    <a href="../../resources/guide.html">Guide</a>
+    <a href="../about.html">About</a>
+  </nav>
+  <nav aria-label="Karnataka">
+    <a href="../ka/explore.html" aria-current="page">Explore</a>
+    <a href="../ka/dashboard.html">Dashboard</a>
+    <a href="../ka/series.html">Time series</a>
+  </nav>
+  <span class="sp"></span>
+  <nav aria-label="Utility">
+    <a href="../report.html">Report an error</a>
+    <a href="https://github.com/xKDR/india-public-finance-portal">GitHub</a>
+  </nav>
+</div>
+
+  <p class="kicker">Karnataka · state finances</p>
+  <h1>Budget explorer</h1>
+  <p class="sub">Every account head in the printed expenditure volumes, as a
+    cascading table. Open a major head to see what is under it, all the way
+    down to the additive leaf lines. Amounts are ₹ crore, summed from the
+    leaf rows only; printed subtotals are used as checks, not as data.</p>
+  <p class="meta" id="xmeta">Loading…</p>
+
+  <div class="starter">
+    <span class="slbl">Start with a question:</span>
+    <a href="explore.html#open=2210">How much goes to health?</a>
+    <a href="series.html#sel=2202&amp;m=be,ac">Education spending over the years</a>
+    <a href="explore.html#g=cap-gen,cap-soc,cap-eco">What is being built?; the capital budget</a>
+    <a href="explore.html#v=dept">Browse by department</a>
+    <a href="dashboard.html">The whole budget as rings</a>
+  </div>
+
+  <div class="overview" id="xoverview"></div>
+  <div class="topheads" id="xtop"></div>
+
+  <div class="controls">
+    <div class="field"><label>Browse by</label>
+      <div class="seg" id="xpivot"></div></div>
+    <div class="field"><label>Year view</label>
+      <div class="seg" id="xmode"></div></div>
+    <div class="field" id="xf-year"><label>Fiscal year</label>
+      <select id="xyear"></select></div>
+    <div class="field" id="xf-from" hidden><label>From fiscal year</label>
+      <select id="xfrom"></select></div>
+    <div class="field" id="xf-to" hidden><label>To fiscal year</label>
+      <select id="xto"></select></div>
+    <div class="field searchwrap"><label>Search heads</label>
+      <div style="display:flex;gap:10px;align-items:center">
+        <div class="searchbox" id="xsearch"><input type="text"
+          placeholder="Code or name, e.g. 2210, hospitals, salaries"
+          autocomplete="off"></div>
+      </div></div>
+    <span class="sp"></span>
+    <button class="btn sm" id="xcollapse" type="button">Collapse all</button>
+  </div>
+
+  <div class="xlayout">
+    <div class="xwrap">
+      <div id="xcount" class="xcount"></div>
+      <div class="xtree">
+        <div id="xhead" class="xhead"></div>
+        <div id="xtree"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Single-year view shows the three columns as printed in that document
+      year: accounts from two years before, the previous year’s revised estimate, and the headline budget
+      estimate. A band sums each measure over the chosen fiscal years; a
+      figure not printed yet shows as a dash, rather than zero.</p>
+    <p>Chips flag heads whose printed totals do not reconcile with the rows
+      beneath them in the source PDF. <a href="../about.html">Method and
+      data notes</a> · <a href="../report.html?state=ka">Report an
+      error</a>.</p>
+  </div>
+</div>
+<script>window.PORTAL={root:'../',state:'ka',stateName:'Karnataka'}</script>
+<script src="../js/common.js?v=sync10"></script>
+<script src="../js/engine.js?v=sync10"></script>
+<script src="../js/store.js?v=sync10"></script>
+<script src="../js/model.js?v=sync10"></script>
+<script src="../js/stats.js?v=sync10"></script>
+<script src="../js/badges.js?v=sync10"></script>
+<script src="../js/search.js?v=sync10"></script>
+<script src="../js/explorer.js?v=no-summary-1"></script>
+</body>
+</html>

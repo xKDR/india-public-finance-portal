@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>India Public Finance</title>
+    <meta name="description" content="Explore state budget accounts by head and document year, with source references and arithmetic validation results.">
+    <link rel="stylesheet" href="./public-finance/css/tokens.css?v=sync10">
+    <link rel="stylesheet" href="./public-finance/css/base.css?v=sync10">
+    <link rel="stylesheet" href="./public-finance/css/controls.css?v=sync10">
+    <link rel="stylesheet" href="./public-finance/css/map.css?v=sync10">
+    <link rel="stylesheet" href="./styles.css?v=sync10">
+  </head>
+  <body><aside style="padding:8px 16px;background:#fff4cf;color:#493a14;font:13px system-ui">Local recovered preview · Budget data rebuilt from GitHub. Raw extraction values may differ from live processed data. Detailed quality badges and deeper comparison search are pending; see local README.</aside>
+    <div class="site-head">
+      <a class="brand" href="./index.html">India Public Finance<span class="dot">·</span>Portal</a>
+      <nav aria-label="Site">
+        <a href="./public-finance/index.html">States</a>
+        <a href="explore.html">Explore</a>
+        <a href="./public-finance/compare.html">Compare</a>
+        <a href="./resources/guide.html">Guide</a>
+        <a href="./public-finance/about.html">About</a>
+      </nav>
+      <span class="sp"></span>
+      <nav aria-label="Utility">
+        <a href="./public-finance/report.html">Report an error</a>
+        <a href="https://github.com/xKDR/india-public-finance-portal">GitHub</a>
+      </nav>
+    </div>
+    <nav class="page-toc" aria-label="On this page">
+      <a href="#dataset">Data</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#validation">Validation</a>
+      <a href="#method">Method</a>
+      <a href="#contribute">Contribute</a>
+    </nav>
+
+    <main id="top">
+      <section class="portal">
+        <div class="portal-copy">
+          <p class="kicker">India Public Finance</p>
+          <h1>Public budgets.<br><em>Usable data.</em></h1>
+          <p class="lede">
+            Budget figures sit across thousands of PDF pages. We turn those pages into structured
+            tables, retain the source references, and check the accounting relationships.
+            Researchers can then compare spending and explain what the budget means.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="./explore.html#explore">Explore the accounts</a>
+            <a class="button secondary" href="#examples">See worked examples</a>
+          </div>
+          <div class="release-actions" aria-label="Release resources">
+            <a href="./public-finance/index.html">Open the state portal</a>
+            <a href="https://github.com/xKDR/india-public-finance-portal/tree/main/karnataka-state-finance" target="_blank" rel="noopener">Browse the data package</a>
+            <a href="https://github.com/xKDR/india-public-finance-portal/archive/refs/heads/main.zip" target="_blank" rel="noopener">Download the repository archive</a>
+          </div>
+          <p class="release-note">
+            <strong>Research preview.</strong> Amounts are shown in ₹ crore at current prices. Karnataka covers 2018-19 to 2026-27;
+            the state comparison also includes Tamil Nadu.
+          </p>
+        </div>
+
+        <figure class="budget-symbol">
+          <svg viewBox="0 0 640 360" role="img" aria-labelledby="symbolTitle symbolDesc">
+            <title id="symbolTitle">Budget pages become structured data</title>
+            <desc id="symbolDesc">Printed tables connect to an account hierarchy and a reusable grid of records. This is a symbolic illustration.</desc>
+            <defs><pattern id="dotGrid" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#cfc5b8"/></pattern></defs>
+            <rect x="12" y="12" width="616" height="320" fill="url(#dotGrid)"/>
+            <circle cx="333" cy="174" r="128" fill="none" stroke="#dcc8a8"/>
+            <circle cx="333" cy="174" r="97" fill="none" stroke="#e8e2dc"/>
+            <g transform="translate(40 49) rotate(-8 92 117)">
+              <rect x="-12" y="-9" width="177" height="227" fill="#e8e2dc" stroke="#cfc5b8"/>
+              <rect x="-5" y="-4" width="177" height="227" fill="#faf7f1" stroke="#c9a25f"/>
+              <rect width="177" height="227" fill="#fdfcfb" stroke="#7b0925" stroke-width="2"/>
+              <rect x="18" y="24" width="83" height="7" fill="#7b0925"/>
+              <rect x="18" y="42" width="130" height="3" fill="#cfc5b8"/>
+              <path d="M18 72H159M18 98H159M18 124H159M18 150H159M18 176H159M18 202H159M18 72V202M89 72V202M124 72V202M159 72V202" stroke="#cfc5b8" fill="none"/>
+              <rect x="20" y="100" width="67" height="22" fill="#dcc8a8"/>
+              <rect x="126" y="152" width="31" height="22" fill="#7b0925"/>
+            </g>
+            <g fill="none" stroke="#7b0925" stroke-width="2">
+              <path d="M213 168H273M273 168V106H337M273 168H337M273 168V230H337"/>
+              <path d="M357 106H408Q425 106 425 124V168H474M357 168H474M357 230H408Q425 230 425 212V168"/>
+            </g>
+            <g fill="#7b0925"><rect x="332" y="96" width="20" height="20"/><rect x="332" y="158" width="20" height="20"/><rect x="332" y="220" width="20" height="20"/></g>
+            <circle cx="273" cy="168" r="6" fill="#c9a25f"/>
+            <g transform="translate(471 79)">
+              <rect width="137" height="182" rx="2" fill="#fdfcfb" stroke="#7b0925" stroke-width="2"/>
+              <rect width="137" height="30" fill="#7b0925"/>
+              <g fill="#c9a25f"><rect x="14" y="45" width="25" height="21"/><rect x="14" y="82" width="25" height="21"/><rect x="14" y="119" width="25" height="21"/></g>
+              <g stroke="#cfc5b8" stroke-width="3"><path d="M53 48H120M53 60H103M53 85H120M53 97H110M53 122H120M53 134H98"/></g>
+              <path d="M14 160H120" stroke="#7b0925" stroke-width="3"/>
+            </g>
+            <g fill="#5d5555" font-size="12" font-weight="650"><text x="54" y="324">SOURCE PAGES</text><text x="285" y="324">ACCOUNT STRUCTURE</text><text x="485" y="324">REUSABLE DATA</text></g>
+          </svg>
+          <figcaption>Keep the account, the amount, and the source together.</figcaption>
+        </figure>
+        <div class="metric-row" id="metrics" aria-label="Karnataka explorer coverage"></div>
+      </section>
+
+      <section id="examples" class="band examples-band">
+        <div class="section-heading"><small>Python, R and DuckDB SQL</small></div>
+        <div class="examples-intro">
+          <h2>Start with a research question</h2>
+          <p>Use the companion repository's prepared table to reproduce an analysis, inspect its assumptions, and adapt the code to your question.</p>
+        </div>
+        <div class="example-list">
+          <article class="example-row">
+            <span class="example-number">01</span>
+            <div><h3>Which departments spend the most?</h3><p>Rank departments by actual expenditure in 2024-25. Learn to group account entries by demand and convert lakh to crore.</p></div>
+            <div class="example-code" aria-label="Department spending code">
+              <a href="https://github.com/xKDR/india-public-finance-portal/blob/main/examples/src/python/00_onboarding.py">Python</a>
+              <a href="https://github.com/xKDR/india-public-finance-portal/blob/main/examples/src/r/00_onboarding.R">R</a>
+              <a href="https://github.com/xKDR/india-public-finance-portal/blob/main/examples/src/sql/00_onboarding.sql">SQL</a>
+            </div>
+          </article>
+          <article class="example-row">
+            <span class="example-number">02</span>
+            <div><h3>How much of the health budget is spent?</h3><p>Compare budget estimates, revised estimates and actual expenditure over time. The example combines Medical and Public Health with Family Welfare.</p></div>
+            <div class="example-code" aria-label="Health spending code">
+              <a href="https://github.com/xKDR/india-public-finance-portal/blob/main/examples/src/python/01_health.py">Python</a>
+              <a href="https://github.com/xKDR/india-public-finance-portal/blob/main/examples/src/r/01_health.R">R</a>
+              <a href="https://github.com/xKDR/india-public-finance-portal/blob/main/examples/src/sql/01_health.sql">SQL</a>
+            </div>
+          </article>
+          <article class="example-row">
+            <span class="example-number">03</span>
+            <div><h3>What share goes to salaries, pensions and interest?</h3><p>Classify expenditure by account code and calculate its share of total spending. Read the salary-code exclusions before extending the definition.</p></div>
+            <div class="example-code" aria-label="Committed expenditure code">
+              <a href="https://github.com/xKDR/india-public-finance-portal/blob/main/examples/src/python/02_committed.py">Python</a>
+              <a href="https://github.com/xKDR/india-public-finance-portal/blob/main/examples/src/r/02_committed.R">R</a>
+              <a href="https://github.com/xKDR/india-public-finance-portal/blob/main/examples/src/sql/02_committed.sql">SQL</a>
+            </div>
+          </article>
+          <article class="example-row">
+            <span class="example-number">04</span>
+            <div><h3>How have departmental allocations changed?</h3><p>Compare demand totals across years and examine changes in rank. Separate financial years from document years to avoid repeated amounts.</p></div>
+            <div class="example-code" aria-label="Demand variation code">
+              <a href="https://github.com/xKDR/india-public-finance-portal/blob/main/examples/src/python/03_demand_variation.py">Python</a>
+              <a href="https://github.com/xKDR/india-public-finance-portal/blob/main/examples/src/r/03_demand_variation.R">R</a>
+              <a href="https://github.com/xKDR/india-public-finance-portal/blob/main/examples/src/sql/03_demand_variation.sql">SQL</a>
+            </div>
+          </article>
+        </div>
+        <div class="examples-footer">
+          <p>The examples use the companion repository's research table. Its year coverage and filters differ from the explorer below.</p>
+          <a class="button secondary" href="./resources/results.html">View example results</a>
+        </div>
+
+
+      </section>
+
+      <section id="dataset" class="band">
+        <div class="section-heading">
+          <span>Data</span>
+          <small>accounts as printed</small>
+        </div>
+        <div class="table-grid">
+          <div>
+            <h2>What the explorer contains</h2>
+            <p>
+              The explorer displays three financial columns: actual expenditure from two
+              years earlier, the previous year's revised estimate, and the current
+              budget estimate. The data package retains account codes and source page references
+              so researchers can examine the figures in context.
+            </p>
+          </div>
+          <div class="table-list" id="tableList"></div>
+        </div>
+      </section>
+
+      <section id="data-in-practice" class="band">
+          <div class="research-directions use-case-section">
+            <span class="use-case-kicker">Data in practice</span>
+            <h3>Spending as planned</h3>
+            <p>See how structured budget data supported a comparison of drug procurement in Karnataka and Tamil Nadu.</p>
+            <button type="button" class="tool-button" id="seeUseCase" aria-expanded="false" aria-controls="drugUseCase">See use case</button>
+            <article id="drugUseCase" class="use-case-body" hidden aria-label="Drug procurement research use case">
+              <div class="use-case-intro">
+                <h4>Structured data made this exercise possible</h4>
+                <p>PDFs can show a budget figure, but a comparison needs a consistent set of records. Without structured data, this exercise would not have been feasible at this level of detail: researchers would have had to locate, transcribe and reconcile individual entries across years and two different account structures. The portal made those entries searchable, sortable and reusable, with source references for checking them.</p>
+              </div>
+              <h4>The resulting work</h4>
+              <p><a href="https://blog.theleapjournal.org/2026/10/spending-as-planned-efficiency-of-drug.html#gsc.tab=0" target="_blank" rel="noopener">Spending as Planned: Efficiency of Drug Procurement in Tamil Nadu</a>, by Pavithra Manivannan, Aakriti Narang and Susan Thomas, uses the portal to compare drug spending with budget plans in Karnataka and Tamil Nadu.</p>
+              <h4>From records to a research result</h4>
+              <ol class="use-case-steps">
+                <li><h5>Define the question and the spending basket</h5><p>The study asks how closely drug expenditure follows its budget. Its basket includes medicines, medical supplies and equipment within health and family welfare budgets.</p><p>For a similar exercise here, write down which items belong in your basket before adding amounts. A label such as “Drugs and Chemicals” is a starting point, not a complete classification. The same label under Police serves a different purpose from one under Medical and Public Health.</p></li>
+                <li><h5>Identify the relevant lines in each state</h5><p>Search one state at a time, check the major head attached to each result, and inspect the expandable account table for context. Keep a list of the selected codes, names and reasons for including them. Match spending purposes across states rather than assuming their detailed codes are interchangeable.</p></li>
+                <li><h5>Build a comparable year-by-year table</h5><p>The comparison covers FY 2018–19 to 2024–25. Actuals arrive with a two-year publication lag.</p><p>Select the required fiscal years and download BE, RE and Actuals. Each row must compare the same fiscal year. Keep unavailable figures blank, retain genuine zeros, and use one currency unit. This portal converts both states to crore. To form a basket, add mutually exclusive detail lines; adding a parent total to its children counts expenditure twice.</p></li>
+                <li><h5>Measure the difference between plans and spending</h5><p>For each state and year, calculate:</p><div class="use-case-formula">Spending gap (%) = 100 × (Actuals − BE) ÷ BE</div><p>Zero means spending matched the plan. A positive number means spending exceeded BE; a negative number means it fell short. If BE is zero, the percentage is undefined. Average the annual gaps to describe their direction; calculate their standard deviation to describe how much they vary.</p></li>
+                <li><h5>Check whether the pattern survives a different test</h5><p>The authors repeat the analysis without 2020–21, and compare Actuals with RE.</p><p>These checks answer different questions: does an exceptional year drive the overall result, and does updating the estimate bring the plan closer to expenditure? In your own analysis, keep the year selection and formula explicit so another researcher can reproduce each version.</p></li>
+              </ol>
+              <h4>What the study found</h4>
+              <p>The article reports a smaller, less variable BE spending gap in Tamil Nadu. The table below reproduces its reported summary, rather than recalculating the study from the heads currently selected above.</p>
+              <div class="pf-table-wrap"><table class="data-table use-case-findings"><caption>Reported annual spending gaps, FY 2018–19 to 2024–25</caption><thead><tr><th>State</th><th>Mean Gap v. BE</th><th>SD of Gap v. BE</th><th>Mean Gap v. RE</th><th>SD of Gap v. RE</th></tr></thead><tbody><tr><th scope="row">Karnataka</th><td>56.1%</td><td>184.7%</td><td>−18%</td><td>24.4%</td></tr><tr><th scope="row">Tamil Nadu</th><td>17.3%</td><td>21.2%</td><td>0.38%</td><td>15.9%</td></tr></tbody></table></div>
+              <p>The difference remains after excluding the COVID year. The authors discuss budgeting, demand forecasting and procurement systems as possible explanations; the comparison does not establish causation.</p>
+              <h4>What the data enabled</h4>
+              <p>The result is a traceable comparison: a defined spending basket, aligned fiscal years, a documented calculation and checks of the conclusion. Structured data was the essential bridge between scattered budget pages and that analysis. For a reproduction, use the article’s complete classification and source checks; selecting a single head here is not a reproduction of the study.</p>
+              <p class="use-case-source"><a href="https://blog.theleapjournal.org/2026/10/spending-as-planned-efficiency-of-drug.html#gsc.tab=0" target="_blank" rel="noopener">Read the resulting article on The Leap Blog →</a></p>
+              <button type="button" class="tool-button" id="collapseUseCase" aria-controls="drugUseCase">Collapse use case</button>
+            </article>
+          </div>
+      </section>
+
+      <section id="coverage" class="band quality-band">
+        <div class="section-heading">
+          <span>Coverage and validation</span>
+          <small>Karnataka, 2018-19 to 2026-27</small>
+        </div>
+        <div class="quality-grid">
+          <div class="coverage-table" id="coverageTable"></div>
+          <div id="validation" class="quality-explanation">
+            <h2>What a pass means</h2>
+            <p>
+              Each check compares an extracted total with the sum of its detail rows. A pass
+              means that the difference falls within the specified tolerance. Errors can still
+              remain in figures that add up correctly. A source-page comparison is needed to
+              establish whether the extraction is accurate.
+            </p>
+            <div class="validation-list" id="validationList"></div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section id="queries" class="band">
+        <div class="section-heading">
+          <span>SQL</span>
+          <small>reproduce a demand total</small>
+        </div>
+        <div class="query-layout">
+          <div>
+            <h2>Calculate a total from the package</h2>
+            <p>
+              This query adds object-head entries by demand from a Karnataka package CSV. It
+              excludes summary rows to avoid counting the same expenditure twice. Results are
+              in lakh. Divide by 100 to convert them to crore.
+            </p>
+          </div>
+          <div class="query-box">
+            <pre id="sqlRecipe"><code></code></pre>
+            <button id="copySql" type="button">Copy SQL</button>
+            <span id="copyStatus" role="status"></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="method" class="band final-band">
+        <div class="section-heading">
+          <span>Method</span>
+          <small>from source document to account table</small>
+        </div>
+        <div class="method-grid">
+          <div>
+            <h3>1. Read and map</h3>
+            <p>Identify the source's account levels, financial columns, units and links between detail tables and summaries.</p>
+          </div>
+          <div>
+            <h3>2. Define the record</h3>
+            <p>Specify the account path, amount, year, unit and source. Keep detail rows, totals, blanks and zeros distinct.</p>
+          </div>
+          <div>
+            <h3>3. Extract and check</h3>
+            <p>Extract source-linked records and reconcile the totals. Trace each failed check back through the processing steps.</p>
+          </div>
+          <div>
+            <h3>4. Support research</h3>
+            <p>Provide reusable tables, worked examples and source references. Report the checked scope and the errors that remain.</p>
+          </div>
+        </div>
+          <p class="citation">
+            Related paper:
+            <a href="./assets/paper-acm_icaif_25.pdf">Information Extraction From Fiscal Documents Using LLMs</a>.
+          </p>
+          <div class="citation-box">
+            <div>
+              <strong>Citation</strong>
+              <p id="projectCitation">xKDR. India Public Finance Portal. Karnataka state budget data, 2018-19 to 2026-27. https://github.com/xKDR/india-public-finance-portal</p>
+            </div>
+            <button class="tool-button" id="copyCitation" type="button">Copy citation</button>
+            <span id="citationStatus" role="status"></span>
+          </div>
+      </section>
+      <section id="contribute" class="band contribute-band">
+        <div class="section-heading"><span>Contribute</span><small>Sources, corrections and research</small></div>
+        <div class="contribute-layout">
+          <div class="contribute-intro">
+            <h2>Contribute to the database</h2>
+            <p>Help extend the archive or improve an existing record. Start with the source document and describe the change so another researcher can check it.</p>
+            <p>For a data correction, include the state, account code, financial year, measure, unit and source page. Show the recorded value and the proposed correction.</p>
+            <a class="button primary" href="https://github.com/xKDR/india-public-finance-portal/issues/new">Open a contribution issue</a>
+            <p class="contribute-access">The repository is public. Reports open a tracked issue that maintainers can check against the source PDF.</p>
+          </div>
+          <dl class="contribution-types">
+            <div><dt>Add a budget source</dt><dd>Identify the state, year and expenditure volume. Include the official URL or PDF, its units and any missing pages. New layouts need their own field mapping.</dd></div>
+            <div><dt>Correct a record</dt><dd>Cite the source page and explain the discrepancy. Keep the original value and the proposed change visible. A total that adds up is not sufficient evidence for a correction.</dd></div>
+            <div><dt>Improve extraction or validation</dt><dd>Provide the page, expected records and a reproducible failure. Test the rule with a correct sample and deliberate errors, such as a changed digit, a dropped row or a swapped year.</dd></div>
+            <div><dt>Add a worked analysis</dt><dd>State the question, input version, row selection and units. Include code and expected results. Follow the <a href="https://github.com/xKDR/india-public-finance-portal/tree/main/examples/_spec">example specification</a> so others can reproduce the calculation.</dd></div>
+          </dl>
+        </div>
+        <p class="contribution-release">Proposed corrections need source evidence and review before they enter a new data release. Report unresolved differences rather than changing an amount to make a check pass.</p>
+      </section>
+    </main>
+
+    <div class="foot">
+      <p>India Public Finance Portal is a project of xKDR. Data, code and this site are public on
+        <a href="https://github.com/xKDR/india-public-finance-portal">GitHub</a>.</p>
+    </div>
+
+    <script src="./public-finance/js/engine.js?v=sync10"></script>
+    <script src="./public-finance/js/store.js?v=sync10"></script>
+    <script src="./public-finance/js/model.js?v=sync10"></script>
+    <script src="./public-finance/js/search.js?v=sync10"></script>
+    <script>window.PORTAL = { root: './public-finance/', state: 'ka' };</script>
+    <script src="./app.js?v=explore-page-1"></script>
+  </body>
+</html>

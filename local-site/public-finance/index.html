@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>India Public Finance Portal · State Finances</title>
+<meta name="description" content="Explore Indian state budgets line by line:
+  every account head, every year, with data-quality checks against the
+  printed PDFs.">
+<script>try{var t=localStorage.getItem('portal-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="css/tokens.css?v=sync10">
+<link rel="stylesheet" href="css/base.css?v=sync10">
+<link rel="stylesheet" href="css/controls.css?v=sync10">
+<link rel="stylesheet" href="css/charts.css?v=sync10">
+<link rel="stylesheet" href="css/map.css?v=sync10">
+</head>
+<body><aside style="padding:8px 16px;background:#fff4cf;color:#493a14;font:13px system-ui">Local recovered preview · Budget data rebuilt from GitHub. Raw extraction values may differ from live processed data. Detailed quality badges and deeper comparison search are pending; see local README.</aside>
+<div class="page">
+<div class="site-head">
+  <a class="brand" href="../index.html">India Public Finance<span class="dot">·</span>Portal</a>
+  <nav aria-label="Site">
+    <a href="index.html" aria-current="page">States</a>
+        <a href="../explore.html">Explore</a>
+    <a href="compare.html">Compare</a>
+    <a href="../resources/guide.html">Guide</a>
+    <a href="about.html">About</a>
+  </nav>
+  <span class="sp"></span>
+  <nav aria-label="Utility">
+    <a href="report.html">Report an error</a>
+    <a href="https://github.com/xKDR/india-public-finance-portal">GitHub</a>
+  </nav>
+</div>
+
+  <div class="hero">
+    <div id="imap-host"></div>
+    <div class="hero-copy">
+      <h1 class="portal-title">India Public Finance Portal</h1>
+      <p class="tagline">Every line of the budget, open to everyone.</p>
+      <p class="lede">The detailed expenditure volumes of Indian state
+        budgets, hundreds of thousands of printed account lines, turned
+        into something you can explore, chart and question. Pick a state on
+        the map, or start from a card below.</p>
+      <p class="note">Research preview. The current build covers Karnataka FY 2018-19 to 2026-27 and Tamil Nadu FY 2014-15 to 2026-27. Read the <a href="about.html">method and data notes</a> before using the figures.</p>
+      <p class="meta" id="lmeta">Loading…</p>
+    </div>
+  </div>
+
+  <div class="cards" id="cards"></div>
+
+  <div class="foot">
+    <p>Numbers are summed from the additive leaf rows of each printed
+      volume; the volumes' own subtotals are used as independent checks, and
+      heads that fail them are flagged on every page. Something looks wrong?
+      <a href="report.html">Report it</a>; every report becomes a
+      tracked issue.</p>
+    <p>Data and code: <a
+      href="https://github.com/xKDR/india-public-finance-portal">
+      xKDR/india-public-finance-portal</a> ·
+      <a href="about.html">method and data notes</a> ·
+      map © <a href="https://github.com/datameet/maps">DataMeet
+      contributors</a>, CC-BY 4.0.</p>
+  </div>
+</div>
+<script>window.PORTAL={root:''}</script>
+<script src="js/common.js?v=sync10"></script>
+<script src="js/engine.js?v=sync10"></script>
+<script src="js/store.js?v=sync10"></script>
+<script src="js/landing.js?v=sync10"></script>
+</body>
+</html>

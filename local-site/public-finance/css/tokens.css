@@ -1,0 +1,111 @@
+/* Design tokens — the SINGLE source for the whole site: landing page,
+   resources pages, and the state portal all read from this file.
+
+   One visual vocabulary, not two: warm paper grounds, maroon red as the
+   primary brand colour, xkdr orange as the accent for fills, rules,
+   chart marks, badges and hover/focus states. Controls are flat: thin
+   warm border, no shadow, square corners. This file used to serve the
+   portal only, with the landing page keeping its own conflicting
+   :root in styles.css; every name from both is defined here now so
+   nothing that reads a custom property breaks. See
+   /tmp/ipf-design/spec.md for the full palette table and rollout plan. */
+
+:root{
+  color-scheme: light;
+
+  /* ---------------------------------------------------------- grounds */
+  --paper:#fdfcfb;        /* primary warm paper */
+  --paper-warm:#faf7f1;   /* deeper warm paper, for alternating bands */
+  --ground:var(--paper);
+  --ground-2:#f3eee8;     /* warm grey-beige: hover states, stripes, tracks */
+  --surface:#ffffff;      /* pure white: cards/tables that sit above paper */
+  --bg:var(--paper);      /* legacy alias, landing styles.css */
+
+  /* -------------------------------------------------------------- ink */
+  --ink:#1a1817;          /* near-black warm ink */
+  --ink-2:#5d5555;        /* secondary ink: sub-heads, table headers */
+  --ink-soft:var(--ink-2); /* legacy alias, landing styles.css */
+  --muted:#6b6560;        /* tertiary: captions, meta, placeholders */
+
+  /* ------------------------------------------------------------- lines */
+  --hair:#e8e2dc;         /* hairline rule: row dividers, thin borders */
+  --line:var(--hair);     /* legacy alias, landing styles.css */
+  --line-strong:#cfc5b8;  /* stronger warm line: control borders, dividers */
+  --grid:#ece5dc;         /* chart gridlines */
+  --axis:#a89e90;         /* chart axis lines, section-row rules */
+  --edge:var(--maroon-deep); /* bordered card/figure/table edge */
+
+  /* ------------------------------------------------- brand red (primary) */
+  --maroon:#7b0925;
+  --maroon-deep:#4b0a1e;
+  --brand:var(--maroon);  /* legacy alias, landing styles.css */
+
+  /* --------------------------------------------- xkdr orange (accent) */
+  /* Same values as xkdr.org. Orange carries fills, rules, chart marks,
+     badges, and hover/focus states. Orange TEXT only via --coral-deep,
+     and sparingly — body text stays ink, not orange. */
+  --coral:#f57d6a;        /* xkdr coral-orange */
+  --coral-light:#f49b81;  /* lighter orange, xkdr.org's second tone */
+  --coral-deep:#b5462f;   /* AA-safe deep variant, for orange text/icons */
+  --coral-soft:#fdeae6;   /* pale orange tint: badge/hover backgrounds */
+  --accent-ink:var(--coral-deep); /* alias used by resources pages today */
+
+  /* ---------------------------------------------------- restrained gold */
+  /* Decorative only: thin dividers, kicker rules, link underlines.
+     Never a button, focus ring, or status colour — red and orange cover
+     those roles now. */
+  --gold:#c9a25f;
+  --gold-soft:#dcc8a8;
+
+  /* ----------------------------------------------------------- roles */
+  --accent:var(--maroon);       /* primary interactive colour: buttons,
+                                    links, selected rows, active nav */
+  --accent-soft:#f5e9ec;        /* pale maroon tint: hover backgrounds */
+
+  /* --------------------------------------------------- categorical series */
+  /* --s1..--s8: interleaves red, orange and warm neutrals so neighbouring
+     series stay separable. Used by chart engines via getComputedStyle. */
+  --s1:#7b0925; --s2:#f57d6a; --s3:#b5462f; --s4:#e0b183;
+  --s5:#4b0a1e; --s6:#c9a25f; --s7:#8a6a5c; --s8:#c9c0b3;
+
+  /* ------------------------------------------- six-step ramp (house ramp) */
+  /* b1 = darkest, b6 = lightest; same direction as the old blue ramp it
+     replaces. Used for choropleth fills and progress/share bars. */
+  --b1:#4b0a1e; --b2:#7b0925; --b3:#b5462f;
+  --b4:#e07856; --b5:#efa583; --b6:#fbdcc7;
+
+  /* sequential ramp: pale peach to deep maroon, aliased to the ramp ends */
+  --seq1:var(--b6); --seq7:var(--b1);
+
+  /* ------------------------------------------------------------- status */
+  /* Kept in the same warm family as the rest of the palette: muted olive
+     green, ochre amber, brick red. None of these are blue or orange, so
+     they read as distinct from both the brand accent and chart series. */
+  --ok:#3d6b4f;
+  --warn:#9b5a1f;   --warn-bg:#f7f0e3;
+  --bad:#9c2f2a;    --bad-bg:#f7e9e6;
+  --risk:var(--bad); /* legacy alias, landing styles.css */
+  --notice:#6b6560; --notice-bg:#f3eee8;
+
+  /* --------------------------------------------------------- typography */
+  --serif:Georgia, "Times New Roman", serif; /* headings */
+  --sans:-apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; /* UI/body */
+  --mono:ui-monospace, "SF Mono", Menlo, Consolas, monospace; /* numbers */
+
+  /* ------------------------------------------------------------- spacing */
+  /* page column: portal .page is 1480px wide with 30px padding, so its
+     content edge sits at max(30px, (viewport - 1420px) / 2). Full-bleed
+     landing bands use the same gutter so every page shares one column. */
+  --gutter:max(30px, calc((100vw - 1420px) / 2));
+
+  --space-xs:4px; --space-sm:8px; --space-md:16px; --space-lg:24px; --space-xl:40px;
+
+  /* -------------------------------------------------- flat-control kit */
+  /* One control style everywhere: thin warm border, no shadow, square
+     corners. */
+  --radius:0;
+  --ctl-border:1px solid var(--line-strong);
+  --ctl-shadow:none;
+  --ctl-shadow-sm:none;
+  --ctl-radius:var(--radius);
+}

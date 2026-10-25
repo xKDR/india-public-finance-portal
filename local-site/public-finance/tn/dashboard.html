@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tamil Nadu budget dashboard</title>
+<script>try{var t=localStorage.getItem('portal-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../css/tokens.css?v=sync10">
+<link rel="stylesheet" href="../css/base.css?v=sync10">
+<link rel="stylesheet" href="../css/controls.css?v=sync10">
+<link rel="stylesheet" href="../css/charts.css?v=sync10">
+<link rel="stylesheet" href="../css/explorer.css?v=sync10">
+<style>
+.dlayout{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;
+  align-items:start}
+@media (max-width:1020px){.dlayout{grid-template-columns:1fr}}
+</style>
+</head>
+<body><aside style="padding:8px 16px;background:#fff4cf;color:#493a14;font:13px system-ui">Local recovered preview · Budget data rebuilt from GitHub. Raw extraction values may differ from live processed data. Detailed quality badges and deeper comparison search are pending; see local README.</aside>
+<div class="page">
+<div class="site-head">
+  <a class="brand" href="../../index.html">India Public Finance<span class="dot">·</span>Portal</a>
+  <nav aria-label="Site">
+    <a href="../index.html">States</a>
+        <a href="../../explore.html">Explore</a>
+    <a href="../compare.html">Compare</a>
+    <a href="../../resources/guide.html">Guide</a>
+    <a href="../about.html">About</a>
+  </nav>
+  <nav aria-label="Tamil Nadu">
+    <a href="../tn/explore.html">Explore</a>
+    <a href="../tn/dashboard.html" aria-current="page">Dashboard</a>
+    <a href="../tn/series.html">Time series</a>
+  </nav>
+  <span class="sp"></span>
+  <nav aria-label="Utility">
+    <a href="../report.html">Report an error</a>
+    <a href="https://github.com/xKDR/india-public-finance-portal">GitHub</a>
+  </nav>
+</div>
+
+  <p class="kicker">Tamil Nadu · state finances</p>
+  <h1>Composition dashboard</h1>
+  <p class="sub">Expenditure composition for the selected fiscal year and measure. The initial view shows major heads. Select a slice to follow the account hierarchy: major → sub-major → minor → sub-head → detailed → sub-detailed head. Breadcrumbs and the displayed-level label identify the current branch. Percentages show each head’s share of its selected parent, excluding negative amounts such as recoveries. The table includes all amounts.</p>
+
+  <div class="controls">
+    <div class="field"><label>Fiscal year</label>
+      <select id="dyear"></select></div>
+    <div class="field"><label>Measure</label>
+      <div class="seg" id="dmeasure"></div></div>
+  </div>
+
+  <div class="crumbs" id="crumbs"></div>
+
+  <div class="dlayout">
+    <div id="ring"></div>
+  </div>
+
+  <div class="foot">
+    <p>Slices are shares of the parent's positive amounts; negative lines
+      (recoveries) are excluded from the ring and listed in the table.
+      Amounts are ₹ crore, summed from additive leaf rows.
+      <a href="../about.html">Method and data notes</a>.</p>
+  </div>
+</div>
+<script>window.PORTAL={root:'../',state:'tn',stateName:'Tamil Nadu'}</script>
+<script src="../js/common.js?v=sync10"></script>
+<script src="../js/engine.js?v=sync10"></script>
+<script src="../js/store.js?v=sync10"></script>
+<script src="../js/model.js?v=sync10"></script>
+<script src="../js/stats.js?v=sync10"></script>
+<script src="../js/badges.js?v=sync10"></script>
+<script src="../js/dashboard.js?v=no-summary-1"></script>
+</body>
+</html>

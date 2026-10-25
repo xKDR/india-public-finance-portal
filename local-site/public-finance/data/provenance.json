@@ -1,0 +1,1 @@
+{"repository":"https://github.com/xKDR/india-public-finance-portal","commit":"371c1e5d79a7f2dfcb8d55f21867330384093910","inputs":"state-finances/*/*_years/*/*_json/*_budget_leaves_*.ndjson","note":"Every amount rebuilt from repository additive leaves. Hosted budget JSON is not used. Validation badges are pending."}

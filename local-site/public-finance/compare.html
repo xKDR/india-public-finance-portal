@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compare states · India Public Finance Portal</title>
+<script>try{var t=localStorage.getItem('portal-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="css/tokens.css?v=sync10">
+<link rel="stylesheet" href="css/base.css?v=sync10">
+<link rel="stylesheet" href="css/controls.css?v=sync10">
+<link rel="stylesheet" href="css/charts.css?v=sync10">
+<link rel="stylesheet" href="css/compare.css?v=sync10">
+</head>
+<body><aside style="padding:8px 16px;background:#fff4cf;color:#493a14;font:13px system-ui">Local recovered preview · Budget data rebuilt from GitHub. Raw extraction values may differ from live processed data. Detailed quality badges and deeper comparison search are pending; see local README.</aside>
+<div class="page">
+<div class="site-head">
+  <a class="brand" href="../index.html">India Public Finance<span class="dot">·</span>Portal</a>
+  <nav aria-label="Site">
+    <a href="index.html">States</a>
+        <a href="../explore.html">Explore</a>
+    <a href="compare.html" aria-current="page">Compare</a>
+    <a href="../resources/guide.html">Guide</a>
+    <a href="about.html">About</a>
+  </nav>
+  <span class="sp"></span>
+  <nav aria-label="Utility">
+    <a href="report.html">Report an error</a>
+    <a href="https://github.com/xKDR/india-public-finance-portal">GitHub</a>
+  </nav>
+</div>
+
+  <p class="kicker">India · state finances</p>
+  <h1>Compare states</h1>
+  <p class="sub">Pick any head printed by more than one state and plot BE, RE
+    and actuals side by side; states are paired by account code down to the
+    minor head, the level the national List of Major and Minor Heads
+    prescribes; below that, scheme codes are state-specific.</p>
+  <p class="meta" id="cmeta">Loading…</p>
+
+  <div class="controls">
+    <div class="field searchwrap">
+      <div class="searchbox" id="csearch"><input type="text"
+        placeholder="Code or name, e.g. 2210, urban health, tn: NRHM"
+        autocomplete="off"></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="field"><label>Measures</label>
+      <div class="seg" id="cmeasures"></div></div>
+    <div class="field"><label>From</label><select id="cfrom"></select></div>
+    <div class="field"><label>To</label><select id="cto"></select></div>
+    <div class="field"><label>Scale</label>
+      <div class="seg" id="cscale"></div></div>
+    <label class="field ckfree" id="cfree" hidden><input type="checkbox">
+      Free scales</label>
+  </div>
+
+  <div id="cards" class="cards">
+    <div id="cempty" class="xloading">Search for a head above to start a
+      comparison; try 2210, or a name.</div>
+  </div>
+
+  <div class="foot">
+    <p>Colour identifies the state. BE: solid line and circles;
+      RE: long dashes and triangles; actuals: dots and squares.
+      Gaps indicate unavailable
+      data or an undefined percentage, rather than a change in magnitude.</p>
+    <details><summary>How is percentage view calculated?</summary>
+      <p>Percentage view divides each head by its state's total for the
+        same measure and fiscal year: actuals by total actuals, revised by
+        total revised, and budget by total budget. It is a spending share,
+        not the percentage of the original budget spent.</p></details>
+    <p>Amounts are each state's printed volumes summed from additive leaf
+      rows, shown in ₹ crore. <a href="about.html">Method and data
+      notes</a>.</p>
+  </div>
+</div>
+<script>window.PORTAL={root:''}</script>
+<script src="js/common.js?v=sync10"></script>
+<script src="js/engine.js?v=sync10"></script>
+<script src="js/store.js?v=sync10"></script>
+<script src="js/model.js?v=sync10"></script>
+<script src="js/stats.js?v=sync10"></script>
+<script src="js/search.js?v=sync10"></script>
+<script src="js/compare.js?v=sync10"></script>
+</body>
+</html>

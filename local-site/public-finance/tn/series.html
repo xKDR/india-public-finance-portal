@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tamil Nadu budget time series</title>
+<script>try{var t=localStorage.getItem('portal-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../css/tokens.css?v=sync10">
+<link rel="stylesheet" href="../css/base.css?v=sync10">
+<link rel="stylesheet" href="../css/controls.css?v=sync10">
+<link rel="stylesheet" href="../css/charts.css?v=sync10">
+<link rel="stylesheet" href="../css/explorer.css?v=sync10">
+<link rel="stylesheet" href="../css/series.css?v=sync10">
+</head>
+<body><aside style="padding:8px 16px;background:#fff4cf;color:#493a14;font:13px system-ui">Local recovered preview · Budget data rebuilt from GitHub. Raw extraction values may differ from live processed data. Detailed quality badges and deeper comparison search are pending; see local README.</aside>
+<div class="page">
+<div class="site-head">
+  <a class="brand" href="../../index.html">India Public Finance<span class="dot">·</span>Portal</a>
+  <nav aria-label="Site">
+    <a href="../index.html">States</a>
+        <a href="../../explore.html">Explore</a>
+    <a href="../compare.html">Compare</a>
+    <a href="../../resources/guide.html">Guide</a>
+    <a href="../about.html">About</a>
+  </nav>
+  <nav aria-label="Tamil Nadu">
+    <a href="../tn/explore.html">Explore</a>
+    <a href="../tn/dashboard.html">Dashboard</a>
+    <a href="../tn/series.html" aria-current="page">Time series</a>
+  </nav>
+  <span class="sp"></span>
+  <nav aria-label="Utility">
+    <a href="../report.html">Report an error</a>
+    <a href="https://github.com/xKDR/india-public-finance-portal">GitHub</a>
+  </nav>
+</div>
+
+  <p class="kicker">Tamil Nadu · state finances</p>
+  <h1>Time series</h1>
+  <p class="sub">Any head, any level, across every budget volume. Pick up to
+    eight lines, choose the measures to overlay, and combine heads into a
+    single summed line when they belong together. The chart's link preserves
+    the whole selection; share it as it is.</p>
+  <p class="meta" id="smeta">Loading…</p>
+
+  <div class="controls">
+    <div class="field"><label>Level</label><select id="slevel"></select></div>
+    <div class="field" id="sf-scope" hidden><label>Within major head</label>
+      <select id="smajor"></select></div>
+    <div class="field"><label>From</label><select id="sfrom"></select></div>
+    <div class="field"><label>To</label><select id="sto"></select></div>
+    <div class="field"><label>Measures</label>
+      <div class="measbar" id="smeasures"></div></div>
+    <div class="field"><label>Scale</label>
+      <div class="seg" id="sscale"></div></div>
+  </div>
+
+  <div class="tray" id="tray"></div>
+  <div class="pnote" id="pnote"></div>
+
+  <div class="slayout">
+    <div id="splot"></div>
+    <aside class="picker">
+      <h3>Pick heads to plot</h3>
+      <input class="pfilter" id="pfilter" type="text"
+        placeholder="Filter this list…" autocomplete="off">
+      <div class="plist" id="plist"></div>
+      <div class="pcount" id="pcount"></div>
+    </aside>
+  </div>
+
+  <div class="foot">
+    <p>Budget estimates come from each year's own volume; revised estimates
+      from the following volume; actuals from two volumes later.
+      <a href="../about.html">Method and data notes</a>.</p>
+  </div>
+</div>
+<script>window.PORTAL={root:'../',state:'tn',stateName:'Tamil Nadu'}</script>
+<script src="../js/common.js?v=sync10"></script>
+<script src="../js/engine.js?v=sync10"></script>
+<script src="../js/store.js?v=sync10"></script>
+<script src="../js/model.js?v=sync10"></script>
+<script src="../js/stats.js?v=sync10"></script>
+<script src="../js/series.js?v=sync10"></script>
+</body>
+</html>
