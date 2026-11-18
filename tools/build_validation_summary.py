@@ -6,6 +6,8 @@ package's per-year checks CSVs. stdlib Python only.
 Usage (from repo root):
     python3 tools/build_validation_summary.py                   # Karnataka
     python3 tools/build_validation_summary.py --package tamil-nadu
+    python3 tools/build_validation_summary.py --package bihar
+    python3 tools/build_validation_summary.py --package maharashtra
 
 Years are discovered from the package's <PREFIX>_years/ directory — never
 hardcoded, so the tool stays correct when years are added or retired.
@@ -41,7 +43,12 @@ CSV_COLUMNS = [
 HTML_CAP_LEVELS = {
     "karnataka": "SubMajor",
     "tamil-nadu": "MajorHead",
+    "bihar": "MajorHead",
+    "maharashtra": "MajorHead",
 }
+
+# Packages whose summary CSV is written gzip-compressed (<PREFIX>_validation_summary.csv.gz).
+COMPRESSED = {"tamil-nadu", "bihar", "maharashtra"}
 
 LEVEL_DISPLAY = {
     "Year": "Year",
@@ -191,6 +198,74 @@ PACKAGES = {
             "out from the leaves straight to the Minor / Sub-Major / Major totals; "
             "Tamil Nadu prints those per plan-band and over a recoveries ladder, so "
             "that fan-out is not a meaningful identity here and is not computed."),
+        "anomalies": None,
+    },
+    "bihar": {
+        "title": "Bihar State Budget",
+        "state": "BR",
+        "pos_labels": {"1": "Actuals", "2": "BE", "3": "RE", "4": "BE"},
+        "threshold_text": "0.01 rupee (Bihar prints amounts in rupees; a pass means the "
+                          "two figures agree to the paisa)",
+        "trust_notes": {},
+        "trust_intro": (
+            "Use this table to see how well each year's printed arithmetic checks out. "
+            "All ten years were extracted with gemini-2.5-pro on one pipeline. Three "
+            "demand 20 / major 2210 blocks (2024-25 to 2026-27) were never extracted; "
+            "see BR_known_caveats.md."),
+        "glossary": [
+            ("W06", "in_schema", "Σ Object-Head leaves = Detailed-Head total (pipeline SUM_OBJ_TO_DH)"),
+            ("W08", "in_schema", "Σ Detailed-Head totals = Sub-Head total (pipeline SUM_DH_TO_SH)"),
+            ("W13", "in_schema", "Σ Sub-Head totals = Minor-Head total (pipeline SUM_SH_TO_MIN)"),
+            ("W11", "in_schema", "Σ Minor-Head totals = Sub-Major total (pipeline SUM_MIN_TO_SMAJ)"),
+            ("W12", "in_schema", "Σ Sub-Major totals = Major-Head total (pipeline SUM_SMAJ_TO_MAJ)"),
+            ("W25", "in_schema", "Voted line + Charged line = Major-Head total (pipeline SUM_VC_TO_MAJ)"),
+        ],
+        "glossary_note": (
+            "W = within one table, numbered once across the portal. W06 is the same check "
+            "as in Karnataka and Tamil Nadu. W08, W11, W12 and W13 are the same checks as "
+            "in Tamil Nadu. W25 is Bihar-only: Bihar prints a Voted line and a Charged "
+            "line under each major head."),
+        "anomalies": None,
+    },
+    "maharashtra": {
+        "title": "Maharashtra State Budget",
+        "state": "MH",
+        "pos_labels": {"1": "Actuals", "2": "BE", "3": "RE", "4": "BE"},
+        "threshold_text": "0.01 (INR thousand; Maharashtra prints whole thousands, so a "
+                          "pass means the two figures match exactly)",
+        "trust_notes": {},
+        "trust_intro": (
+            "Use this table to see how well each year's printed arithmetic checks out. "
+            "Years up to 2017-18 print Non-Plan, Plan and Total columns; the checks use "
+            "the Total column. 2011-12 is out of scope and 2025-26 is not public. See "
+            "MH_README.md and MH_known_caveats.md."),
+        "glossary": [
+            ("W06", "in_schema", "Σ Object-Head leaves = Detailed-Head total"),
+            ("W15", "in_schema", "Σ Object-Head leaves = Sub-Head total"),
+            ("W01", "in_schema", "Σ Object-Head leaves = Minor-Head total"),
+            ("W02", "in_schema", "Σ Object-Head leaves = Sub-Major total"),
+            ("W16", "in_schema", "Σ Object-Head leaves = Major-Head gross total"),
+            ("W08", "in_schema", "Σ Detailed-Head totals = Sub-Head total"),
+            ("W17", "in_schema", "Σ Detailed-Head totals = Minor-Head total"),
+            ("W18", "in_schema", "Σ Detailed-Head totals = Sub-Major total"),
+            ("W19", "in_schema", "Σ Detailed-Head totals = Major-Head gross total"),
+            ("W13", "in_schema", "Σ Sub-Head totals = Minor-Head total"),
+            ("W20", "in_schema", "Σ Sub-Head totals = Sub-Major total"),
+            ("W21", "in_schema", "Σ Sub-Head totals = Major-Head gross total"),
+            ("W11", "in_schema", "Σ Minor-Head totals = Sub-Major total"),
+            ("W22", "in_schema", "Σ Minor-Head totals = Major-Head gross total"),
+            ("W14", "in_schema", "Σ Sub-Major totals = Major-Head gross total"),
+            ("W23", "in_schema", "Charged + Voted = printed total"),
+            ("W24", "in_schema", "Printed total = nearest printed or derived children"),
+            ("A01", "across_schema", "Object-table Minor total = minor-head table Minor data"),
+            ("A04", "across_schema", "Gross total less recoveries = net total"),
+        ],
+        "glossary_note": (
+            "W = within one table, A = across tables. W01, W02, W06 and A01 are the same "
+            "checks as in Karnataka; W08, W11 and W13 are the same checks as in Tamil Nadu. "
+            "The Maharashtra major-head target is the printed Gross Total, before Deduct "
+            "Recoveries, so W14, W16, W19, W21 and W22 do not reuse Karnataka W07 or Tamil "
+            "Nadu W12. Check ids are defined in MH_README.md."),
         "anomalies": None,
     },
 }
@@ -662,7 +737,7 @@ def main():
     prefix = cfg["state"]
     years_dir = base_dir / f"{prefix}_years"
     # TN's summary (~1.6M rows) exceeds GitHub's 100 MB file limit uncompressed.
-    compress = args.package == "tamil-nadu"
+    compress = args.package in COMPRESSED
     out_csv = base_dir / (f"{prefix}_validation_summary.csv.gz" if compress
                           else f"{prefix}_validation_summary.csv")
     out_html = base_dir / f"{prefix}_validation_summary.html"

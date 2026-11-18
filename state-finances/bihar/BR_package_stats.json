@@ -1,0 +1,113 @@
+{
+ "budget_rows_count": 338377,
+ "checks_rows_count": 450832,
+ "leaf_rows_count": 117973,
+ "pdfs_count": 0,
+ "per_year": {
+  "2017-18": {
+   "budget_rows": 30480,
+   "check_rows": 41616,
+   "json_budget_leaves": 11610,
+   "json_budget_nodes": 51,
+   "json_checks": 41616,
+   "json_summaries": 10866,
+   "pdf_count": 0
+  },
+  "2018-19": {
+   "budget_rows": 33120,
+   "check_rows": 43024,
+   "json_budget_leaves": 12015,
+   "json_budget_nodes": 51,
+   "json_checks": 43024,
+   "json_summaries": 12664,
+   "pdf_count": 0
+  },
+  "2019-20": {
+   "budget_rows": 33535,
+   "check_rows": 44216,
+   "json_budget_leaves": 11778,
+   "json_budget_nodes": 51,
+   "json_checks": 44216,
+   "json_summaries": 12968,
+   "pdf_count": 0
+  },
+  "2020-21": {
+   "budget_rows": 33515,
+   "check_rows": 44064,
+   "json_budget_leaves": 11818,
+   "json_budget_nodes": 51,
+   "json_checks": 44064,
+   "json_summaries": 12893,
+   "pdf_count": 0
+  },
+  "2021-22": {
+   "budget_rows": 32714,
+   "check_rows": 43188,
+   "json_budget_leaves": 11396,
+   "json_budget_nodes": 51,
+   "json_checks": 43188,
+   "json_summaries": 12690,
+   "pdf_count": 0
+  },
+  "2022-23": {
+   "budget_rows": 34514,
+   "check_rows": 45044,
+   "json_budget_leaves": 12079,
+   "json_budget_nodes": 51,
+   "json_checks": 45044,
+   "json_summaries": 13218,
+   "pdf_count": 0
+  },
+  "2023-24": {
+   "budget_rows": 36610,
+   "check_rows": 47872,
+   "json_budget_leaves": 13177,
+   "json_budget_nodes": 50,
+   "json_checks": 47872,
+   "json_summaries": 13763,
+   "pdf_count": 0
+  },
+  "2024-25": {
+   "budget_rows": 32858,
+   "check_rows": 44492,
+   "json_budget_leaves": 10798,
+   "json_budget_nodes": 52,
+   "json_checks": 44492,
+   "json_summaries": 13111,
+   "pdf_count": 0
+  },
+  "2025-26": {
+   "budget_rows": 35586,
+   "check_rows": 47960,
+   "json_budget_leaves": 11503,
+   "json_budget_nodes": 52,
+   "json_checks": 47960,
+   "json_summaries": 14096,
+   "pdf_count": 0
+  },
+  "2026-27": {
+   "budget_rows": 35445,
+   "check_rows": 49356,
+   "json_budget_leaves": 11799,
+   "json_budget_nodes": 55,
+   "json_checks": 49356,
+   "json_summaries": 14232,
+   "pdf_count": 0
+  }
+ },
+ "release_version": "v0.1.0-draft",
+ "schema_version": "br-public-two-table-v1",
+ "source": {
+  "repo": "IndiaBudgets (pipeline)",
+  "sha": "19ebba1990701c904afb505566914d0e2cf2a6c2",
+  "tables": "OUT/BR/extraction/yearwise/<year>/BR_<yy>_complete.csv",
+  "converter": "SRC/BR/portal_export/convert_br.py"
+ },
+ "source_pdfs": {
+  "count": 315,
+  "bytes": 5448050002,
+  "shipped": false,
+  "location": "DATA/full_source/BR/<year>/ in the pipeline repo (Git LFS)"
+ },
+ "years_count": 10
+}
