@@ -1,0 +1,104 @@
+table_name,column_name,type,description,controlled_values
+budget,document_year,string,"Budget document year (the year folder, e.g. 2024-25).",
+budget,state_code,string,Always BR.,BR
+budget,page_number,string,"Page number printed on the page, as extracted.",
+budget,pdf_page_number,integer,"Bihar only. 1-based page of the source PDF named in source_file. Needed for the consolidated volumes of 2017-18 to 2020-21 (about 2,100 pages each).",
+budget,row_number,integer,1-based row position in the year table BR_<yy>_complete.csv. The row address used in NDJSON _ids.,
+budget,type_of_table,string,"object_head for the detail table (Karnataka's object_head columns). object_head_summary for rows on the pages of a demand's object-head summary annex, which repeats the whole demand; those rows are never leaves.",object_head|object_head_summary
+budget,row_type,string,Printed row role.,Data|Header|Total
+budget,row_level,string,Hierarchy level. Voted and Charged are the major-head Voted/Charged lines.,Object-Head|Detailed-Head|Sub-Head|Minor-Head|Sub-Major-Head|Major-Head|Voted|Charged
+budget,row_header,string,Row text as printed (Hindi).,
+budget,demand_number,string,"Demand (grant) number, 2 digits.",
+budget,major_head_code,string,"4-digit major head code, as extracted.",
+budget,major_head_name,string,Major head name as printed (Hindi).,
+budget,sub_major_head_code,string,2-digit sub-major head code.,
+budget,sub_major_head_name,string,Sub-major head name (Hindi).,
+budget,minor_head_code,string,3-digit minor head code.,
+budget,minor_head_name,string,Minor head name (Hindi).,
+budget,sub_head_code,string,4-digit sub-head (scheme) code.,
+budget,sub_head_name,string,Sub-head name (Hindi).,
+budget,detailed_head_code,string,2-digit detailed head code.,
+budget,detailed_head_name,string,Detailed head name (Hindi).,
+budget,object_head_code,string,2-digit object head code: the additive leaf level (Tamil Nadu calls it the sub-detailed head).,
+budget,object_head_description,string,Object head name (Hindi).,
+budget,full_account_code,string,"Account code as printed, where extracted.",
+budget,vote_charge_marker,string,"V = Voted, C = Charged, blank = not marked.",V|C|
+budget,<type>_<year>_amount_inRs,number,"The four positional amounts, in rupees. <type> is accounts (position 1, document year - 2), budget_estimate (position 2, year - 1, and position 4, the document year) or revised_estimate (position 3, year - 1). <year> is the fiscal year with an underscore, e.g. budget_estimate_2024_25_amount_inRs. Blank when the cell is blank, a dash or unreadable.",
+budget,amount_unit,string,Unit of the amounts: rupees. Divide by 1e7 for crore.,INR
+budget,source_file,string,Package-relative path of the source PDF. Blank in a build without PDFs.,
+budget,has_check,string,yes when a check anchors on this printed total.,yes|no
+budget,reference_check_id,string,Link to checks_<year>.csv. Rows of one target key share the id; W12 and W25 both anchor on the Major-Head total.,
+budget,pass,integer,Number of anchored comparisons that passed.,
+budget,pass_pct,number,Percent of anchored comparisons that passed.,
+budget,diff,number,"Sum of abs_diff over the anchored comparisons, rupees.",
+budget,diff_pct,number,diff as a percent of the summed |target amounts|.,
+budget,quality_flags,string,Bihar only. ';'-joined flags; definitions in BR_known_caveats.md.,summary_annex|malformed_amount|incomplete_code_path|total_at_object_level|demand_level_line|demand_total|w06_mismatch|no_printed_dh_total
+checks,document_year,string,Budget document year.,
+checks,reference_check_id,string,BR.<year>.dn_<demand>.in_schema.object_head.<level>.<compared_key>.,
+checks,check_id,string,"Portal check id (W = within one table). W06, W08, W11, W12 and W13 mean the same as in Tamil Nadu (W06 also in Karnataka). W25 is Bihar-only.",W06|W08|W13|W11|W12|W25
+checks,check_type,string,Descriptive slug of the check.,
+checks,validation_scope,string,Always in_schema.,in_schema
+checks,source_table_family,string,Always object_head.,object_head
+checks,source_row_level,string,Level of the summed (child) side.,
+checks,source_row_type,string,Row type of the summed side.,Data|Total
+checks,target_table_family,string,Always object_head.,object_head
+checks,target_row_level,string,Level of the printed total.,
+checks,target_row_type,string,Always Total.,Total
+checks,compared_key,string,Underscore-joined normalised key (demand first).,
+checks,demand_number,string,Demand of the key.,
+checks,major_head_code,string,Major head of the key.,
+checks,sub_major_head_code,string,Sub-major head of the key (blank above it).,
+checks,minor_head_code,string,Minor head of the key.,
+checks,sub_head_code,string,Sub-head of the key.,
+checks,detailed_head_code,string,Detailed head of the key.,
+checks,financial_column_position,integer,Amount position compared.,1|2|3|4
+checks,financial_column_label,string,"Label of that position, e.g. BE 2024-25.",
+checks,source_amount,number,"Sum of the children, rupees.",
+checks,target_amount,number,"Printed total, rupees (summed when printed twice).",
+checks,diff,number,source_amount - target_amount.,
+checks,abs_diff,number,|diff|.,
+checks,accuracy_pct,number,"100 - |diff|/|target|*100, floored at 0; 100 when both are 0.",
+checks,passed,integer,1 when abs_diff < threshold.,0|1
+checks,failed,integer,1 - passed.,0|1
+checks,metric_name,string,Always abs_diff.,abs_diff
+checks,metric_value,number,The abs_diff.,
+checks,threshold,number,Pass threshold in rupees (0.01).,0.01
+checks,na_reason,string,Blank.,
+checks,source_file,string,Year table the comparison was computed from.,
+checks,target_file,string,Same as source_file.,
+validation_summary,document_year,string,Budget document year.,
+validation_summary,fiscal_year,string,Fiscal year of the position (ALL on ALL rows).,
+validation_summary,level,string,Aggregation level.,Year|Demand|MajorHead|SubMajor|Minor|SubHead|Detailed
+validation_summary,demand_number,string,Demand (Demand level and below).,
+validation_summary,major_head_code,string,Major head (MajorHead level and below).,
+validation_summary,sub_major_head_code,string,Sub-major head.,
+validation_summary,minor_head_code,string,Minor head.,
+validation_summary,sub_head_code,string,Sub-head.,
+validation_summary,detailed_head_code,string,Detailed head.,
+validation_summary,financial_column_position,string,Position aggregated; ALL = all four.,1|2|3|4|ALL
+validation_summary,financial_column_label,string,Label of the position.,
+validation_summary,n_checks,integer,Comparisons in the bucket.,
+validation_summary,n_passed,integer,Comparisons that passed.,
+validation_summary,pass_pct,number,n_passed / n_checks * 100.,
+validation_summary,mu_accuracy_pct,number,Mean accuracy_pct.,
+validation_summary,sigma_accuracy_pct,number,Population standard deviation of accuracy_pct.,
+validation_totals,document_year,string,Budget document year.,
+validation_totals,check_id,string,Published check id.,
+validation_totals,pipeline_check_id,string,Check id in SRC/BR/validation/BR_run_validation.py.,
+validation_totals,keys_checked,integer,Keys with both a source and a target (validator Items_Checked).,
+validation_totals,keys_passed,integer,Keys where all four positions pass.,
+validation_totals,keys_failed,integer,Keys where any position fails (validator Failed).,
+validation_totals,keys_missing_source,integer,Printed totals with no child rows.,
+validation_totals,keys_missing_target,integer,Child rows whose printed total was not extracted.,
+validation_totals,keys_not_printed,integer,"Key and section pairs where the book prints no total at that level for that section (validator details/not_printed_keys.csv). Not checked, not unmatched.",
+validation_totals,comparisons,integer,Rows in the checks CSV (4 per checked key).,
+validation_totals,comparisons_passed,integer,Comparisons that passed.,
+validation_totals,key_pass_pct,number,keys_passed / keys_checked * 100.,
+leaf_reconciliation,document_year,string,Budget document year.,
+leaf_reconciliation,demand_number,string,Demand.,
+leaf_reconciliation,n_leaves,integer,Leaf rows of the demand.,
+leaf_reconciliation,printed_total_row_number,integer,row_number of the demand-total row.,
+leaf_reconciliation,status,string,"match, gap or no_printed_total.",match|gap|no_printed_total
+leaf_reconciliation,leaf_sum_pos<p>,number,"Sum of the demand's leaves at position p, rupees.",
+leaf_reconciliation,printed_total_pos<p>,number,"Printed demand total at position p, rupees.",
+leaf_reconciliation,diff_pos<p>,number,leaf_sum - printed total at position p.,

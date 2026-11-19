@@ -18,16 +18,24 @@ The goal is not to hide uncertainty. The goal is to make it inspectable.
 |-------|---------|-------|--------|
 | Karnataka | [`state-finances/karnataka/`](state-finances/karnataka/) | 2018-19 to 2026-27 (9 years) | v0.2.0-draft |
 | Tamil Nadu | [`state-finances/tamil-nadu/`](state-finances/tamil-nadu/) | 2014-15 to 2026-27 (13 years) | v0.1.0-draft |
+| Bihar | [`state-finances/bihar/`](state-finances/bihar/) | 2017-18 to 2026-27 (10 years) | v0.1.0-draft |
+| Maharashtra | [`state-finances/maharashtra/`](state-finances/maharashtra/) | 2010-11 to 2026-27 (15 years; no 2011-12 or 2025-26) | v0.1.0-draft |
 
 Each state is a self-describing package under `state-finances/`. Every directory
-and file inside a package carries the state's prefix (`KA_`, `TN_`), so a file
+and file inside a package carries the state's prefix (`KA_`, `TN_`, `BR_`, `MH_`), so a file
 stays identifiable once it is downloaded, copied, or opened away from its folder.
 More states will be added the same way.
 
-**Units differ between states**: Karnataka amounts are INR lakh; Tamil Nadu
-amounts are INR thousand (its amount columns carry an explicit `_inThous`
-suffix). Every row also carries an `amount_unit` column — check it before
-comparing across states.
+**Units differ between states**: Karnataka amounts are INR lakh; Tamil Nadu and
+Maharashtra amounts are INR thousand (amount columns end in `_inThous`); Bihar
+amounts are rupees (amount columns end in `_inRs`). Every row also carries an
+`amount_unit` column — check it before comparing across states.
+
+**Source PDFs**: the Karnataka and Tamil Nadu packages include their PDFs. The Bihar
+and Maharashtra packages do not yet; their `source_file` is blank. See each
+package README for where the PDFs are kept.
+
+**Head names**: Bihar head and demand names are in Hindi (Devanagari), as printed.
 
 ## Repository Layout
 
@@ -58,8 +66,11 @@ india-public-finance-portal/
 │               ├── TN_csv/           TN_budget_<year>.csv, TN_checks_<year>.csv
 │               ├── TN_json/          leaves/nodes/summaries + TN_checks_<year>.ndjson.gz
 │               └── TN_pdfs/          Source PDFs (one per demand)
+│   ├── bihar/                        Bihar budget data package (v0.1.0-draft), same layout, no PDFs
+│   └── maharashtra/                  Maharashtra budget data package (v0.1.0-draft), same layout, no PDFs
 ├── tools/
-│   └── build_validation_summary.py   Rebuilds a package's validation summary from its checks CSVs
+│   ├── build_validation_summary.py   Rebuilds a package's validation summary from its checks CSVs
+│   └── import_state_package.py       Copies a built package in (no PDFs, gzip rules) and rebuilds its summary
 └── examples/                         Multi-language worked-examples compendium (Karnataka)
     ├── README.md                     Compendium index, quick-start, Docker instructions
     ├── src/python/                   Four analysis scripts in Python (stdlib only)
@@ -165,6 +176,8 @@ make -C examples reproduce
 |-------|-------------|---------------------|
 | Karnataka | [`state-finances/karnataka/`](state-finances/karnataka/) | [`examples/`](examples/) |
 | Tamil Nadu | [`state-finances/tamil-nadu/`](state-finances/tamil-nadu/) | — |
+| Bihar | [`state-finances/bihar/`](state-finances/bihar/) | — |
+| Maharashtra | [`state-finances/maharashtra/`](state-finances/maharashtra/) | — |
 
 ## Source Provenance
 
