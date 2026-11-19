@@ -1,0 +1,90 @@
+table_name,column_name,type,description,controlled_values
+budget,document_year,string,"Budget document year (the source folder year, e.g. 2024-25).",
+budget,state_code,string,Two-letter state code.,MH
+budget,page_number,string,"Printed page number of the department white book, as extracted (Printed_Page_Number). Can hold a book letter (H 166). Blank where the extracted page is blank.",
+budget,row_number,integer,1-based row position in the year's budget CSV. Unique within a year; used in NDJSON _ids.,
+budget,type_of_table,string,Packet surface the row comes from: object_head = II-Details (leaves and their totals); minor_head = I-Summary; recoveries = III-Details of Recoveries and the Net closure.,object_head|minor_head|recoveries
+budget,row_type,string,"Printed row role, kept as extracted. Gross Total, Recoveries and Net Total are the closing block of a major head. Other values are shifted rows (flag BAD_ROW_TYPE).",Header|Data|Total|Gross Total|Recoveries|Net Total
+budget,row_level,string,"Hierarchy level of the row, kept as extracted. Other values are shifted rows (flag BAD_ROW_LEVEL).",Object-Head|Detailed-Head|Sub-Head|Minor-Head|Sub-Major-Head|Major-Head|
+budget,row_header,string,Printed row label (Printed_Row_Label).,
+budget,demand_number,string,"Demand of the source file, e.g. F-2 (from the snippet manifest). MH demands are letter-scoped per department.",
+budget,major_head_code,string,"Major head code as printed (4 digits). Where the print is blank, filled from full_account_code or the source snippet (flag MAJOR_HEAD_FILLED).",
+budget,major_head_name,string,Major head name as printed; filled with the code (flag MAJOR_HEAD_FILLED).,
+budget,sub_major_head_code,string,Sub-major head code as printed.,
+budget,sub_major_head_name,string,Sub-major head name as printed.,
+budget,minor_head_code,string,Minor head code as printed (3 digits).,
+budget,minor_head_name,string,Minor head name as printed.,
+budget,sub_head_code,string,"Sub-head code as printed (2 digits, printed in brackets in the book).",
+budget,sub_head_name,string,Sub-head name as printed.,
+budget,detailed_head_code,string,Detailed head code as printed (2 digits).,
+budget,detailed_head_name,string,Detailed head name as printed.,
+budget,object_head_code,string,The additive leaf: object head code (2 digits). Same level as Karnataka's object head and Tamil Nadu's sub-detailed head.,
+budget,object_head_description,string,Object head name as printed.,
+budget,full_account_code,string,"MH budget code of the scheme block as printed (Scheme_Account_ID, e.g. 20531071 or (2404 316 2)). Not a dash-joined hierarchy as in Karnataka.",
+budget,vote_charge_marker,string,Vote leg as extracted. Charged + Voted = Total. Other values are faults (flags VOTE_LEG_*).,Charged|Voted|Total|
+budget,<type>_<year>_amount_inThous,number,"The four positional amounts in INR thousand. <type> is accounts, budget_estimate or revised_estimate; <year> is the fiscal year with an underscore. Position 1 = Actuals of year minus 2, 2 = BE of year minus 1, 3 = RE of year minus 1, 4 = BE of the document year. Plan era: the printed Total sub-column. Blank when the cell is blank or holds text (a label, a bracketed code such as (00), a code with a trailing comma such as 904,; flag NON_MONEY_AMOUNT). 0 when the book prints a nil mark (.., - or .). -,15 reads as -15. Rule and counts: MH_README.md, Money cells.",
+budget,amount_unit,string,"Unit of every amount column. Divide by 100 for INR lakh, by 10,000 for INR crore.",INR_thousand
+budget,source_file,string,Package-relative path of the department white book PDF. Blank in a build without PDFs.,
+budget,has_check,string,Whether a check anchors on this row.,yes|no
+budget,reference_check_id,string,"Links this printed row to its comparisons in MH_checks_<year>.csv: MH.<year>.dn_<demand>.<table_family>.<row_token>.<anchor_key>. Charged, Voted and Total rows of one printed block share one id.",
+budget,pass,integer,Number of attached comparisons that passed.,
+budget,pass_pct,number,Percentage of attached comparisons that passed.,
+budget,diff,number,"Sum of abs_diff over the attached comparisons, INR thousand.",
+budget,diff_pct,number,diff as a percentage of the summed absolute target amounts (blank when that sum is 0).,
+budget,scheme_type_marker,string,"MH-only. Scheme tag printed with the block (e.g. Committed, State Plan Scheme), as extracted.",
+budget,<type>_<year>_nonplan_amount_inThous,number,"MH-only, plan era (2010-11 to 2017-18). Non-Plan part of the positional amount, INR thousand. Blank from 2018-19.",
+budget,<type>_<year>_plan_amount_inThous,number,"MH-only, plan era. Plan part of the positional amount, INR thousand. Blank from 2018-19.",
+budget,source_snippet,string,MH-only. Snippet the row was extracted from: snip_MH_<year>_DEP<book>_<demand tag>_maj<major>_p<first>-p<last> (pages of the department book).,
+budget,quality_flags,string,MH-only. Semicolon-separated data-fault flags; blank when none. See MH_known_caveats.md.,NON_MONEY_AMOUNT|MAJOR_HEAD_FILLED|VOTE_LEG_COMMITTED|VOTE_LEG_OTHER|VOTE_LEG_MISSING|BAD_ROW_TYPE|BAD_ROW_LEVEL|UNIT_CELL_SHIFTED|SHORT_ROW|DEMAND_MISMATCH|PLAN_SPLIT_MISMATCH
+checks,document_year,string,Budget document year.,
+checks,reference_check_id,string,Anchor id shared with MH_budget_<year>.csv (the printed target row).,
+checks,check_id,string,Published check id (see the glossary in MH_README.md).,A01|A04|W01|W02|W06|W08|W11|W13|W14|W15|W16|W17|W18|W19|W20|W21|W22|W23|W24
+checks,check_type,string,Descriptive slug of the check.,
+checks,validation_scope,string,in_schema: within one table; across_schema: two tables.,in_schema|across_schema
+checks,source_table_family,string,Table of the summed (child) side. closing = the Gross Total and Recoveries rows of any table.,object_head|minor_head|recoveries|closing
+checks,source_row_level,string,Row level of the child side. Nearest-Child = the printed or derived children of W24.,
+checks,source_row_type,string,Row type of the child side.,
+checks,target_table_family,string,Table of the printed-total side.,object_head|minor_head|recoveries|closing
+checks,target_row_level,string,Row level of the printed-total side.,
+checks,target_row_type,string,Row type of the printed-total side.,
+checks,compared_key,string,"The state validator's key, underscore-joined: printed demand (normalised) and codes. W23 prefixes the source table, row type and level; W06 and W24 may end with the budget code of a split detailed-head block.",
+checks,demand_number,string,Demand of the source file.,
+checks,major_head_code,string,Normalised major head code of the key.,
+checks,sub_major_head_code,string,Normalised sub-major head code of the key.,
+checks,minor_head_code,string,Normalised minor head code of the key.,
+checks,sub_head_code,string,Normalised sub-head code of the key.,
+checks,detailed_head_code,string,Normalised detailed head code of the key.,
+checks,financial_column_position,integer,Which positional amount is compared.,1|2|3|4
+checks,financial_column_label,string,"Label of that column, e.g. 'Actuals 2022-23', 'BE 2024-25'.",
+checks,source_amount,number,"Sum of the children, INR thousand.",
+checks,target_amount,number,"The printed total, INR thousand.",
+checks,diff,number,"source_amount - target_amount, INR thousand.",
+checks,abs_diff,number,"Absolute difference, INR thousand.",
+checks,accuracy_pct,number,"100 - |diff|/|target|*100, floored at 0 (100 when both are 0).",
+checks,passed,integer,1 when abs_diff < threshold.,0|1
+checks,failed,integer,1 - passed.,0|1
+checks,metric_name,string,Always abs_diff.,abs_diff
+checks,metric_value,number,The abs_diff value.,
+checks,threshold,number,"Pass threshold in INR thousand (0.01), the state validator's rule.",0.01
+checks,na_reason,string,Blank.,
+checks,source_file,string,Per-demand object table the children came from.,
+checks,target_file,string,Per-demand table the printed total came from.,
+checks,legacy_check_id,string,MH-only. The state validator's check id (SRC/MH/validation/MH_run_validation.py).,SUM_OBJ_TO_DH|SUM_OBJ_TO_SH|SUM_OBJ_TO_MIN|SUM_OBJ_TO_SMAJ|SUM_OBJ_TO_MAJ|SUM_DH_TO_SH|SUM_DH_TO_MIN|SUM_DH_TO_SMAJ|SUM_DH_TO_MAJ|SUM_SH_TO_MIN|SUM_SH_TO_SMAJ|SUM_SH_TO_MAJ|SUM_MIN_TO_SMAJ|SUM_MIN_TO_MAJ|SUM_SMAJ_TO_MAJ|MATCH_MIN_OBJ_VS_SUMMARY|MATCH_NET_GROSS_VS_RECOVERIES|SUM_VC_TO_TOTAL|NEAREST_CHILD
+checks,plan_split_passed,integer,"MH-only, plan era. 1 when the Non-Plan and Plan parts of this position also match; 0 when one does not; blank from 2018-19. The validator passes a key only when all four positions pass and no plan_split_passed is 0.",0|1|
+checks,unprinted_level_fill,string,"MH-only. Whether the source side uses an unprinted level. The book prints no total at a level for a one-child branch (or a branch with no code at that level); the check then counts that branch at the sum of its object rows. filled_only: every child branch is such a fill, so the key exists only because of it. filled_part: printed totals plus at least one fill. Blank: no fill.",filled_only|filled_part|
+validation_summary,document_year,string,Budget document year of the aggregated checks.,
+validation_summary,fiscal_year,string,Fiscal year of the aggregated column (ALL on ALL-position rows).,
+validation_summary,level,string,"Aggregation level: Year, then Demand, MajorHead, SubMajor, Minor, SubHead, Detailed.",Year|Demand|MajorHead|SubMajor|Minor|SubHead|Detailed
+validation_summary,demand_number,string,Demand (Demand level and below).,
+validation_summary,major_head_code,string,Major head code (MajorHead level and below).,
+validation_summary,sub_major_head_code,string,Sub-major head code.,
+validation_summary,minor_head_code,string,Minor head code.,
+validation_summary,sub_head_code,string,Sub-head code.,
+validation_summary,detailed_head_code,string,Detailed head code.,
+validation_summary,financial_column_position,string,Positional column aggregated (ALL = the four together).,1|2|3|4|ALL
+validation_summary,financial_column_label,string,Label of that column.,
+validation_summary,n_checks,integer,Comparisons aggregated.,
+validation_summary,n_passed,integer,Comparisons that passed.,
+validation_summary,pass_pct,number,n_passed / n_checks * 100.,
+validation_summary,mu_accuracy_pct,number,Mean of accuracy_pct.,
+validation_summary,sigma_accuracy_pct,number,Population standard deviation of accuracy_pct.,

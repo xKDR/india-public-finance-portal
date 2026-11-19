@@ -1,0 +1,147 @@
+{
+ "budget_rows_count": 501984,
+ "checks_rows_count": 729876,
+ "pdfs_count": 0,
+ "per_year": {
+  "2010-11": {
+   "budget_rows": 28099,
+   "check_rows": 36172,
+   "json_budget_leaves": 13462,
+   "json_budget_nodes": 185,
+   "json_checks": 36172,
+   "json_summaries": 5871,
+   "pdf_count": 0
+  },
+  "2012-13": {
+   "budget_rows": 29366,
+   "check_rows": 37968,
+   "json_budget_leaves": 14071,
+   "json_budget_nodes": 185,
+   "json_checks": 37968,
+   "json_summaries": 6125,
+   "pdf_count": 0
+  },
+  "2013-14": {
+   "budget_rows": 30233,
+   "check_rows": 39440,
+   "json_budget_leaves": 14333,
+   "json_budget_nodes": 205,
+   "json_checks": 39440,
+   "json_summaries": 6179,
+   "pdf_count": 0
+  },
+  "2014-15": {
+   "budget_rows": 29341,
+   "check_rows": 36752,
+   "json_budget_leaves": 14048,
+   "json_budget_nodes": 205,
+   "json_checks": 36752,
+   "json_summaries": 5916,
+   "pdf_count": 0
+  },
+  "2015-16": {
+   "budget_rows": 31197,
+   "check_rows": 38972,
+   "json_budget_leaves": 14654,
+   "json_budget_nodes": 208,
+   "json_checks": 38972,
+   "json_summaries": 6298,
+   "pdf_count": 0
+  },
+  "2016-17": {
+   "budget_rows": 33577,
+   "check_rows": 40884,
+   "json_budget_leaves": 15038,
+   "json_budget_nodes": 205,
+   "json_checks": 40884,
+   "json_summaries": 6781,
+   "pdf_count": 0
+  },
+  "2017-18": {
+   "budget_rows": 33884,
+   "check_rows": 40256,
+   "json_budget_leaves": 15783,
+   "json_budget_nodes": 202,
+   "json_checks": 40256,
+   "json_summaries": 6575,
+   "pdf_count": 0
+  },
+  "2018-19": {
+   "budget_rows": 29723,
+   "check_rows": 49840,
+   "json_budget_leaves": 12201,
+   "json_budget_nodes": 197,
+   "json_checks": 49840,
+   "json_summaries": 7184,
+   "pdf_count": 0
+  },
+  "2019-20": {
+   "budget_rows": 35364,
+   "check_rows": 56428,
+   "json_budget_leaves": 15157,
+   "json_budget_nodes": 214,
+   "json_checks": 56428,
+   "json_summaries": 8317,
+   "pdf_count": 0
+  },
+  "2020-21": {
+   "budget_rows": 33886,
+   "check_rows": 54912,
+   "json_budget_leaves": 14501,
+   "json_budget_nodes": 206,
+   "json_checks": 54912,
+   "json_summaries": 7920,
+   "pdf_count": 0
+  },
+  "2021-22": {
+   "budget_rows": 35381,
+   "check_rows": 57396,
+   "json_budget_leaves": 15202,
+   "json_budget_nodes": 212,
+   "json_checks": 57396,
+   "json_summaries": 8212,
+   "pdf_count": 0
+  },
+  "2022-23": {
+   "budget_rows": 36271,
+   "check_rows": 57384,
+   "json_budget_leaves": 15544,
+   "json_budget_nodes": 212,
+   "json_checks": 57384,
+   "json_summaries": 8461,
+   "pdf_count": 0
+  },
+  "2023-24": {
+   "budget_rows": 36995,
+   "check_rows": 59448,
+   "json_budget_leaves": 16046,
+   "json_budget_nodes": 213,
+   "json_checks": 59448,
+   "json_summaries": 8617,
+   "pdf_count": 0
+  },
+  "2024-25": {
+   "budget_rows": 37713,
+   "check_rows": 60012,
+   "json_budget_leaves": 16324,
+   "json_budget_nodes": 209,
+   "json_checks": 60012,
+   "json_summaries": 8701,
+   "pdf_count": 0
+  },
+  "2026-27": {
+   "budget_rows": 40954,
+   "check_rows": 64012,
+   "json_budget_leaves": 17935,
+   "json_budget_nodes": 225,
+   "json_checks": 64012,
+   "json_summaries": 9227,
+   "pdf_count": 0
+  }
+ },
+ "release_version": "v0.1.0-draft",
+ "schema_version": "mh-public-two-table-v1",
+ "source_commit": "2b4ce9f0d13d2c68301818264855bbdf69ed37c8",
+ "validator_leg_dedup": "block",
+ "years_count": 15
+}
